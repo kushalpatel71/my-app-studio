@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}{{ build.model }} | {{ super() }}{% endblock %}
+{% block content %}
+<nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/builds">Car Builds</a><span aria-hidden="true">/</span><span aria-current="page">{{ build.model }}</span></nav>
+<header class="page-intro detail-intro"><p class="eyebrow">Sample build / {{ build.category }}</p><h1>{{ build.model }}</h1><p class="page-lede">{{ build.title }} — {{ build.description }}</p></header>
+<figure class="detail-figure"><img class="detail-photo photo-{{ build.slug }}" src="/static/photos/{{ build.slug }}.jpg" alt="{{ build.alt }}" width="1800" height="1200" fetchpriority="high"><figcaption>Representative photo: <a href="{{ build.source }}">{{ build.photographer }} / Unsplash</a> · <a href="https://unsplash.com/license">Photo license</a></figcaption></figure>
+<p class="sample-notice detail-notice"><strong>Illustrative sample build.</strong> The specifications and modifications below describe a concept, not a verified build sheet for the photographed car. No measured power or performance results are claimed.</p>
+<div class="detail-columns"><section class="spec-panel" aria-labelledby="specs-title"><p class="eyebrow">The foundation</p><h2 id="specs-title">Example specifications</h2><dl>{% for label, detail in build.specifications.items() %}<div><dt>{{ label }}</dt><dd>{{ detail }}</dd></div>{% endfor %}</dl></section>
+<section class="mod-panel" aria-labelledby="mods-title"><p class="eyebrow">The choices behind the concept</p><h2 id="mods-title">Modification details</h2><dl>{% for label, detail in build.modifications.items() %}<div><dt>{{ label }}</dt><dd>{{ detail }}</dd></div>{% endfor %}</dl></section></div>
+<div class="detail-actions"><a class="secondary-button" href="/builds"><span aria-hidden="true">←</span> Back to Car Builds</a><a class="text-link" href="/about">Why we build <span aria-hidden="true">→</span></a></div>
+{% endblock %}

@@ -7,8 +7,8 @@ actual evidence; pending is a valid state. Keep explanations/help in
 ## Current stage
 
 - **Current feature:** APP-001.
-- **Status:** Revised APP-001 static showcase implemented and checked locally; learner reviewed all six revised pages and chose Keep with a reason. Learning-summary publication and commit/push approved; GitHub completion pending.
-- **Next step:** Commit/push the approved feature branch, open the issue-linked PR, verify check/windows CI and present the results for learner review. Do not merge without separate approval.
+- **Status:** Revised APP-001 static showcase implemented and checked locally; learner reviewed all six revised pages and chose Keep with a reason. Approved work committed/pushed; PR #2 is open and implementation CI check/windows passed. Learner PR review and merge approval pending.
+- **Next step:** Verify CI on the latest PR revision after recording these links, then present PR #2 and CI results for learner review. Do not merge without separate approval.
 - **Implementation marker:** `studio.json` is now `implemented_through: 1`, advanced only after the full APP-001 check passed; the default full check then passed again.
 
 This repository owns application code. Server/proxy changes and production
@@ -26,7 +26,7 @@ Keep account actions honest about their unfinished state.
 | Visitor and concrete use situation | Car enthusiasts exploring build photos and comparing modification details for inspiration. |
 | Reused IS117 brand, or name / promise / primary archetype | New brand: Car Builders Place.com. Promise: “Explore the builds. Discover what’s under the hood.” Primary archetype: Creator (AI suggestion adopted by learner). |
 | One visible choice and visitor benefit | Photos beside labeled modification details so visitors can compare customization and find ideas for their own cars. |
-| Own issue / branch / PR | [Issue #1](https://github.com/kushalpatel71/my-app-studio/issues/1); `feature/app-001-car-builders-place`; PR pending. |
+| Own issue / branch / PR | [Issue #1](https://github.com/kushalpatel71/my-app-studio/issues/1); `feature/app-001-car-builders-place`; [PR #2](https://github.com/kushalpatel71/my-app-studio/pull/2), open. |
 
 **Approved revised scope (learner request):** keep the branded homepage and featured previews;
 add a separate Car Builds index, one static detail page per sample build and a
@@ -106,7 +106,7 @@ customer research or claims that a timestamp proves learning.
 
 | Feature | Files / own issue / PR | Actual checks and learner observations | Kept / GitHub state |
 |---|---|---|---|
-| APP-001 | [Issue #1](https://github.com/kushalpatel71/my-app-studio/issues/1); `feature/app-001-car-builders-place`; static showcase router, templates, brand data, shared CSS/SVG/photos and route/browser tests. PR pending. | Revised full explicit/default checks: Black/Pylint, 104 foundation/route tests, 2 homepage contracts, 7 Chromium cases passed. Learner interpretation recorded; learner inspected all six revised pages, preferred actual page navigation/detail pages and reported responsive adjustment in a narrower window. | Learner requested separate pages before Keep; revised implementation checked locally. Learner chose Keep: separate pages make navigation, comparison and finding modification details easier. Learner approved the learning summary and authorized commit/push/PR. GitHub completion pending; merge is explicitly not authorized. |
+| APP-001 | [Issue #1](https://github.com/kushalpatel71/my-app-studio/issues/1); `feature/app-001-car-builders-place`; static showcase router, templates, brand data, shared CSS/SVG/photos and route/browser tests. [PR #2](https://github.com/kushalpatel71/my-app-studio/pull/2), open. | Revised full explicit/default checks: Black/Pylint, 104 foundation/route tests, 2 homepage contracts, 7 Chromium cases passed. Learner interpretation recorded; learner inspected all six revised pages, preferred actual page navigation/detail pages and reported responsive adjustment in a narrower window. | Learner requested separate pages before Keep; revised implementation checked locally. Learner chose Keep: separate pages make navigation, comparison and finding modification details easier. Learner approved the summary and Keep workflow; committed/pushed and PR #2 opened. Implementation CI check/windows passed; final-revision CI and learner PR review precede merge. Merge is explicitly not authorized. |
 | APP-002 | Pending | Unfinished; explicit contracts not yet passed | Pending |
 | APP-003 | Pending | Unfinished; explicit contracts not yet passed | Pending |
 
@@ -128,8 +128,14 @@ The learner approved summary accuracy/publication and authorized commit/push/PR 
 [unchanged homepage contracts](contracts/test_homepage.py),
 [CI workflow](.github/workflows/check.yml),
 [actual issue](https://github.com/kushalpatel71/my-app-studio/issues/1).
-PR, commit and CI-run links are pending creation and verification; they will be
-recorded from actual GitHub results.
+**GitHub evidence:** [PR #2](https://github.com/kushalpatel71/my-app-studio/pull/2) (open, `Closes #1`),
+[implementation commit `9ecd9f6`](https://github.com/kushalpatel71/my-app-studio/commit/9ecd9f6c65f2a1230dcdddce17c9fd4f4b7135aa),
+[implementation CI run](https://github.com/kushalpatel71/my-app-studio/actions/runs/41519046897) — `check` and `windows` both completed successfully.
+Linux CI passed 104 foundation/route tests, 2 contracts and 7 Chromium cases.
+Windows CI passed 102 foundation/route tests, 2 contracts and 7 Chromium cases,
+with 2 existing POSIX-only tests skipped by their platform markers.
+This evidence update changes documentation only; verify the latest PR revision
+before requesting learner merge approval. Issue #1 remains open until the approved merge.
 
 - The earlier single-page version passed Black/Pylint, 98 foundation tests, 2 contracts and 5 Chromium cases. The learner interpreted its Next Step check and reviewed that version, then explicitly requested separate pages before commit/push.
 - Revised implementation: `app/showcase.py` adds `/builds`, `/builds/{slug}` and `/about`; `app/main.py` registers the router. Static data remains in `app/brand.json`, including clearly labeled concept specifications. No car-build database, authentication or upload feature was added.
@@ -138,7 +144,7 @@ recorded from actual GitHub results.
 - Revised checks on 2026-11-02: `python3 studio.py check --lesson APP-001` and `python3 studio.py check` both exited 0: Black, Pylint, **104 foundation/route tests, 2 homepage contracts and 7 actual Chromium cases**. Marker remains 1. Existing FastAPI/httpx deprecation warning did not fail either run.
 - Instructor contracts and existing browser assertions are unchanged. `tests/test_showcase.py` adds direct public/detail-route checks and unknown-build 404 cases. The added `test_separate_showcase_page_navigation` checks real links at 1440/390px, each detail page, keyboard Enter on View Details, loaded photos, modification content, Back to Car Builds, About/Home navigation, no overflow and preserved Next Step. The earlier gallery/focus test still runs at 1440/768/390px.
 - AI browser review: all six live pages returned 200 with loaded photos, no horizontal overflow at 1440/390/320px, and no browser script errors. Desktop/narrow screenshots were inspected for the gallery, detail, About and revised Home layouts; detail specifications/modifications stack on narrow screens. These are AI observations. The learner separately reported checking all six pages, easier Home/Car Builds/About navigation, working detail-page buttons, responsive adjustment in a narrower window and a preference for this multi-page version.
-- Publication authorized after learner summary review; PR/CI results and merge are pending. Local full-check receipt is ignored at `runtime/check-APP-001.json`. Credentials, keys, environments and local SQLite files remain outside tracked changes.
+- Learner approved summary publication; implementation commit and both implementation CI jobs are verified above. Latest PR revision and learner review must be verified before merge. Local full-check receipt is ignored at `runtime/check-APP-001.json`. Credentials, keys, environments and local SQLite files remain outside tracked changes.
 
 The instructor's reference branches show possible implementations. They do not
 establish this repository's completion or the learner's own reasoning.

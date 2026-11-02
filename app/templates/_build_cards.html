@@ -1,0 +1,11 @@
+<div class="build-grid">
+{% for build in brand.builds %}
+  <article class="build-card" aria-labelledby="{{ build.slug }}-title">
+    <figure><a class="photo-link" href="/builds/{{ build.slug }}" aria-label="Explore {{ build.model }}"><img class="build-photo photo-{{ build.slug }}" src="/static/photos/{{ build.slug }}.jpg" alt="{{ build.alt }}" width="900" height="675" loading="lazy"></a><figcaption><a href="{{ build.source }}">Photo: {{ build.photographer }} / Unsplash</a></figcaption></figure>
+    <div class="build-body"><div class="card-meta"><span>Sample build / 0{{ loop.index }}</span></div><p class="build-category">{{ build.category }}</p><h3 id="{{ build.slug }}-title"><a href="/builds/{{ build.slug }}">{{ build.model }}</a></h3><p class="build-title">{{ build.title }}</p><p class="build-description">{{ build.description }}</p>
+      <h4>Example modification details</h4><dl>{% for label, detail in build.modifications.items() %}<div><dt>{{ label }}</dt><dd>{{ detail }}</dd></div>{% endfor %}</dl>
+      <a class="text-link detail-link" href="/builds/{{ build.slug }}">View Details<span class="sr-only"> for {{ build.model }}</span> <span aria-hidden="true">→</span></a>
+    </div>
+  </article>
+{% endfor %}
+</div>

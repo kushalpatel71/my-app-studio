@@ -11,7 +11,7 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from starlette.middleware.trustedhost import TrustedHostMiddleware
 
-from app import branding, database, security
+from app import branding, database, security, showcase
 from app.features import accounts, roles
 from app.settings import Settings
 from studio_tools.live import revision as current_revision
@@ -38,6 +38,7 @@ def create_app(settings=None):
     )
     application.include_router(accounts.router)
     application.include_router(roles.router)
+    application.include_router(showcase.router)
     application.state.feature_flags = lambda: {
         "accounts": any(route.path == "/api/me" for route in accounts.router.routes),
         "roles": any(route.path == "/api/admin" for route in roles.router.routes),

@@ -1,16 +1,88 @@
 {
-  "name": "Your Project",
-  "audience": "Not chosen yet",
-  "archetype": "Not chosen yet",
-  "promise": "Not chosen yet",
-  "headline": "A small idea. A real application.",
-  "summary": "This working page is your starting point. Give it a purpose and a brand, then build accounts and permissions one feature at a time.",
-  "voice": ["Not chosen yet"],
-  "design_direction": "Not chosen yet",
+  "name": "Car Builders Place.com",
+  "audience": "Car enthusiasts exploring different builds and comparing modifications for inspiration.",
+  "archetype": "Creator",
+  "promise": "Explore the builds. Discover what’s under the hood.",
+  "headline": "Every build tells a story.",
+  "summary": "Get closer to the details that make a car its own. Explore build inspiration, compare modifications, and find ideas for your next project.",
+  "voice": [
+    "Knowledgeable",
+    "Welcoming",
+    "Craft-focused"
+  ],
+  "design_direction": "Charcoal automotive editorial layout, light text, lime accents, large car photography and clearly labeled modification details.",
   "palette": {
-    "ink": "#182C34",
-    "paper": "#F6F5EF",
-    "accent": "#285A50",
-    "surface": "#FFFFFF"
-  }
+    "ink": "#F3F4EF",
+    "paper": "#121513",
+    "accent": "#CBF763",
+    "surface": "#1D221F"
+  },
+  "builds": [
+    {
+      "slug": "skyline",
+      "model": "Nissan Skyline R34",
+      "title": "The midnight project",
+      "category": "JDM / Street concept",
+      "alt": "Rear view of a dark Nissan Skyline R34 on a tree-lined road",
+      "photographer": "Ondrej Trnak",
+      "source": "https://unsplash.com/photos/PAVE62vEXtM",
+      "description": "An old-school silhouette with a focus on response, grip and a purposeful stance.",
+      "modifications": {
+        "Wheels": "18-inch forged wheels with performance tires",
+        "Suspension": "Height-adjustable coilovers",
+        "Engine": "Turbo inline-six with an upgraded intercooler",
+        "Performance": "ECU calibration and a cat-back exhaust"
+      },
+      "specifications": {
+        "Body style": "Coupe concept",
+        "Drivetrain": "Rear-wheel-drive concept",
+        "Transmission": "Manual concept",
+        "Power output": "Not measured — illustrative build"
+      }
+    },
+    {
+      "slug": "miata",
+      "model": "Mazda MX-5 Miata",
+      "title": "Small car. Big character.",
+      "category": "Roadster / Weekend concept",
+      "alt": "Red Mazda MX-5 Miata with raised pop-up headlights and white wheels at a night car meet",
+      "photographer": "sdl sanjaya",
+      "source": "https://unsplash.com/photos/r7AOX1Ppibc",
+      "description": "Lightweight roadster inspiration, built around balance and the joy of a winding road.",
+      "modifications": {
+        "Wheels": "15-inch lightweight wheels with summer tires",
+        "Suspension": "Adjustable dampers and upgraded anti-roll bars",
+        "Engine": "Naturally aspirated four-cylinder with an intake upgrade",
+        "Performance": "Stainless exhaust and upgraded brake pads"
+      },
+      "specifications": {
+        "Body style": "Two-seat roadster concept",
+        "Drivetrain": "Rear-wheel-drive concept",
+        "Transmission": "Manual concept",
+        "Power output": "Not measured — illustrative build"
+      }
+    },
+    {
+      "slug": "bmw",
+      "model": "BMW M3 G80",
+      "title": "Precision with presence",
+      "category": "Euro / Performance concept",
+      "alt": "Blue BMW M3 G80 with dark wheels parked in sunlight beside a charcoal wall",
+      "photographer": "Leiada Krözjhen",
+      "source": "https://unsplash.com/photos/7L3hq41oLCI",
+      "description": "A modern performance-sedan concept that brings everyday presence and considered upgrades together.",
+      "modifications": {
+        "Wheels": "19-inch front / 20-inch rear forged wheels",
+        "Suspension": "Adjustable lowering springs",
+        "Engine": "Twin-turbo inline-six with upgraded cooling",
+        "Performance": "ECU calibration and a valved exhaust"
+      },
+      "specifications": {
+        "Body style": "Four-door performance sedan concept",
+        "Drivetrain": "All-wheel-drive concept",
+        "Transmission": "Automatic concept",
+        "Power output": "Not measured — illustrative build"
+      }
+    }
+  ]
 }

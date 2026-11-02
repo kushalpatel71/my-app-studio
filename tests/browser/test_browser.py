@@ -3,6 +3,7 @@
 from dataclasses import dataclass, field
 import json
 import os
+import re
 from pathlib import Path
 import socket
 import subprocess
@@ -176,3 +177,98 @@ def _check_role_boundary(page, server, username):
             expect(
                 page.get_by_role("heading", name="Administration", exact=True)
             ).to_be_visible()
+
+
+@pytest.mark.parametrize("width", [1440, 768, 390])
+def test_car_gallery_and_next_step(page, server, width):
+    """The gallery CTA reaches usable, credited build details on each layout."""
+    if LEVEL < 1:
+        pytest.skip("Car showcase belongs to APP-001, not the neutral foundation")
+    page.set_viewport_size({"width": width, "height": 900})
+    page.goto(server.url)
+    page.get_by_role("link", name="Next Step", exact=True).focus()
+    page.keyboard.press("Enter")
+    expect(page).to_have_url(server.url + "/#builds")
+    gallery = page.locator("#builds")
+    expect(gallery).to_be_focused()
+    expect(
+        page.get_by_role("heading", name="Different cars. One shared obsession.")
+    ).to_be_in_viewport()
+    assert page.evaluate("window.scrollY > 0")
+    assert page.evaluate("document.documentElement.scrollWidth <= window.innerWidth")
+    cards = gallery.locator("article")
+    expect(cards).to_have_count(3)
+    for card in cards.all():
+        for label in ("Wheels", "Suspension", "Engine", "Performance"):
+            expect(card.locator("dt", has_text=label)).to_have_count(1)
+        expect(card.get_by_text("Sample build /", exact=False)).to_be_visible()
+        credit = card.locator("figcaption a")
+        assert credit.get_attribute("href").startswith("https://unsplash.com/photos/")
+        photo = card.locator("img")
+        photo.scroll_into_view_if_needed()
+        expect(photo).to_be_visible()
+        expect(photo).to_have_attribute("alt", re.compile(r".+"))
+        page.wait_for_function(
+            "image => image.complete && image.naturalWidth > 0",
+            arg=photo.element_handle(),
+        )
+    assert page.request.get(server.url + "/signup").status == 404
+    assert page.request.get(server.url + "/upload").status == 404
+
+
+@pytest.mark.parametrize("width", [1440, 390])
+def test_separate_showcase_page_navigation(page, server, width):
+    """Real links lead to each page and car without replacing the home anchor."""
+    if LEVEL < 1:
+        pytest.skip("Static showcase belongs to APP-001")
+    page.set_viewport_size({"width": width, "height": 900})
+    page.goto(server.url)
+    nav = page.get_by_role("navigation", name="Main navigation", exact=True)
+    for name, path in (("Home", "/"), ("Car Builds", "/builds"), ("About", "/about")):
+        expect(nav.get_by_role("link", name=name, exact=True)).to_have_attribute(
+            "href", path
+        )
+    page.get_by_role("link", name="View All Builds", exact=True).first.click()
+    expect(page).to_have_url(server.url + "/builds")
+    expect(page.get_by_role("heading", level=1)).to_have_text("Car builds.")
+    for slug, model in (
+        ("skyline", "Nissan Skyline R34"),
+        ("miata", "Mazda MX-5 Miata"),
+        ("bmw", "BMW M3 G80"),
+    ):
+        card = page.locator(
+            "article", has=page.get_by_role("heading", name=model, exact=True)
+        )
+        expect(
+            card.get_by_role("link", name="Explore " + model, exact=True)
+        ).to_have_attribute("href", "/builds/" + slug)
+        card.get_by_role("link", name="View Details for " + model, exact=True).focus()
+        page.keyboard.press("Enter")
+        expect(page).to_have_url(server.url + "/builds/" + slug)
+        expect(page.get_by_role("heading", level=1)).to_have_text(model)
+        expect(
+            page.get_by_role("heading", name="Example specifications", exact=True)
+        ).to_be_visible()
+        for label in ("Wheels", "Suspension", "Engine", "Performance"):
+            expect(page.locator(".mod-panel dt", has_text=label)).to_be_visible()
+        photo = page.locator(".detail-photo")
+        page.wait_for_function(
+            "image => image.complete && image.naturalWidth > 0",
+            arg=photo.element_handle(),
+        )
+        assert page.evaluate("document.documentElement.scrollWidth <= innerWidth")
+        assert page.request.get(server.url + "/builds/" + slug).status == 200
+        page.get_by_role("link", name="Back to Car Builds", exact=True).click()
+        expect(page).to_have_url(server.url + "/builds")
+    nav.get_by_role("link", name="About", exact=True).click()
+    expect(page).to_have_url(server.url + "/about")
+    expect(page.get_by_role("heading", level=1)).to_have_text(
+        "A place for the details."
+    )
+    assert page.evaluate("document.documentElement.scrollWidth <= innerWidth")
+    nav.get_by_role("link", name="Home", exact=True).click()
+    expect(page).to_have_url(server.url + "/")
+    page.get_by_role("link", name="Next Step", exact=True).click()
+    expect(page).to_have_url(server.url + "/#builds")
+    expect(page.locator("#builds")).to_be_focused()
+    assert page.request.get(server.url + "/builds/unknown").status == 404

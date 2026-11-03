@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block title %}Admin | {{ super() }}{% endblock %}
+{% block content %}
+<header class="page-intro"><p class="eyebrow">Car Builders Place.com / Admin</p><h1>Administration</h1><p class="page-lede">Welcome, {{ user.username }}. Your account currently has access to this protected area.</p></header>
+<div class="dashboard-layout"><section class="account-panel" aria-labelledby="admin-status-title"><p class="eyebrow">Access confirmed</p><h2 id="admin-status-title">Admin access is active.</h2><dl class="account-details"><div><dt>Username</dt><dd>{{ user.username }}</dd></div><div><dt>Role</dt><dd>{{ user.role }}</dd></div></dl><p class="muted">This page confirms your admin access. It does not provide account or build management.</p><a class="text-link" href="/api/admin">View protected API response <span aria-hidden="true">→</span></a></section>
+<aside class="dashboard-note"><p class="eyebrow">Still part of the community</p><h2>Keep exploring.</h2><p>Your member dashboard and the car showcase remain available. Return to your dashboard to view your account or log out.</p><a class="secondary-button" href="/dashboard">Your dashboard <span aria-hidden="true">→</span></a><p><a class="text-link" href="/builds">Explore Car Builds <span aria-hidden="true">→</span></a></p></aside></div>
+{% endblock %}

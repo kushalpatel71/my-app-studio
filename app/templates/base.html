@@ -25,7 +25,7 @@
         {% if current_user %}<a href="/dashboard"{% if request.url.path == '/dashboard' %} aria-current="page"{% endif %}>Dashboard</a>
         {% else %}<a href="/login"{% if request.url.path == '/login' %} aria-current="page"{% endif %}>Log in</a><a class="nav-signup" href="/signup"{% if request.url.path == '/signup' %} aria-current="page"{% endif %}>Sign up</a>{% endif %}
       {% endif %}
-      {% if features.roles and current_user and current_user.role == "admin" %}<a href="/admin">Admin</a>{% endif %}
+      {% if features.roles and current_user and current_user.role == "admin" %}<a href="/admin"{% if request.url.path == '/admin' %} aria-current="page"{% endif %}>Admin</a>{% endif %}
     </nav>
   </header>
   <main id="main" class="wrap" tabindex="-1">{% block content %}{% endblock %}</main>

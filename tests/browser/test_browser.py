@@ -318,3 +318,78 @@ def test_branded_account_layout_and_keyboard_flow(page, server, width):
     )
     page.goto(server.url + "/dashboard")
     expect(page).to_have_url(server.url + "/login")
+
+
+@pytest.mark.parametrize("width", [1440, 390])
+def test_admin_page_cli_changes_and_existing_session(page, server, width):
+    """A live browser session follows trusted CLI role changes on each request."""
+    if LEVEL < 3:
+        pytest.skip("Admin boundary belongs to APP-003")
+    page.set_viewport_size({"width": width, "height": 900})
+    response = page.goto(server.url + "/admin")
+    expect(page).to_have_url(server.url + "/login")
+    assert page.request.get(server.url + "/api/admin").status == 401
+    username = "roles_" + uuid.uuid4().hex[:10]
+    page.goto(server.url + "/signup")
+    page.get_by_label("Username", exact=True).fill(username)
+    page.get_by_label("Password", exact=True).fill(
+        "a disposable role browser passphrase"
+    )
+    page.get_by_role("button", name="Create account", exact=True).click()
+    page.get_by_label("Username", exact=True).fill(username)
+    page.get_by_label("Password", exact=True).fill(
+        "a disposable role browser passphrase"
+    )
+    page.get_by_role("button", name="Log in", exact=True).click()
+    original_cookie = next(
+        cookie["value"]
+        for cookie in page.context.cookies()
+        if cookie["name"] == "studio-session"
+    )
+    response = page.goto(server.url + "/admin")
+    assert response.status == 403
+    expect(
+        page.get_by_role("heading", name="Admin access required", exact=True)
+    ).to_be_visible()
+    expect(
+        page.get_by_role("navigation", name="Main navigation").get_by_role(
+            "link", name="Admin", exact=True
+        )
+    ).to_have_count(0)
+    for role, expected in (("admin", 200), ("member", 403)):
+        subprocess.run(
+            [sys.executable, "studio.py", "user", "role", username, "--role", role],
+            cwd=ROOT,
+            env=server.environment,
+            check=True,
+            capture_output=True,
+            text=True,
+        )
+        response = page.goto(server.url + "/admin")
+        assert response.status == expected
+        assert page.request.get(server.url + "/api/admin").status == expected
+        assert page.evaluate("document.documentElement.scrollWidth <= innerWidth")
+        current_cookie = next(
+            cookie["value"]
+            for cookie in page.context.cookies()
+            if cookie["name"] == "studio-session"
+        )
+        assert current_cookie == original_cookie
+        if role == "admin":
+            expect(
+                page.get_by_role("heading", name="Administration", exact=True)
+            ).to_be_visible()
+            expect(
+                page.get_by_role("navigation", name="Main navigation").get_by_role(
+                    "link", name="Admin", exact=True
+                )
+            ).to_be_visible()
+        else:
+            expect(
+                page.get_by_role("heading", name="Admin access required", exact=True)
+            ).to_be_visible()
+    page.get_by_role("link", name="Your dashboard", exact=True).click()
+    expect(
+        page.get_by_role("heading", name="Your member space", exact=True)
+    ).to_be_visible()
+    expect(page.locator(".account-details")).to_contain_text("member")

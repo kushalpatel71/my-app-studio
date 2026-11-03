@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block title %}Admin access required | {{ super() }}{% endblock %}
+{% block content %}
+<header class="page-intro"><p class="eyebrow">403 / Restricted area</p><h1>Admin access required</h1><p class="page-lede">You are signed in, but your current account does not have permission to access this area.</p></header>
+<section class="panel" aria-labelledby="member-return-title"><div><p class="eyebrow">Your account is still available</p><h2 id="member-return-title">Back to your member space.</h2><p>You can still visit your private dashboard and explore the public car builds.</p></div><a class="secondary-button" href="/dashboard">Your dashboard <span aria-hidden="true">→</span></a></section>
+<p class="photo-license"><a href="/builds">Explore Car Builds</a> or <a href="/">return Home</a>.</p>
+{% endblock %}

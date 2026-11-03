@@ -6,11 +6,10 @@ actual evidence; pending is a valid state. Keep explanations/help in
 
 ## Current stage
 
-- **Current feature:** APP-002.
-- **Status:** APP-001 merged/verified; approved APP-002 implemented and checked locally. Learner interpreted the logout-replay test and personally reviewed the finished account flow and chose Keep with a reason; summary approved and implementation committed/pushed; PR #4 is open. Latest-revision CI and separate merge approval remain pending.
-- **Next step:** Verify check/windows CI on the latest PR #4 revision and present it for learner review. Separate merge approval is required.
-- **Implementation marker:** `implemented_through` is 2, advanced only after the full cumulative APP-002 check passed; the default full check then passed again.
-
+- **Current feature:** APP-003.
+- **Status:** APP-003 implemented and checked locally. Learner prediction, test interpretation, CLI promotion/demotion observations and Keep reason are recorded. Summary accuracy/publication and commit/push/PR are approved. Latest PR/CI review and separate merge approval remain pending.
+- **Next step:** Publish the approved APP-003 branch, open the issue-linked PR and verify check/windows CI on its latest revision before learner review. Separate merge approval remains required.
+- **Implementation marker:** `implemented_through` is 3, advanced only after the full cumulative APP-003 check passed; the default full check then passed.
 
 This repository owns application code. Server/proxy changes and production
 deployment are outside these three local-development lessons. Prepared helpers
@@ -69,7 +68,7 @@ helpers; keep data local. New accounts cannot choose their role.
 |---|---|
 | Expected public/private behavior and account flow | Member signup → login → private dashboard showing own username/member role → POST logout. Anonymous/expired/revoked dashboard requests redirect to login; private API returns 401. Preserve all public showcase pages and charcoal/lime styling. |
 | Valid and rejected cases to demonstrate | Valid signup/login/logout; normalized duplicate username; invalid credentials/role injection; wrong password; throttling; missing/invalid CSRF; expired session; replay after logout. Use prepared helpers and local SQLite only. |
-| Own issue / branch / PR | [Issue #3](https://github.com/kushalpatel71/my-app-studio/issues/3); `feature/app-002-member-accounts`; [PR #4](https://github.com/kushalpatel71/my-app-studio/pull/4), open. |
+| Own issue / branch / PR | [Issue #3](https://github.com/kushalpatel71/my-app-studio/issues/3); `feature/app-002-member-accounts`; [PR #4](https://github.com/kushalpatel71/my-app-studio/pull/4), merged. |
 
 **Approved plan:** implement HTML `/signup`, `/login`, `/dashboard`, POST `/logout`,
 and JSON `/api/csrf`, `/api/signup`, `/api/login`, `/api/me`, `/api/logout` over the
@@ -106,7 +105,7 @@ presented to the learner before merge.
 - New [request tests](tests/test_account_routes.py) verify actual API/dashboard denial for expired JWTs and expired server sessions, per-member private identity, no-store responses and HTML logout CSRF rejection without unintended logout. [Browser tests](tests/browser/test_browser.py) include the prepared wrong-login/logout-replay journey, the full public showcase and new keyboard account journeys at 1440/390px.
 - One named actual result: `.venv/bin/python -m pytest -q contracts/test_accounts.py::test_logout_revokes_a_copied_token_and_get_does_not_log_out -v` exited 0, **1 passed**. Its request sequence logs in, saves a test session cookie, confirms GET logout does not log out, POSTs a valid-CSRF logout, then sends the saved cookie to `/api/me`; expectation and actual result are 401. Learner interpreted this result as checking server-side session revocation and denying access with the old cookie, rather than only removing the browser cookie.
 - AI reviewed desktop/mobile screenshots of Signup, Login and Dashboard using a temporary isolated database and throwaway accounts. At 1440/390/320px, those pages had no horizontal overflow or browser script errors; revisiting Dashboard after logout redirected to login. This is AI evidence, separate from the learner's browser observation. The learner's live server returned Signup/Login 200 and anonymous Dashboard 303 → `/login`.
-- The existing FastAPI/httpx deprecation warning remains non-blocking. Local check receipt is ignored at `runtime/check-APP-002.json`; private SQLite/keys/environments are ignored. No raw session/cookie/password values enter this record. Publication is authorized after learner summary approval. Learner test interpretation and finished-flow browser observations are recorded. The learner reports the expected redirects, successful signup/login, correct private account details, denied dashboard access after logout and responsive layouts. Learner chose Keep because the tested account flow works as expected, logout prevents old-session access, and the pages match the automotive design on smaller screens. The learner approved the summary before publication. PR #4 is open; latest-revision CI results and separate merge approval remain pending.
+- The existing FastAPI/httpx deprecation warning remains non-blocking. Local check receipt is ignored at `runtime/check-APP-002.json`; private SQLite/keys/environments are ignored. No raw session/cookie/password values enter this record. Publication is authorized after learner summary approval. Learner test interpretation and finished-flow browser observations are recorded. The learner reports the expected redirects, successful signup/login, correct private account details, denied dashboard access after logout and responsive layouts. Learner chose Keep because the tested account flow works as expected, logout prevents old-session access, and the pages match the automotive design on smaller screens. The learner approved the summary before publication. PR #4 merged with learner approval at e4f07535a1e18382a97f2aeda40183d3a3362dab; Issue #3 completed, both main jobs passed and local main/status were verified before APP-003.
 
 ## APP-003 · Server-enforced roles
 
@@ -122,14 +121,45 @@ permissions, including for an existing session after a role change.
 
 | Decision | Agreement |
 |---|---|
-| Intended admin-only result | Pending |
-| Actual allowed/denied request evidence | Pending |
-| Own issue / branch / PR | Pending |
+| Intended admin-only result | Learner wants members to retain their private dashboard but be denied `/admin` and `/api/admin`; only current admins may access them. Minimal admin-access confirmation page and JSON response, approved by the learner before implementation. |
+| Actual allowed/denied request evidence | AI isolated tests: anonymous page 303 → login / API 401; member page/API 403; admin page/API 200; demotion page/API 403 again with the same session. Learner interpreted the same-session role-change test; learner observed successful CLI promotion and admin page/API access without logging out; learner also reported successful CLI demotion, admin-page denial/API 403 and continued dashboard access with member role without another login. |
+| Own issue / branch / PR | [Issue #5](https://github.com/kushalpatel71/my-app-studio/issues/5); `feature/app-003-server-roles`; PR pending. |
+
+**Approved short plan:** add GET `/admin` and
+`/api/admin` using the prepared current-database permission helper. Anonymous
+HTML requests redirect to login and API requests return 401; members receive 403;
+admins receive 200. Show an Admin navbar link only for admins, while enforcing
+permissions on every request. Keep signup member-only and role changes restricted
+to the trusted local terminal command. Check promotion/demotion against an existing
+session and preserve every showcase/account feature. Use a minimal admin-access
+confirmation, with no public user-management or role-editing feature. Run full
+cumulative APP-003 checks, then advance the marker to 3 only after passing and
+rerun the default full check. No DigitalOcean changes.
 
 **Keep when:** a direct request cannot bypass the role boundary, role changes
 take effect as specified, new signup remains member-only, and full cumulative
 checks plus AI review pass. Link the learner's actual interpretation/observation,
 reviewed record and verified GitHub result. Hidden navigation alone is insufficient.
+
+### APP-003 actual local implementation and checks
+
+**Keep decision recorded:** the learner tested promotion/demotion and chose Keep
+because members cannot access admin resources, promotion grants access without
+another login, demotion removes access while preserving the member dashboard,
+and the server enforces permissions beyond hidden navigation. Existing showcase
+and authentication features remain working in the cumulative checks.
+[Actual Issue #5](https://github.com/kushalpatel71/my-app-studio/issues/5) and local
+branch `feature/app-003-server-roles` are recorded. PR/commit/CI-run links remain
+pending creation and verification. The learner approved summary accuracy/publication and commit/push/PR on 2026-11-03; no merge
+without a separate learner decision.
+
+- [Role routes](app/features/roles.py) add GET `/admin` and `/api/admin` over the unchanged prepared `security.require_admin` helper, which authenticates the current live session and reads the current database role. API responses filter identity through `PublicUser`; no session identifier/hash/token is returned. Anonymous HTML redirects to login, authenticated members receive a real 403 response and admin-only content is not rendered.
+- [Administration](app/templates/admin.html) and [member denial](app/templates/admin_denied.html) reuse the existing charcoal/lime layouts. [Shared navigation](app/templates/base.html) shows Admin only for the current admin role, with a current-page indication. Public showcase and all account routes are preserved. No public role mutation endpoint or management feature was added; new signup remains member-only and the trusted CLI is unchanged.
+- `python3 studio.py check --lesson APP-003` and, after advancing marker 2 → 3, `python3 studio.py check` both exited 0: Black/Pylint, **110 foundation/request tests, 18 cumulative contracts, 11 actual Chromium cases**. An initial browser failure required the heading “Administration”; the implementation heading was corrected without changing the prepared assertion. Instructor contracts and pre-existing browser assertions remain intact.
+- [New request tests](tests/test_admin_routes.py) verify public-identity-only admin API output/no-store and denial of replayed admin cookies after logout. [Browser tests](tests/browser/test_browser.py) preserve prior showcase/account checks and add live browser CLI promotion/demotion at 1440/390px, verifying the page/API statuses, unchanged session cookie, navigation, no overflow and continued member dashboard access after demotion.
+- Named actual result: `.venv/bin/python -m pytest -q contracts/test_roles.py::test_trusted_role_change_applies_to_the_existing_session -v` exited 0, **1 passed**. Within the same login session, changing the test member to admin allows page/API 200; changing back to member denies page/API with 403. Learner interpreted this result as catching stale role checks, especially admin access retained after demotion, and showing updated server permissions in the tested case.
+- AI visual review used isolated temporary data and the actual trusted `studio.py user role ... --role admin/member` command. At 1440/390/320px, anonymous API returned 401, member page/API 403, admin page/API 200, and demoted member page/API 403 with the same cookie. There was no horizontal overflow or script error. Desktop/mobile screenshots of both admin and denial pages were reviewed. These are AI observations, not the learner’s role-change/browser evidence. The live learner server separately returned anonymous `/admin` 303 → `/login` and `/api/admin` 401.
+- AI did not change the learner’s account role. The learner personally ran the trusted CLI promotion and reported successful role update plus admin page/API access without logging out. The learner then personally ran CLI demotion and reported the successful update, `/admin` denial, `/api/admin` 403 and continued member dashboard access, all without logging out. The test interpretation is recorded. Local receipt is ignored at `runtime/check-APP-003.json`. The existing FastAPI/httpx warning remains non-blocking. Publication authorized after learner summary approval; no DigitalOcean changes. Learner interpretation is recorded; promotion observation is recorded; demotion observation is also recorded; The learner chose Keep because server checks deny member admin access, promotion/demotion affect the existing session, and normal member features remain available. The learner approved summary accuracy/publication before commit/push; latest PR/CI and separate merge approval remain pending.
 
 ## Evidence
 
@@ -140,7 +170,7 @@ customer research or claims that a timestamp proves learning.
 |---|---|---|---|
 | APP-001 | [Issue #1](https://github.com/kushalpatel71/my-app-studio/issues/1); `feature/app-001-car-builders-place`; static showcase router, templates, brand data, shared CSS/SVG/photos and route/browser tests. [PR #2](https://github.com/kushalpatel71/my-app-studio/pull/2), merged. | Revised full explicit/default checks: Black/Pylint, 104 foundation/route tests, 2 homepage contracts, 7 Chromium cases passed. Learner interpretation recorded; learner inspected all six revised pages, preferred actual page navigation/detail pages and reported responsive adjustment in a narrower window. | Learner requested separate pages before Keep; revised implementation checked locally. Learner chose Keep: separate pages make navigation, comparison and finding modification details easier. Learner approved the summary and Keep workflow; committed/pushed and PR #2 opened. Merged with learner approval at `fedd07c97d5f48481aaf74354adf7201d72a92f9`; Issue #1 completed; main check/windows passed. Local main updated and APP-001 status ready for instructor review. |
 | APP-002 | [Issue #3](https://github.com/kushalpatel71/my-app-studio/issues/3); `feature/app-002-member-accounts`; account routes, Signup/Login/Dashboard templates, shared styles/navigation and request/browser tests. PR pending. | 2026-11-03: full explicit APP-002 check passed; marker set to 2; default full check passed. Black/Pylint, 108 foundation/request tests, 14 cumulative contracts and 9 Chromium cases. Learner prediction, logout-replay interpretation and actual browser observations recorded: anonymous redirect, signup/login success, own username/member role, login required after logout, and responsive layout. Learner chose Keep with a reason and approved summary accuracy/publication. | Implementation committed/pushed; [PR #4](https://github.com/kushalpatel71/my-app-studio/pull/4) is open. Learner browser review and Keep completed; summary approved before commit/push. PR/CI and separate merge approval pending. |
-| APP-003 | Pending | Unfinished; explicit contracts not yet passed | Pending |
+| APP-003 | [Issue #5](https://github.com/kushalpatel71/my-app-studio/issues/5); `feature/app-003-server-roles`; role routes, Admin/403 templates, shared nav and request/browser tests; PR pending. | 2026-11-03: full explicit/default checks passed; marker is 3. Black/Pylint, 110 foundation/request tests, 18 cumulative contracts and 11 Chromium cases. Actual AI allow/deny/live-session CLI evidence above. | Local, unstaged changes only. Learner Check/Keep completed with actual evidence; summary approved before commit/push. PR/CI and separate merge approval pending. |
 
 ### APP-001 local implementation and check evidence
 

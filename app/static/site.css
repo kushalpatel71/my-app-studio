@@ -141,3 +141,29 @@ nav a[aria-current="page"] { color: var(--accent); text-decoration: underline; t
 .about-note .eyebrow { color: var(--accent); }
 @media (max-width: 1000px) { .detail-columns { gap: 20px; } .detail-columns > section { padding: 24px; } .detail-columns dl > div { grid-template-columns: 1fr; gap: 6px; } .about-layout { gap: 32px; } }
 @media (max-width: 720px) { .hero { min-height: 850px; } .page-intro { padding-block: 40px 32px; } .page-intro h1 { font-size: 2.6rem; } .page-lede { font-size: 1rem; } .detail-columns, .about-layout { grid-template-columns: 1fr; gap: 24px; } .breadcrumbs { gap: 10px; } .detail-photo { aspect-ratio: 4 / 3; } .detail-columns dl > div { grid-template-columns: 95px 1fr; } .about-layout { padding-bottom: 44px; } .detail-actions { align-items: flex-start; } }
+
+/* APP-002 member pages reuse the automotive palette, logo and public navigation. */
+.nav-signup { color: var(--accent); }
+.account-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; padding-block: 64px 72px; border-top: 1px solid var(--line); align-items: start; }
+.account-story { padding-block: 24px; }
+.account-story h1 { font-size: clamp(2.8rem, 4.6vw, 4.4rem); max-width: 13ch; }
+.account-story > p:not(.eyebrow) { color: var(--muted); max-width: 43ch; }
+.account-panel { padding: 36px; border: 1px solid var(--line); border-top: 3px solid var(--accent); background: var(--surface); min-width: 0; }
+.account-panel h2 { font-size: 2rem; }
+.account-form { max-width: none; margin: 26px 0 20px; }
+.account-form label { margin-top: 22px; }
+.account-form input { min-height: 48px; border-color: #78877C; }
+.account-form .button { width: 100%; }
+.field-hint { margin: 6px 0 10px; font-size: .75rem; color: var(--muted); }
+.account-caption { font-size: .76rem; color: var(--muted); }
+.form-error { border: 1px solid #AC6861; background: #34231F; padding: 14px; font-size: .88rem; }
+.dashboard-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; padding-bottom: 70px; }
+.dashboard-note { padding: 36px 0; }
+.dashboard-note h2 { font-size: 2rem; }
+.dashboard-note > p:not(.eyebrow) { color: var(--muted); }
+.account-details { font-size: 1rem; }
+.account-details > div { padding-block: 18px; grid-template-columns: 110px 1fr; }
+.account-details dd { overflow-wrap: anywhere; }
+.logout-form { margin-top: 28px; }
+@media (max-width: 1000px) { .account-layout { gap: 32px; } .account-panel { padding: 26px; } }
+@media (max-width: 720px) { .account-layout, .dashboard-layout { grid-template-columns: 1fr; gap: 24px; padding-block: 28px 48px; } .account-story { padding-block: 0; } .account-story h1 { font-size: 2.6rem; max-width: 18ch; } .account-panel { padding: 24px; } .dashboard-note { padding-block: 8px; } .account-panel h2 { font-size: 1.7rem; } }

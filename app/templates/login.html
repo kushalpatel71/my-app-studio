@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Log in | {{ super() }}{% endblock %}
+{% block content %}
+<div class="account-layout"><section class="account-story" aria-labelledby="login-intro"><p class="eyebrow">Welcome back to the garage</p><h1 id="login-intro">Keep your inspiration moving.</h1><p>Sign in to your private member space, then get back to exploring the details that make every build different.</p><a class="text-link" href="/builds">Browse Car Builds <span aria-hidden="true">→</span></a><p class="account-caption">The public showcase is always open to explore.</p></section>
+<section class="account-panel" aria-labelledby="login-title"><p class="eyebrow">Car Builders Place.com / Members</p><h2 id="login-title">Log in</h2><p class="muted">No account yet? <a href="/signup">Create a member account</a>.</p>
+{% if request.query_params.get('registered') == '1' %}<p class="notice" role="status">Account created. Log in to enter your member space.</p>{% endif %}
+{% if request.query_params.get('logged_out') == '1' %}<p class="notice" role="status">You are logged out. Log in again to access your dashboard.</p>{% endif %}
+{% if error %}<p class="error form-error" role="alert">{{ error }}</p>{% endif %}
+<form method="post" action="/login" class="form-stack account-form"><input type="hidden" name="csrf_token" value="{{ csrf_token }}"><label for="username">Username</label><input id="username" name="username" type="text" maxlength="32" value="{{ username }}" autocomplete="username" autocapitalize="none" spellcheck="false" required><label for="password">Password</label><input id="password" name="password" type="password" maxlength="128" autocomplete="current-password" required><button class="button" type="submit">Log in <span aria-hidden="true">→</span></button></form>
+<p class="account-caption">Log out when you finish on a shared device.</p></section></div>
+{% endblock %}

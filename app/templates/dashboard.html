@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block title %}Dashboard | {{ super() }}{% endblock %}
+{% block content %}
+<header class="page-intro"><p class="eyebrow">Your private dashboard</p><h1>Your member space</h1><p class="page-lede">Welcome, {{ user.username }}. A little space for you, built around a shared love of cars.</p></header>
+<div class="dashboard-layout"><section class="account-panel" aria-labelledby="account-title"><p class="eyebrow">Your account</p><h2 id="account-title">Good to have you here.</h2><dl class="account-details"><div><dt>Username</dt><dd>{{ user.username }}</dd></div><div><dt>Role</dt><dd>{{ user.role }}</dd></div></dl><form method="post" action="/logout" class="logout-form"><input type="hidden" name="csrf_token" value="{{ csrf_token }}"><button class="button" type="submit">Log out <span aria-hidden="true">→</span></button></form></section><aside class="dashboard-note"><p class="eyebrow">Find your next idea</p><h2>Back to the builds.</h2><p>Compare the wheels, suspension and performance choices in our sample projects. Build uploads are not available yet.</p><a class="secondary-button" href="/builds">Explore Car Builds <span aria-hidden="true">→</span></a></aside></div>
+{% endblock %}

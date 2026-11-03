@@ -6,10 +6,11 @@ actual evidence; pending is a valid state. Keep explanations/help in
 
 ## Current stage
 
-- **Current feature:** APP-001.
-- **Status:** Revised APP-001 static showcase implemented and checked locally; learner reviewed all six revised pages and chose Keep with a reason. Approved work committed/pushed; PR #2 is open and implementation CI check/windows passed. Learner PR review and merge approval pending.
-- **Next step:** Verify CI on the latest PR revision after recording these links, then present PR #2 and CI results for learner review. Do not merge without separate approval.
-- **Implementation marker:** `studio.json` is now `implemented_through: 1`, advanced only after the full APP-001 check passed; the default full check then passed again.
+- **Current feature:** APP-002.
+- **Status:** APP-001 merged/verified; approved APP-002 implemented and checked locally. Learner interpreted the logout-replay test and personally reviewed the finished account flow and chose Keep with a reason; summary accuracy/publication and commit/push/PR are approved. GitHub CI and separate merge approval remain pending.
+- **Next step:** Publish the approved APP-002 feature branch and issue-linked PR, then verify check/windows CI on its latest revision and present it for learner review. Separate merge approval is required.
+- **Implementation marker:** `implemented_through` is 2, advanced only after the full cumulative APP-002 check passed; the default full check then passed again.
+
 
 This repository owns application code. Server/proxy changes and production
 deployment are outside these three local-development lessons. Prepared helpers
@@ -26,7 +27,7 @@ Keep account actions honest about their unfinished state.
 | Visitor and concrete use situation | Car enthusiasts exploring build photos and comparing modification details for inspiration. |
 | Reused IS117 brand, or name / promise / primary archetype | New brand: Car Builders Place.com. Promise: “Explore the builds. Discover what’s under the hood.” Primary archetype: Creator (AI suggestion adopted by learner). |
 | One visible choice and visitor benefit | Photos beside labeled modification details so visitors can compare customization and find ideas for their own cars. |
-| Own issue / branch / PR | [Issue #1](https://github.com/kushalpatel71/my-app-studio/issues/1); `feature/app-001-car-builders-place`; [PR #2](https://github.com/kushalpatel71/my-app-studio/pull/2), open. |
+| Own issue / branch / PR | [Issue #1](https://github.com/kushalpatel71/my-app-studio/issues/1); `feature/app-001-car-builders-place`; [PR #2](https://github.com/kushalpatel71/my-app-studio/pull/2), merged. |
 
 **Approved revised scope (learner request):** keep the branded homepage and featured previews;
 add a separate Car Builds index, one static detail page per sample build and a
@@ -66,15 +67,43 @@ helpers; keep data local. New accounts cannot choose their role.
 
 | Decision | Agreement |
 |---|---|
-| Expected public/private behavior and account flow | Pending |
-| Valid and rejected cases to demonstrate | Pending |
-| Own issue / branch / PR | Pending |
+| Expected public/private behavior and account flow | Member signup → login → private dashboard showing own username/member role → POST logout. Anonymous/expired/revoked dashboard requests redirect to login; private API returns 401. Preserve all public showcase pages and charcoal/lime styling. |
+| Valid and rejected cases to demonstrate | Valid signup/login/logout; normalized duplicate username; invalid credentials/role injection; wrong password; throttling; missing/invalid CSRF; expired session; replay after logout. Use prepared helpers and local SQLite only. |
+| Own issue / branch / PR | [Issue #3](https://github.com/kushalpatel71/my-app-studio/issues/3); `feature/app-002-member-accounts`; PR pending. |
+
+**Approved plan:** implement HTML `/signup`, `/login`, `/dashboard`, POST `/logout`,
+and JSON `/api/csrf`, `/api/signup`, `/api/login`, `/api/me`, `/api/logout` over the
+same prepared security services. Reuse Argon2id, signed expiring JWT/HttpOnly cookies,
+CSRF rotation, validation and persistent throttles. Passwords never repopulate forms;
+recoverable errors retain only validated usernames. No admin features, uploads,
+recovery, verification or deployment. Preserve Next Step → homepage gallery and all
+showcase links. The earlier custom signup-404 regression becomes stage-aware
+(404 before APP-002, 200 at APP-002); instructor contracts remain untouched.
 
 **Keep when:** the agreed forms/API work; duplicate/invalid signup and wrong
 credentials are rejected; passwords are hashed; authentication uses validated,
 expiring JWTs with protected cookies and CSRF; private requests require a live
 session and logout revokes it. Full cumulative checks, AI review, actual learner
 contributions and GitHub state are recorded. This is not a production-security certification.
+
+### APP-002 actual local implementation and checks
+
+**Keep decision recorded:** the learner tested signup, login, private dashboard and
+logout and chose Keep because the flow works as expected, old-session access is
+prevented in the tested case, and the pages match the charcoal/lime design on
+smaller screens. The learner approved summary accuracy/publication and commit/push/PR on 2026-11-03; separate merge approval is required.
+[Actual issue #3](https://github.com/kushalpatel71/my-app-studio/issues/3) and
+local branch `feature/app-002-member-accounts` are recorded. PR/commit/CI-run
+links remain pending creation and verification; none are invented.
+
+- [Account routes](app/features/accounts.py) serve HTML GET/POST `/signup`, `/login`, private GET `/dashboard`, POST `/logout`, and JSON `/api/csrf`, `/api/signup`, `/api/login`, `/api/me`, `/api/logout`. They call the existing password, CSRF, throttle, JWT and revocation helpers; [security helpers](app/security.py), [schemas](app/schemas.py) and database helpers were not rewritten. Private API output uses `PublicUser` and excludes hashes/session identifiers.
+- [Signup](app/templates/signup.html), [Login](app/templates/login.html) and [Dashboard](app/templates/dashboard.html) reuse the [shared base](app/templates/base.html), SVG, charcoal/lime tokens and [responsive CSS](app/static/site.css). The dashboard renders own username/role and a protected logout form. Form errors never refill passwords; wrong-login/duplicate errors retain a validated username. Current account availability copy is reflected in About/Car Builds; build uploads remain unavailable.
+- Home still uses Next Step → `#builds`, View All Builds and the existing public navbar links. Signup/Login or Dashboard links are added according to the current session. All existing car pages/data remain; `app/features/roles.py` stays unfinished. No DigitalOcean changes, uploads, password recovery or email verification.
+- `python3 studio.py check --lesson APP-002` exited 0 with Black/Pylint, 108 foundation/request tests, 14 cumulative contracts and 9 actual Chromium cases. Only then was the marker advanced to 2; `python3 studio.py check` passed the same full set. No required contract was removed or weakened. Existing custom signup availability expectation is stage-aware (404 before accounts, 200 after accounts), preserving all other gallery checks.
+- New [request tests](tests/test_account_routes.py) verify actual API/dashboard denial for expired JWTs and expired server sessions, per-member private identity, no-store responses and HTML logout CSRF rejection without unintended logout. [Browser tests](tests/browser/test_browser.py) include the prepared wrong-login/logout-replay journey, the full public showcase and new keyboard account journeys at 1440/390px.
+- One named actual result: `.venv/bin/python -m pytest -q contracts/test_accounts.py::test_logout_revokes_a_copied_token_and_get_does_not_log_out -v` exited 0, **1 passed**. Its request sequence logs in, saves a test session cookie, confirms GET logout does not log out, POSTs a valid-CSRF logout, then sends the saved cookie to `/api/me`; expectation and actual result are 401. Learner interpreted this result as checking server-side session revocation and denying access with the old cookie, rather than only removing the browser cookie.
+- AI reviewed desktop/mobile screenshots of Signup, Login and Dashboard using a temporary isolated database and throwaway accounts. At 1440/390/320px, those pages had no horizontal overflow or browser script errors; revisiting Dashboard after logout redirected to login. This is AI evidence, separate from the learner's browser observation. The learner's live server returned Signup/Login 200 and anonymous Dashboard 303 → `/login`.
+- The existing FastAPI/httpx deprecation warning remains non-blocking. Local check receipt is ignored at `runtime/check-APP-002.json`; private SQLite/keys/environments are ignored. No raw session/cookie/password values enter this record. Publication is authorized after learner summary approval. Learner test interpretation and finished-flow browser observations are recorded. The learner reports the expected redirects, successful signup/login, correct private account details, denied dashboard access after logout and responsive layouts. Learner chose Keep because the tested account flow works as expected, logout prevents old-session access, and the pages match the automotive design on smaller screens. The learner approved the summary before publication. PR/CI results and separate merge approval remain pending.
 
 ## APP-003 · Server-enforced roles
 
@@ -106,8 +135,8 @@ customer research or claims that a timestamp proves learning.
 
 | Feature | Files / own issue / PR | Actual checks and learner observations | Kept / GitHub state |
 |---|---|---|---|
-| APP-001 | [Issue #1](https://github.com/kushalpatel71/my-app-studio/issues/1); `feature/app-001-car-builders-place`; static showcase router, templates, brand data, shared CSS/SVG/photos and route/browser tests. [PR #2](https://github.com/kushalpatel71/my-app-studio/pull/2), open. | Revised full explicit/default checks: Black/Pylint, 104 foundation/route tests, 2 homepage contracts, 7 Chromium cases passed. Learner interpretation recorded; learner inspected all six revised pages, preferred actual page navigation/detail pages and reported responsive adjustment in a narrower window. | Learner requested separate pages before Keep; revised implementation checked locally. Learner chose Keep: separate pages make navigation, comparison and finding modification details easier. Learner approved the summary and Keep workflow; committed/pushed and PR #2 opened. Implementation CI check/windows passed; final-revision CI and learner PR review precede merge. Merge is explicitly not authorized. |
-| APP-002 | Pending | Unfinished; explicit contracts not yet passed | Pending |
+| APP-001 | [Issue #1](https://github.com/kushalpatel71/my-app-studio/issues/1); `feature/app-001-car-builders-place`; static showcase router, templates, brand data, shared CSS/SVG/photos and route/browser tests. [PR #2](https://github.com/kushalpatel71/my-app-studio/pull/2), merged. | Revised full explicit/default checks: Black/Pylint, 104 foundation/route tests, 2 homepage contracts, 7 Chromium cases passed. Learner interpretation recorded; learner inspected all six revised pages, preferred actual page navigation/detail pages and reported responsive adjustment in a narrower window. | Learner requested separate pages before Keep; revised implementation checked locally. Learner chose Keep: separate pages make navigation, comparison and finding modification details easier. Learner approved the summary and Keep workflow; committed/pushed and PR #2 opened. Merged with learner approval at `fedd07c97d5f48481aaf74354adf7201d72a92f9`; Issue #1 completed; main check/windows passed. Local main updated and APP-001 status ready for instructor review. |
+| APP-002 | [Issue #3](https://github.com/kushalpatel71/my-app-studio/issues/3); `feature/app-002-member-accounts`; account routes, Signup/Login/Dashboard templates, shared styles/navigation and request/browser tests. PR pending. | 2026-11-03: full explicit APP-002 check passed; marker set to 2; default full check passed. Black/Pylint, 108 foundation/request tests, 14 cumulative contracts and 9 Chromium cases. Learner prediction, logout-replay interpretation and actual browser observations recorded: anonymous redirect, signup/login success, own username/member role, login required after logout, and responsive layout. Learner chose Keep with a reason and approved summary accuracy/publication. | Local, unstaged implementation only. Learner browser review and Keep completed; summary approved before commit/push. PR/CI and separate merge approval pending. |
 | APP-003 | Pending | Unfinished; explicit contracts not yet passed | Pending |
 
 ### APP-001 local implementation and check evidence
@@ -116,7 +145,7 @@ customer research or claims that a timestamp proves learning.
 Home, Car Builds, individual Build Details and About make the site easier to
 navigate and help enthusiasts compare modifications without one long scroll.
 The learner approved summary accuracy/publication and authorized commit/push/PR on
-2026-11-02. Separate PR/CI review and approval remain required before merge.
+2026-11-02, then reviewed PR/CI and explicitly approved the merge.
 
 **Implementation and test links:** [static routes](app/showcase.py),
 [brand and sample data](app/brand.json), [Home](app/templates/home.html),
@@ -128,14 +157,17 @@ The learner approved summary accuracy/publication and authorized commit/push/PR 
 [unchanged homepage contracts](contracts/test_homepage.py),
 [CI workflow](.github/workflows/check.yml),
 [actual issue](https://github.com/kushalpatel71/my-app-studio/issues/1).
-**GitHub evidence:** [PR #2](https://github.com/kushalpatel71/my-app-studio/pull/2) (open, `Closes #1`),
+**GitHub evidence:** [PR #2](https://github.com/kushalpatel71/my-app-studio/pull/2) (merged, `Closes #1`),
 [implementation commit `9ecd9f6`](https://github.com/kushalpatel71/my-app-studio/commit/9ecd9f6c65f2a1230dcdddce17c9fd4f4b7135aa),
 [implementation CI run](https://github.com/kushalpatel71/my-app-studio/actions/runs/41519046897) — `check` and `windows` both completed successfully.
 Linux CI passed 104 foundation/route tests, 2 contracts and 7 Chromium cases.
 Windows CI passed 102 foundation/route tests, 2 contracts and 7 Chromium cases,
 with 2 existing POSIX-only tests skipped by their platform markers.
-This evidence update changes documentation only; verify the latest PR revision
-before requesting learner merge approval. Issue #1 remains open until the approved merge.
+Final PR revision check/windows passed in [run 41519511095](https://github.com/kushalpatel71/my-app-studio/actions/runs/41519511095).
+[Merge commit fedd07c](https://github.com/kushalpatel71/my-app-studio/commit/fedd07c97d5f48481aaf74354adf7201d72a92f9)
+and [main CI run 41520303801](https://github.com/kushalpatel71/my-app-studio/actions/runs/41520303801) were verified;
+both main jobs passed, Issue #1 closed as completed, and clean local main matched the merge.
+APP-001 status reported evidence ready for instructor review; the repository remained public.
 
 - The earlier single-page version passed Black/Pylint, 98 foundation tests, 2 contracts and 5 Chromium cases. The learner interpreted its Next Step check and reviewed that version, then explicitly requested separate pages before commit/push.
 - Revised implementation: `app/showcase.py` adds `/builds`, `/builds/{slug}` and `/about`; `app/main.py` registers the router. Static data remains in `app/brand.json`, including clearly labeled concept specifications. No car-build database, authentication or upload feature was added.
@@ -144,7 +176,7 @@ before requesting learner merge approval. Issue #1 remains open until the approv
 - Revised checks on 2026-11-02: `python3 studio.py check --lesson APP-001` and `python3 studio.py check` both exited 0: Black, Pylint, **104 foundation/route tests, 2 homepage contracts and 7 actual Chromium cases**. Marker remains 1. Existing FastAPI/httpx deprecation warning did not fail either run.
 - Instructor contracts and existing browser assertions are unchanged. `tests/test_showcase.py` adds direct public/detail-route checks and unknown-build 404 cases. The added `test_separate_showcase_page_navigation` checks real links at 1440/390px, each detail page, keyboard Enter on View Details, loaded photos, modification content, Back to Car Builds, About/Home navigation, no overflow and preserved Next Step. The earlier gallery/focus test still runs at 1440/768/390px.
 - AI browser review: all six live pages returned 200 with loaded photos, no horizontal overflow at 1440/390/320px, and no browser script errors. Desktop/narrow screenshots were inspected for the gallery, detail, About and revised Home layouts; detail specifications/modifications stack on narrow screens. These are AI observations. The learner separately reported checking all six pages, easier Home/Car Builds/About navigation, working detail-page buttons, responsive adjustment in a narrower window and a preference for this multi-page version.
-- Learner approved summary publication; implementation commit and both implementation CI jobs are verified above. Latest PR revision and learner review must be verified before merge. Local full-check receipt is ignored at `runtime/check-APP-001.json`. Credentials, keys, environments and local SQLite files remain outside tracked changes.
+- Learner approved summary publication; implementation commit and both implementation CI jobs are verified above. Final PR/main CI and the learner-approved merge were verified. Local full-check receipt is ignored at `runtime/check-APP-001.json`. Credentials, keys, environments and local SQLite files remain outside tracked changes.
 
 The instructor's reference branches show possible implementations. They do not
 establish this repository's completion or the learner's own reasoning.

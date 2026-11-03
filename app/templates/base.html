@@ -22,8 +22,8 @@
       <a href="/builds"{% if request.url.path.startswith('/builds') %} aria-current="page"{% endif %}>Car Builds</a>
       <a href="/about"{% if request.url.path == '/about' %} aria-current="page"{% endif %}>About</a>
       {% if features.accounts %}
-        <a href="/dashboard">Member space</a>
-        {% if not current_user %}<a href="/login">Log in</a>{% endif %}
+        {% if current_user %}<a href="/dashboard"{% if request.url.path == '/dashboard' %} aria-current="page"{% endif %}>Dashboard</a>
+        {% else %}<a href="/login"{% if request.url.path == '/login' %} aria-current="page"{% endif %}>Log in</a><a class="nav-signup" href="/signup"{% if request.url.path == '/signup' %} aria-current="page"{% endif %}>Sign up</a>{% endif %}
       {% endif %}
       {% if features.roles and current_user and current_user.role == "admin" %}<a href="/admin">Admin</a>{% endif %}
     </nav>

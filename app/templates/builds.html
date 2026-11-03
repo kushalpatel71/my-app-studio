@@ -3,6 +3,6 @@
 {% block content %}
 <header class="page-intro"><p class="eyebrow">The showcase / 01—03</p><h1>Car builds.</h1><p class="page-lede">Three different approaches. Explore the parts, the purpose and the personality behind each sample project.</p></header>
 <section class="index-gallery" aria-labelledby="gallery-title"><h2 id="gallery-title">Find your next inspiration.</h2><p class="sample-notice"><strong>Sample builds.</strong> These illustrative concepts use representative photos. Modifications and example specifications are not verified details of the pictured cars.</p>{% include "_build_cards.html" %}</section>
-<aside class="panel"><div><p class="eyebrow">Good things take shape</p><h2>Explore now. Share later.</h2><p>This is a static showcase. Accounts and build uploads are not available yet.</p></div><a class="text-link" href="/about">About the showcase <span aria-hidden="true">→</span></a></aside>
+<aside class="panel"><div><p class="eyebrow">Good things take shape</p><h2>Explore now. Share later.</h2><p>This is a static showcase. {% if features.accounts %}Member accounts are available; build uploads are not available yet.{% else %}Accounts and build uploads are not available yet.{% endif %}</p></div><a class="text-link" href="/about">About the showcase <span aria-hidden="true">→</span></a></aside>
 <p class="photo-license">Photo source credits appear beside each image. Photography used under the <a href="https://unsplash.com/license">Unsplash License</a>.</p>
 {% endblock %}

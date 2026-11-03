@@ -212,7 +212,9 @@ def test_car_gallery_and_next_step(page, server, width):
             "image => image.complete && image.naturalWidth > 0",
             arg=photo.element_handle(),
         )
-    assert page.request.get(server.url + "/signup").status == 404
+    assert page.request.get(server.url + "/signup").status == (
+        200 if LEVEL >= 2 else 404
+    )
     assert page.request.get(server.url + "/upload").status == 404
 
 
@@ -272,3 +274,47 @@ def test_separate_showcase_page_navigation(page, server, width):
     expect(page).to_have_url(server.url + "/#builds")
     expect(page.locator("#builds")).to_be_focused()
     assert page.request.get(server.url + "/builds/unknown").status == 404
+
+
+@pytest.mark.parametrize("width", [1440, 390])
+def test_branded_account_layout_and_keyboard_flow(page, server, width):
+    """Member pages stay responsive and usable through keyboard form submission."""
+    if LEVEL < 2:
+        pytest.skip("Account UI belongs to APP-002")
+    page.set_viewport_size({"width": width, "height": 900})
+    username = "layout_" + uuid.uuid4().hex[:10]
+    page.goto(server.url + "/dashboard")
+    expect(page).to_have_url(server.url + "/login")
+    page.get_by_role("link", name="Sign up", exact=True).click()
+    page.get_by_label("Username", exact=True).fill(username)
+    page.get_by_label("Password", exact=True).fill("a disposable layout passphrase")
+    assert page.evaluate("document.documentElement.scrollWidth <= innerWidth")
+    page.get_by_role("button", name="Create account", exact=True).focus()
+    page.keyboard.press("Enter")
+    expect(page.get_by_role("status")).to_have_text(
+        "Account created. Log in to enter your member space."
+    )
+    page.get_by_label("Username", exact=True).fill(username)
+    page.get_by_label("Password", exact=True).fill("a disposable layout passphrase")
+    assert page.evaluate("document.documentElement.scrollWidth <= innerWidth")
+    page.get_by_role("button", name="Log in", exact=True).focus()
+    page.keyboard.press("Enter")
+    expect(
+        page.get_by_role("heading", name="Your member space", exact=True)
+    ).to_be_visible()
+    expect(page.locator(".account-details")).to_contain_text(username)
+    expect(page.locator(".account-details")).to_contain_text("member")
+    assert page.evaluate("document.documentElement.scrollWidth <= innerWidth")
+    for name in ("Home", "Car Builds", "About"):
+        expect(
+            page.get_by_role("navigation", name="Main navigation").get_by_role(
+                "link", name=name, exact=True
+            )
+        ).to_be_visible()
+    page.get_by_role("button", name="Log out", exact=True).focus()
+    page.keyboard.press("Enter")
+    expect(page.get_by_role("status")).to_have_text(
+        "You are logged out. Log in again to access your dashboard."
+    )
+    page.goto(server.url + "/dashboard")
+    expect(page).to_have_url(server.url + "/login")

@@ -3,7 +3,7 @@
 Plan due **November 17, 2026, 1:00 PM Eastern**. Research/audit checked November 9, 2026.
 Owner: Kushal Patel. This is the single individual record; extend its two sections through Build, Checked Release and Improve. Research is AI-assisted and recommendations remain provisional for student review. No portfolio or RAG implementation, hosted release, benchmark, or peer feedback is claimed here.
 
-[Repository](https://github.com/kushalpatel71/my-app-studio) · [Plan branch](https://github.com/kushalpatel71/my-app-studio/tree/feature/review1-plan) · [Issue #7](https://github.com/kushalpatel71/my-app-studio/issues/7)
+[Repository](https://github.com/kushalpatel71/my-app-studio) · [Plan branch](https://github.com/kushalpatel71/my-app-studio/tree/feature/review1-plan) · [Issue #7](https://github.com/kushalpatel71/my-app-studio/issues/7) · [PR #8](https://github.com/kushalpatel71/my-app-studio/pull/8) (open; not merged)
 
 ## Instructor requirements and repository audit
 
@@ -220,7 +220,7 @@ Null values mean not computed, not verified. Numeric vectors must come from a re
 | Heading + paragraph (selected) | Keep heading with paragraph; cap at 200 word pieces measured with the pinned MiniLM tokenizer; split long paragraphs at sentences; no routine overlap | Keeps “Build details” with the full sentence. Retains semantic context; tiny sections may need title context. |
 | Fixed characters | 40-character windows, 8-character overlap for the teaching sketch; later compare 600/100 as an experiment | On `Build details\nView Details opens an individual sample build page.`, first window ends `an indi`; next starts ` an individual...`. Repeats text and can sever the useful phrase. |
 
-The boundary sketch is manually reasoned, not an executed chunker comparison. Character counts are not tokens. Actual ingestion must measure word pieces and preserve source offsets; the selected 200-word-piece cap leaves room under the model's documented truncation boundary. Inspect real boundary examples during Build, log both methods and choose based on retrieval results.
+The boundary sketch is illustrative; character-window offsets were checked with a small Python string slice, but neither corpus chunker nor a retrieval comparison was executed. Character counts are not tokens. Actual ingestion must measure word pieces and preserve source offsets; the selected 200-word-piece cap leaves room under the model's documented truncation boundary. Inspect real boundary examples during Build, log both methods and choose based on retrieval results.
 
 #### Evaluation questions and observable checks
 
@@ -296,3 +296,5 @@ Changed: planned the Car Builds Knowledge Assistant with five proposed owner-aut
 Actual local regression check: `python3 studio.py check` passed Black, Pylint, 110 foundation/request tests, 18 APP-003 cumulative contracts and 11 Chromium cases on November 9, 2026. Existing application behavior and instructor tests are preserved. This result does not establish RAG functionality.
 
 Plan workflow: https://github.com/kushalpatel71/my-app-studio/issues/7
+
+Pull request: https://github.com/kushalpatel71/my-app-studio/pull/8

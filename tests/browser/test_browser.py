@@ -402,7 +402,7 @@ def test_review2_public_portfolio_keyboard_and_layout(page, server, width):
     page.goto(server.url + "/portfolio")
     expect(page.get_by_role("heading", name="Kushal Patel", exact=True)).to_be_visible()
     expect(
-        page.get_by_text("Contribution evidence pending", exact=True)
+        page.get_by_text("Verified Plan review · private team project", exact=True)
     ).to_be_visible()
     assert page.evaluate("document.documentElement.scrollWidth <= window.innerWidth")
     page.get_by_role("link", name="Projects", exact=True).focus()

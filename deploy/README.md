@@ -1,7 +1,9 @@
 # Existing-server deployment runbook
 
-This is an **approval-gated proposal**, not evidence that deployment occurred.
-The public hostname below is proposed until external HTTPS verification succeeds.
+The owner approved this isolated deployment on November 23, 2026.
+The public hostname below was verified through trusted HTTPS and real Chromium.
+Actual revision/check evidence and approved Free-tier configuration are in
+`docs/review1/README.md`; this runbook records repeatable operations.
 Application and individual evidence stay in `docs/review1/README.md`.
 
 ## Reviewed scope
@@ -78,13 +80,19 @@ Recheck health, source/chunk counts, login/session behavior, semantic retrieval,
 Before updates, stop **only the new app**, then export its entire named volume consistently (SQLite + Chroma + model cache). Keep archives private and copy them off-host. Test restore into a separate volume before calling backups verified. Initial deployment has no prior app data; take a first backup after import and verify its checksum off-host.
 
 ```sh
+export CBP_BACKUP_DIR=/home/deployer/.config/cbp-review2/backups
+mkdir -p "$CBP_BACKUP_DIR"
+chmod 700 "$CBP_BACKUP_DIR"
+umask 077
 docker compose -f deploy/compose.yml stop app
-# Run from this project's host directory; keep this archive outside GitHub.
-docker run --rm --network none --user 0:0 \
-  -v cbp-review2_app-data:/source:ro -v "$PWD/private-backups:/backup" \
-  --entrypoint tar cbp-review2:$RELEASE_TAG -czf /backup/app-data.tar.gz -C /source .
-sha256sum private-backups/app-data.tar.gz
-docker compose -f deploy/compose.yml start app
+# Restart the app even if a later command fails during this maintenance shell.
+trap 'docker compose -f deploy/compose.yml start app' EXIT
+docker run --rm --network none --read-only --cap-drop ALL --user 10001:10001 \
+  -v cbp-review2_app-data:/source:ro --entrypoint tar \
+  cbp-review2:$RELEASE_TAG -czf - -C /source . > "$CBP_BACKUP_DIR/app-data.tar.gz"
+sha256sum "$CBP_BACKUP_DIR/app-data.tar.gz"
+docker compose -f deploy/compose.yml restart app
+trap - EXIT
 ```
 
 For rollback, preserve the volume and select the previously verified source commit/image. The current schema changes are additive; before future incompatible migrations, design and verify a data rollback separately.

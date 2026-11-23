@@ -1,0 +1,72 @@
+{
+  "origin": "https://carbuilders.192.81.212.73.sslip.io",
+  "release": "7aeaef6a48e13c1315af71208595a06403596279",
+  "checked_date": "2026-11-23",
+  "real_generated_journey": true,
+  "layout": [
+    {
+      "width": 1440,
+      "overflow": false,
+      "keyboard_navigation": "passed"
+    },
+    {
+      "width": 390,
+      "overflow": false,
+      "keyboard_navigation": "passed"
+    },
+    {
+      "width": 320,
+      "overflow": false,
+      "keyboard_navigation": "passed"
+    }
+  ],
+  "steps": [
+    "public portfolio",
+    "keyboard project link",
+    "RAG case study",
+    "assistant",
+    "question submitted",
+    "real vector trace",
+    "real Gemini answer",
+    "verified citation opened"
+  ],
+  "answer": "View Details opens an individual sample build detail page.",
+  "citations": [
+    {
+      "id": "CBP-S01-v1-40f3df8f794e-2",
+      "title": "Site navigation",
+      "url": "/rag/sources/CBP-S01-v1-40f3df8f794e-2"
+    }
+  ],
+  "trace": [
+    {
+      "id": "CBP-S01-v1-40f3df8f794e-2",
+      "source_id": "CBP-S01",
+      "version": "v1",
+      "title": "Site navigation",
+      "score": 0.4277,
+      "metric": "cosine",
+      "url": "/rag/sources/CBP-S01-v1-40f3df8f794e-2"
+    },
+    {
+      "id": "CBP-S02-v1-d8b616f8c5ce-2",
+      "source_id": "CBP-S02",
+      "version": "v1",
+      "title": "Understanding sample builds",
+      "score": 0.31188,
+      "metric": "cosine",
+      "url": "/rag/sources/CBP-S02-v1-d8b616f8c5ce-2"
+    },
+    {
+      "id": "CBP-S01-v1-40f3df8f794e-3",
+      "source_id": "CBP-S01",
+      "version": "v1",
+      "title": "Site navigation",
+      "score": 0.3114,
+      "metric": "cosine",
+      "url": "/rag/sources/CBP-S01-v1-40f3df8f794e-3"
+    }
+  ],
+  "opened_source": "https://carbuilders.192.81.212.73.sslip.io/rag/sources/CBP-S01-v1-40f3df8f794e-2",
+  "source_passage": "Site navigation\nView Details opens an individual sample build detail page. The Skyline is at /builds/skyline, the Miata at /builds/miata, and the BMW at /builds/bmw. These pages show the example car and labeled modification categories. To look at the upgrades on one example car, open Car Builds and then View Details."
+}

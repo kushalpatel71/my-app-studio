@@ -55,8 +55,8 @@ def generate(question, passages):
             ]
         },
         "contents": [{"role": "user", "parts": [{"text": json.dumps(prompt)}]}],
+        # Gemini 3 models require their default sampling settings for reliability.
         "generationConfig": {
-            "temperature": 0,
             "maxOutputTokens": 600,
             "responseMimeType": "application/json",
         },

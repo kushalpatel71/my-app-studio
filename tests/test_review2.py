@@ -52,6 +52,12 @@ def test_import_permissions_and_current_role(client, settings, monkeypatch):
         ).status_code
         == 400
     )
+    assert (
+        client.post(
+            "/api/rag/import", content=iter([b"out-of-scope"]), headers=csrf(client)
+        ).status_code
+        == 400
+    )
     assert database.set_role(settings, "rag_member", "member")
     assert client.post("/api/rag/import", headers=csrf(client)).status_code == 403
     assert called == [1]

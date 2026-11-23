@@ -75,7 +75,7 @@ def import_corpus(request: Request):
     """Admin-only, CSRF-protected import of the fixed approved directory."""
     security.require_admin(request)
     security.require_csrf(request, request.headers.get("x-csrf-token"))
-    if request.headers.get("content-length", "0") not in {"0", ""}:
+    if request.state.rag_body_length:
         raise HTTPException(400, "Import does not accept uploaded content or paths.")
     try:
         return store(request).ingest()

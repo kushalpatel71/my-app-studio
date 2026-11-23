@@ -67,6 +67,7 @@ def create_app(settings=None):
                     return JSONResponse(
                         {"detail": "Request too large."}, status_code=413
                     )
+            request.state.rag_body_length = len(body)
             request._body = bytes(body)  # pylint: disable=protected-access
         response = await call_next(request)
         response.headers["X-Content-Type-Options"] = "nosniff"

@@ -27,7 +27,7 @@ All three implementations are present on main; [studio.json](../../studio.json) 
 
 #### Review 2 Build — current implementation, November 23, 2026
 
-**Status:** responsive public portfolio implemented and hosted. [Portfolio](https://carbuilders.192.81.212.73.sslip.io/portfolio) · [Car Builders Place](https://carbuilders.192.81.212.73.sslip.io/) · [RAG case study](https://carbuilders.192.81.212.73.sslip.io/portfolio/projects/rag) · [working assistant](https://carbuilders.192.81.212.73.sslip.io/rag). [Issue #9](https://github.com/kushalpatel71/my-app-studio/issues/9) · [PR #10](https://github.com/kushalpatel71/my-app-studio/pull/10), unmerged. The branch started from merged Review 1 main `1efd73e16552abf3336e0dd897c903300225db82`.
+**Status:** responsive public portfolio implemented and hosted. [Portfolio](https://carbuilders.192.81.212.73.sslip.io/portfolio) · [Car Builders Place](https://carbuilders.192.81.212.73.sslip.io/) · [RAG case study](https://carbuilders.192.81.212.73.sslip.io/portfolio/projects/rag) · [working assistant](https://carbuilders.192.81.212.73.sslip.io/rag). [Issue #9](https://github.com/kushalpatel71/my-app-studio/issues/9) · [PR #10](https://github.com/kushalpatel71/my-app-studio/pull/10), merged into main. The branch started from merged Review 1 main `1efd73e16552abf3336e0dd897c903300225db82`.
 
 [Portfolio template](../../app/templates/portfolio.html), [RAG case study](../../app/templates/rag_case.html), [additive routes](../../app/features/review2.py) and scoped CSS implement the evidence-first layout. NJIT student/developer identity and provisional **AI Application / Product Engineering**, with FDE as a comparison, come from the owner’s task. No employment history, credentials or independent AI expertise is invented. About, Skills, Projects, Research and Contact anchors work by keyboard. Project links open the original car site, actual RAG case study/app, public code, account/role PRs and the single project record.
 
@@ -208,7 +208,7 @@ Public HTTPS and the real browser verified the new origin. Traefik’s existing 
 
 **Persistence / backup / release evidence.** New-app restart retained 5/18, the same semantic source and the disposable account. A consistent volume backup was created with only this app stopped, copied off-host into ignored owner-only runtime storage and checksum-verified. Offline restore into a **separate local volume** recovered 5/18, the same semantic result and account-table presence; no live volume was restored. A separate offline restored-account check passed login/dashboard/logout with a disposable signing key; the original server signing key was not copied. A final app-only restart preserved an existing authenticated session, current-role denial and real cited Gemini generation; logout token replay returned 401. [Restart and recovery receipt](../rag/hosted-persistence-evidence.json). Production rollback has not been executed. Raw backup/baseline/credentials are not in GitHub.
 
-Final browser, restart and real-generation checks used [deployed release 517b03c](https://github.com/kushalpatel71/my-app-studio/commit/517b03c947c4fb0e14947fbda98fab11b850a267). The first five-question evaluation used [provider fix 7aeaef6](https://github.com/kushalpatel71/my-app-studio/commit/7aeaef6a48e13c1315af71208595a06403596279). Earlier [implementation 3387adc](https://github.com/kushalpatel71/my-app-studio/commit/3387adc7ded7ab6164d8af92b54b6cf6c40d269f) and [dependency correction 827829f](https://github.com/kushalpatel71/my-app-studio/commit/827829f9444dd35ea8390c787fd506b6883709e5) preserve the progression. [Issue #9](https://github.com/kushalpatel71/my-app-studio/issues/9) · [PR #10](https://github.com/kushalpatel71/my-app-studio/pull/10) · [latest PR checks](https://github.com/kushalpatel71/my-app-studio/pull/10/checks). No merge is authorized.
+Final browser, restart and real-generation checks used [deployed release 517b03c](https://github.com/kushalpatel71/my-app-studio/commit/517b03c947c4fb0e14947fbda98fab11b850a267). The first five-question evaluation used [provider fix 7aeaef6](https://github.com/kushalpatel71/my-app-studio/commit/7aeaef6a48e13c1315af71208595a06403596279). Earlier [implementation 3387adc](https://github.com/kushalpatel71/my-app-studio/commit/3387adc7ded7ab6164d8af92b54b6cf6c40d269f) and [dependency correction 827829f](https://github.com/kushalpatel71/my-app-studio/commit/827829f9444dd35ea8390c787fd506b6883709e5) preserve the progression. [Issue #9](https://github.com/kushalpatel71/my-app-studio/issues/9) · [PR #10](https://github.com/kushalpatel71/my-app-studio/pull/10) · [latest PR checks](https://github.com/kushalpatel71/my-app-studio/pull/10/checks). The owner approved merging; PR #10 merged into main as `04db6b614e706f5577ff72e4699ed9ef5510383e`.
 
 [Deployed-release CI 45252943773](https://github.com/kushalpatel71/my-app-studio/actions/runs/45252943773) passed all three jobs: Linux (120 + 18 contracts + 15 Chromium), Windows (118 + 18 + 15; two existing POSIX-only cases skipped), and expanded RAG (146 passed, five optional local-simulation cases skipped, 15 browser cases deselected, Docker build/startup passed). The final published revision’s required jobs are checked through the PR checks link. Local simulation and live Gemini evidence are separate.
 
@@ -422,7 +422,7 @@ Public portfolio: https://carbuilders.192.81.212.73.sslip.io/portfolio
 
 Car Builders Place: https://carbuilders.192.81.212.73.sslip.io/
 
-Record/research: https://github.com/kushalpatel71/my-app-studio/blob/feature/review2-build/docs/review1/README.md#1-individual-portfolio--career-research
+Record/research: https://github.com/kushalpatel71/my-app-studio/blob/main/docs/review1/README.md#1-individual-portfolio--career-research
 
 **Changed:** added the public responsive portfolio, About/Skills/Projects/Research/Contact navigation, Car Builders Place and real RAG case studies, and an accurately labeled group planning contribution. Review 1 employer research motivated evidence-first project links and grounding/evaluation evidence for the provisional AI Application / Product Engineering direction, with FDE as a comparison. GitHub provides a public project-contact route; no unverified résumé, LinkedIn, email or credentials are invented.
 
@@ -432,7 +432,7 @@ Record/research: https://github.com/kushalpatel71/my-app-studio/blob/feature/rev
 
 Issue: https://github.com/kushalpatel71/my-app-studio/issues/9
 
-Pull request (unmerged): https://github.com/kushalpatel71/my-app-studio/pull/10
+Pull request (merged): https://github.com/kushalpatel71/my-app-studio/pull/10
 
 ### 2. Individual RAG app + technical research
 
@@ -440,9 +440,9 @@ Working public RAG app: https://carbuilders.192.81.212.73.sslip.io/rag
 
 Case study: https://carbuilders.192.81.212.73.sslip.io/portfolio/projects/rag
 
-Actual generated answers/traces/passages: https://github.com/kushalpatel71/my-app-studio/blob/feature/review2-build/docs/rag/hosted-generation-evidence.json
+Actual generated answers/traces/passages: https://github.com/kushalpatel71/my-app-studio/blob/main/docs/rag/hosted-generation-evidence.json
 
-Real browser journey: https://github.com/kushalpatel71/my-app-studio/blob/feature/review2-build/docs/rag/hosted-browser-evidence.json
+Real browser journey: https://github.com/kushalpatel71/my-app-studio/blob/main/docs/rag/hosted-browser-evidence.json
 
 **Changed:** implemented five original permitted guides, admin/CSRF-protected import, 384-dimensional MiniLM CPU embeddings, persistent Chroma, SQLite FTS5 comparison, versioned source references and genuine server-side Gemini 3.5 Flash-Lite generation. Docker Compose reuses the existing DigitalOcean/Traefik HTTPS environment with one new persistent app volume; no paid service or public vector-database port was enabled.
 
@@ -462,6 +462,16 @@ Deployed-release CI evidence: https://github.com/kushalpatel71/my-app-studio/act
 
 Latest required PR checks: https://github.com/kushalpatel71/my-app-studio/pull/10/checks
 
-Final hosted restart/recovery receipt: https://github.com/kushalpatel71/my-app-studio/blob/feature/review2-build/docs/rag/hosted-persistence-evidence.json
+Final hosted restart/recovery receipt: https://github.com/kushalpatel71/my-app-studio/blob/main/docs/rag/hosted-persistence-evidence.json
 
 Final 390px browser evidence: [portfolio](evidence/portfolio-mobile.png) · [real answer and citation](evidence/rag-answer-mobile.png).
+
+## Post-merge verification — November 23, 2026
+
+The owner explicitly approved the merge. [PR #10](https://github.com/kushalpatel71/my-app-studio/pull/10) merged into main as [04db6b614e706f5577ff72e4699ed9ef5510383e](https://github.com/kushalpatel71/my-app-studio/commit/04db6b614e706f5577ff72e4699ed9ef5510383e); local main was fast-forwarded. [Merge-main Actions run](https://github.com/kushalpatel71/my-app-studio/actions/runs/45256050429).
+
+The deployed image/checkout remains `517b03c947c4fb0e14947fbda98fab11b850a267`, healthy with five documents / 18 chunks. Comparing app, runtime dependencies, studio tools and deployment configuration against the merge commit produced no differences. No restart, redeployment or infrastructure changes were necessary. This follow-up updates evidence links from the feature branch to main; the three corresponding live case-study links still point to the retained, working feature branch until a future application release. Their destination content is merged into main.
+
+[Actual post-merge HTTPS and real Gemini answer receipt](../rag/postmerge-evidence.json): homepage, all three car pages, About, portfolio, RAG case study, assistant, health, calculator and original production/QA returned trusted HTTPS 200. Gemini returned “View Details opens an individual sample build detail page.” The retrieved citation `CBP-S01-v1-40f3df8f794e-2` opened HTTP 200 and its supporting text was checked. No mock or credential value appears in this receipt.
+
+Post-merge local `python3 studio.py check` passed Black/Pylint, 120 application/request/tooling tests, 18 unchanged instructor contracts and 15 Chromium cases. The separate Python 3.12 optional real-vector regression/contracts passed 146 tests; five local HTTP-provider simulation cases were explicitly skipped because no simulation server was configured, and 15 browser cases were deselected and run separately by studio. All four original service snapshots and proxy hashes matched preflight. Latest main Actions are linked through the repository [Actions page](https://github.com/kushalpatel71/my-app-studio/actions?query=branch%3Amain); merge-specific CI is linked above.

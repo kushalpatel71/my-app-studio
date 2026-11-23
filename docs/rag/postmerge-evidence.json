@@ -1,0 +1,67 @@
+{
+  "merge_commit": "04db6b614e706f5577ff72e4699ed9ef5510383e",
+  "origin": "https://carbuilders.192.81.212.73.sslip.io",
+  "routes": {
+    "https://carbuilders.192.81.212.73.sslip.io/": 200,
+    "https://carbuilders.192.81.212.73.sslip.io/builds": 200,
+    "https://carbuilders.192.81.212.73.sslip.io/builds/skyline": 200,
+    "https://carbuilders.192.81.212.73.sslip.io/builds/miata": 200,
+    "https://carbuilders.192.81.212.73.sslip.io/builds/bmw": 200,
+    "https://carbuilders.192.81.212.73.sslip.io/about": 200,
+    "https://carbuilders.192.81.212.73.sslip.io/portfolio": 200,
+    "https://carbuilders.192.81.212.73.sslip.io/portfolio/projects/rag": 200,
+    "https://carbuilders.192.81.212.73.sslip.io/rag": 200,
+    "https://carbuilders.192.81.212.73.sslip.io/health": 200,
+    "https://calc.192.81.212.73.sslip.io/health": 200,
+    "https://192.81.212.73.sslip.io/": 200,
+    "https://qa.192.81.212.73.sslip.io/": 200
+  },
+  "answer": {
+    "answer": "View Details opens an individual sample build detail page.",
+    "citations": [
+      {
+        "id": "CBP-S01-v1-40f3df8f794e-2",
+        "title": "Site navigation",
+        "url": "/rag/sources/CBP-S01-v1-40f3df8f794e-2"
+      }
+    ],
+    "insufficient": false,
+    "trace": [
+      {
+        "id": "CBP-S01-v1-40f3df8f794e-2",
+        "source_id": "CBP-S01",
+        "version": "v1",
+        "title": "Site navigation",
+        "score": 0.4277,
+        "metric": "cosine",
+        "url": "/rag/sources/CBP-S01-v1-40f3df8f794e-2"
+      },
+      {
+        "id": "CBP-S02-v1-d8b616f8c5ce-2",
+        "source_id": "CBP-S02",
+        "version": "v1",
+        "title": "Understanding sample builds",
+        "score": 0.31188,
+        "metric": "cosine",
+        "url": "/rag/sources/CBP-S02-v1-d8b616f8c5ce-2"
+      },
+      {
+        "id": "CBP-S01-v1-40f3df8f794e-3",
+        "source_id": "CBP-S01",
+        "version": "v1",
+        "title": "Site navigation",
+        "score": 0.3114,
+        "metric": "cosine",
+        "url": "/rag/sources/CBP-S01-v1-40f3df8f794e-3"
+      }
+    ],
+    "generation": "gemini"
+  },
+  "opened_sources": [
+    {
+      "url": "https://carbuilders.192.81.212.73.sslip.io/rag/sources/CBP-S01-v1-40f3df8f794e-2",
+      "status": 200,
+      "supporting_text_verified": true
+    }
+  ]
+}

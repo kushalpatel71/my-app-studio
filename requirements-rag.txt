@@ -4,3 +4,7 @@ chromadb==1.5.9
 onnxruntime==1.23.2
 tokenizers==0.23.3
 numpy==2.5.5
+# Keep the original application's verified httpx cookie semantics. Hub 2.x pulls
+# httpx2, which changes TestClient cookie replacement in existing JWT contracts.
+# This transitive Hub dependency is not used for our direct ONNX model download.
+huggingface-hub==0.36.0

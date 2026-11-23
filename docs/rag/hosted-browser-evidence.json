@@ -1,6 +1,6 @@
 {
   "origin": "https://carbuilders.192.81.212.73.sslip.io",
-  "release": "7aeaef6a48e13c1315af71208595a06403596279",
+  "release": "517b03c947c4fb0e14947fbda98fab11b850a267",
   "checked_date": "2026-11-23",
   "real_generated_journey": true,
   "layout": [
@@ -18,6 +18,16 @@
       "width": 320,
       "overflow": false,
       "keyboard_navigation": "passed"
+    }
+  ],
+  "rag_answer_layout": [
+    {
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "overflow": false
     }
   ],
   "steps": [

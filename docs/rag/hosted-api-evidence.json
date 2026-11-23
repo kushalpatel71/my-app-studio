@@ -1,0 +1,216 @@
+{
+  "origin": "https://carbuilders.192.81.212.73.sslip.io",
+  "routes": {
+    "/": 200,
+    "/builds": 200,
+    "/builds/skyline": 200,
+    "/builds/miata": 200,
+    "/builds/bmw": 200,
+    "/about": 200,
+    "/signup": 200,
+    "/login": 200,
+    "/portfolio": 200,
+    "/portfolio/projects/rag": 200,
+    "/rag": 200,
+    "/health": 200
+  },
+  "permissions": {
+    "anonymous_import": 401,
+    "member_admin": 403,
+    "member_import": 403,
+    "admin_without_csrf": 403,
+    "same_session_demotion": "admin denied; member dashboard retained"
+  },
+  "questions": [
+    {
+      "question": "Where does View Details take me?",
+      "status": 503,
+      "detail": "Generation unavailable: GEMINI_API_KEY is not configured.",
+      "trace": [
+        {
+          "id": "CBP-S01-v1-40f3df8f794e-2",
+          "source_id": "CBP-S01",
+          "version": "v1",
+          "title": "Site navigation",
+          "score": 0.4277,
+          "metric": "cosine",
+          "url": "/rag/sources/CBP-S01-v1-40f3df8f794e-2"
+        },
+        {
+          "id": "CBP-S02-v1-d8b616f8c5ce-2",
+          "source_id": "CBP-S02",
+          "version": "v1",
+          "title": "Understanding sample builds",
+          "score": 0.31188,
+          "metric": "cosine",
+          "url": "/rag/sources/CBP-S02-v1-d8b616f8c5ce-2"
+        },
+        {
+          "id": "CBP-S01-v1-40f3df8f794e-3",
+          "source_id": "CBP-S01",
+          "version": "v1",
+          "title": "Site navigation",
+          "score": 0.3114,
+          "metric": "cosine",
+          "url": "/rag/sources/CBP-S01-v1-40f3df8f794e-3"
+        }
+      ],
+      "opened_source_status": 200
+    },
+    {
+      "question": "Where can I look at the upgrades on one example car?",
+      "status": 503,
+      "detail": "Generation unavailable: GEMINI_API_KEY is not configured.",
+      "trace": [
+        {
+          "id": "CBP-S01-v1-40f3df8f794e-2",
+          "source_id": "CBP-S01",
+          "version": "v1",
+          "title": "Site navigation",
+          "score": 0.58849,
+          "metric": "cosine",
+          "url": "/rag/sources/CBP-S01-v1-40f3df8f794e-2"
+        },
+        {
+          "id": "CBP-S02-v1-d8b616f8c5ce-1",
+          "source_id": "CBP-S02",
+          "version": "v1",
+          "title": "Understanding sample builds",
+          "score": 0.44773,
+          "metric": "cosine",
+          "url": "/rag/sources/CBP-S02-v1-d8b616f8c5ce-1"
+        },
+        {
+          "id": "CBP-S01-v1-40f3df8f794e-1",
+          "source_id": "CBP-S01",
+          "version": "v1",
+          "title": "Site navigation",
+          "score": 0.41917,
+          "metric": "cosine",
+          "url": "/rag/sources/CBP-S01-v1-40f3df8f794e-1"
+        }
+      ],
+      "opened_source_status": 200
+    },
+    {
+      "question": "Which role may access the administration page?",
+      "status": 503,
+      "detail": "Generation unavailable: GEMINI_API_KEY is not configured.",
+      "trace": [
+        {
+          "id": "CBP-S04-v1-a9408862c957-3",
+          "source_id": "CBP-S04",
+          "version": "v1",
+          "title": "Accounts and access",
+          "score": 0.63688,
+          "metric": "cosine",
+          "url": "/rag/sources/CBP-S04-v1-a9408862c957-3"
+        },
+        {
+          "id": "CBP-S04-v1-a9408862c957-4",
+          "source_id": "CBP-S04",
+          "version": "v1",
+          "title": "Accounts and access",
+          "score": 0.4254,
+          "metric": "cosine",
+          "url": "/rag/sources/CBP-S04-v1-a9408862c957-4"
+        },
+        {
+          "id": "CBP-S04-v1-a9408862c957-1",
+          "source_id": "CBP-S04",
+          "version": "v1",
+          "title": "Accounts and access",
+          "score": 0.36013,
+          "metric": "cosine",
+          "url": "/rag/sources/CBP-S04-v1-a9408862c957-1"
+        }
+      ],
+      "opened_source_status": 200
+    },
+    {
+      "question": "What measured horsepower gain will this build give my car?",
+      "status": 503,
+      "detail": "Generation unavailable: GEMINI_API_KEY is not configured.",
+      "trace": [
+        {
+          "id": "CBP-S05-v1-9a017135492c-3",
+          "source_id": "CBP-S05",
+          "version": "v1",
+          "title": "Assistant scope and provenance",
+          "score": 0.40816,
+          "metric": "cosine",
+          "url": "/rag/sources/CBP-S05-v1-9a017135492c-3"
+        },
+        {
+          "id": "CBP-S01-v1-40f3df8f794e-2",
+          "source_id": "CBP-S01",
+          "version": "v1",
+          "title": "Site navigation",
+          "score": 0.31042,
+          "metric": "cosine",
+          "url": "/rag/sources/CBP-S01-v1-40f3df8f794e-2"
+        },
+        {
+          "id": "CBP-S03-v1-b9ba1459dd37-3",
+          "source_id": "CBP-S03",
+          "version": "v1",
+          "title": "Modification categories",
+          "score": 0.26739,
+          "metric": "cosine",
+          "url": "/rag/sources/CBP-S03-v1-b9ba1459dd37-3"
+        }
+      ],
+      "opened_source_status": 200
+    }
+  ],
+  "session_cookie_flags": {
+    "Secure": true,
+    "HttpOnly": true,
+    "SameSite": true
+  },
+  "import": {
+    "status": "imported",
+    "generation": "c8f0e4d840fdef5f40a4f4ec",
+    "documents": 5,
+    "chunks": 18
+  },
+  "repeat_import": {
+    "status": "unchanged",
+    "generation": "c8f0e4d840fdef5f40a4f4ec",
+    "documents": 5,
+    "chunks": 18
+  },
+  "logout_replay_status": 401,
+  "real_generation": "blocked: key presence and model metadata verified; Free-tier confirmation pending; no generation request made",
+  "checked_date": "2026-11-23",
+  "deployed_commit": "827829f9444dd35ea8390c787fd506b6883709e5",
+  "initial_verified_commit": "3387adc7ded7ab6164d8af92b54b6cf6c40d269f",
+  "dependency_update_recheck": {
+    "release": "827829f9444dd35ea8390c787fd506b6883709e5",
+    "routes": {
+      "/": 200,
+      "/builds": 200,
+      "/builds/skyline": 200,
+      "/builds/miata": 200,
+      "/builds/bmw": 200,
+      "/about": 200,
+      "/portfolio": 200,
+      "/portfolio/projects/rag": 200,
+      "/rag": 200,
+      "/health": 200
+    },
+    "generation_requests_to_provider": 0,
+    "invalid_cookie_denied": 401,
+    "persisted_account_login_dashboard_member_denial_logout": "passed",
+    "retrieval": {
+      "id": "CBP-S01-v1-40f3df8f794e-2",
+      "source_id": "CBP-S01",
+      "version": "v1",
+      "title": "Site navigation",
+      "score": 0.4277,
+      "metric": "cosine",
+      "url": "/rag/sources/CBP-S01-v1-40f3df8f794e-2"
+    },
+    "generation_status": "Generation unavailable: free-tier project approval is pending."
+  }
+}

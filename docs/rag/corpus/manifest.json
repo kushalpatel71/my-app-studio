@@ -1,0 +1,47 @@
+[
+  {
+    "id": "CBP-S01",
+    "title": "Site navigation",
+    "version": "v1",
+    "file": "navigation.md",
+    "origin": "app/showcase.py",
+    "permission": "original-project-text-public-and-provider-context",
+    "author": "AI-authored original project guides, requested by project owner for this Build"
+  },
+  {
+    "id": "CBP-S02",
+    "title": "Understanding sample builds",
+    "version": "v1",
+    "file": "sample-builds.md",
+    "origin": "app/brand.json",
+    "permission": "original-project-text-public-and-provider-context",
+    "author": "AI-authored original project guides, requested by project owner for this Build"
+  },
+  {
+    "id": "CBP-S03",
+    "title": "Modification categories",
+    "version": "v1",
+    "file": "categories.md",
+    "origin": "original project glossary",
+    "permission": "original-project-text-public-and-provider-context",
+    "author": "AI-authored original project guides, requested by project owner for this Build"
+  },
+  {
+    "id": "CBP-S04",
+    "title": "Accounts and access",
+    "version": "v1",
+    "file": "access.md",
+    "origin": "app/features/accounts.py and app/features/roles.py",
+    "permission": "original-project-text-public-and-provider-context",
+    "author": "AI-authored original project guides, requested by project owner for this Build"
+  },
+  {
+    "id": "CBP-S05",
+    "title": "Assistant scope and provenance",
+    "version": "v1",
+    "file": "assistant-scope.md",
+    "origin": "original project scope",
+    "permission": "original-project-text-public-and-provider-context",
+    "author": "AI-authored original project guides, requested by project owner for this Build"
+  }
+]

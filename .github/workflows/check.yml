@@ -55,3 +55,33 @@ jobs:
           name: failed-windows-browser-check
           path: test-results/
           if-no-files-found: ignore
+  rag:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install CPU semantic retrieval runtime
+        run: python -m pip install -r requirements-rag.txt
+      - name: Check real embeddings, corpus lifecycle, persistence and request boundaries
+        run: python -m pytest -q tests -m "not e2e" contracts
+      - name: Validate the production Docker build
+        run: docker build -f deploy/Dockerfile -t cbp-review2:ci .
+      - name: Smoke test production image without provider credentials
+        run: |
+          docker run -d --name cbp-review2-ci --read-only --tmpfs /tmp --tmpfs /data:uid=10001,gid=10001,mode=0700 -e APP_MODE=production -e APP_ORIGIN=https://review2.test -e APP_DATABASE=/data/studio.sqlite3 -e APP_SECRET=test-only-ci-image-key-at-least-thirty-two-bytes cbp-review2:ci
+          python - <<'PYCODE'
+          import subprocess, time
+          for attempt in range(30):
+              result = subprocess.run(["docker", "exec", "cbp-review2-ci", "python", "-c", "import urllib.request; r=urllib.request.urlopen(urllib.request.Request('http://127.0.0.1:8000/portfolio',headers={'Host':'review2.test'})); assert r.status==200"], capture_output=True)
+              if result.returncode == 0:
+                  break
+              time.sleep(1)
+          else:
+              raise SystemExit("Production image did not become ready")
+          PYCODE
+      - name: Stop isolated CI image
+        if: always()
+        run: docker stop cbp-review2-ci || true

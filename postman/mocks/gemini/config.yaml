@@ -1,0 +1,10 @@
+version: 1
+name: Gemini generateContent dependency subset
+slug: gemini-generatecontent-dependenc
+protocol: http
+port: 4510
+scenarios:
+  - name: default
+    path: ./default.js
+    default: true
+interceptRequests: true

@@ -14,3 +14,7 @@ playwright-report/
 *.sqlite-*
 *.db
 *.db-*
+*.sqlite3.rag/
+*.env
+private-backups/
+.venv-rag/

@@ -1,0 +1,318 @@
+{
+  "origin": "https://carbuilders.192.81.212.73.sslip.io",
+  "release": "7aeaef6a48e13c1315af71208595a06403596279",
+  "checked_date": "2026-11-23",
+  "provider": "real Gemini 3.5 Flash-Lite",
+  "billing_basis": "owner confirmed Free tier and no linked billing account; no billing settings changed",
+  "questions": [
+    {
+      "type": "exact",
+      "question": "Where does View Details take me?",
+      "expected_source": "CBP-S01",
+      "http_status": 200,
+      "latency_seconds": 3.763,
+      "response": {
+        "answer": "View Details opens an individual sample build detail page.",
+        "citations": [
+          {
+            "id": "CBP-S01-v1-40f3df8f794e-2",
+            "title": "Site navigation",
+            "url": "/rag/sources/CBP-S01-v1-40f3df8f794e-2"
+          }
+        ],
+        "insufficient": false,
+        "trace": [
+          {
+            "id": "CBP-S01-v1-40f3df8f794e-2",
+            "source_id": "CBP-S01",
+            "version": "v1",
+            "title": "Site navigation",
+            "score": 0.4277,
+            "metric": "cosine",
+            "url": "/rag/sources/CBP-S01-v1-40f3df8f794e-2"
+          },
+          {
+            "id": "CBP-S02-v1-d8b616f8c5ce-2",
+            "source_id": "CBP-S02",
+            "version": "v1",
+            "title": "Understanding sample builds",
+            "score": 0.31188,
+            "metric": "cosine",
+            "url": "/rag/sources/CBP-S02-v1-d8b616f8c5ce-2"
+          },
+          {
+            "id": "CBP-S01-v1-40f3df8f794e-3",
+            "source_id": "CBP-S01",
+            "version": "v1",
+            "title": "Site navigation",
+            "score": 0.3114,
+            "metric": "cosine",
+            "url": "/rag/sources/CBP-S01-v1-40f3df8f794e-3"
+          }
+        ],
+        "generation": "gemini"
+      },
+      "opened_citations": [
+        {
+          "id": "CBP-S01-v1-40f3df8f794e-2",
+          "url": "https://carbuilders.192.81.212.73.sslip.io/rag/sources/CBP-S01-v1-40f3df8f794e-2",
+          "http_status": 200,
+          "passage": "Site navigation\nView Details opens an individual sample build detail page. The Skyline is at /builds/skyline, the Miata at /builds/miata, and the BMW at /builds/bmw. These pages show the example car and labeled modification categories. To look at the upgrades on one example car, open Car Builds and then View Details."
+        }
+      ]
+    },
+    {
+      "type": "paraphrase",
+      "question": "Where can I look at the upgrades on one example car?",
+      "expected_source": "CBP-S01",
+      "http_status": 200,
+      "latency_seconds": 1.103,
+      "response": {
+        "answer": "To look at the upgrades on one example car, open Car Builds and then View Details.",
+        "citations": [
+          {
+            "id": "CBP-S01-v1-40f3df8f794e-2",
+            "title": "Site navigation",
+            "url": "/rag/sources/CBP-S01-v1-40f3df8f794e-2"
+          }
+        ],
+        "insufficient": false,
+        "trace": [
+          {
+            "id": "CBP-S01-v1-40f3df8f794e-2",
+            "source_id": "CBP-S01",
+            "version": "v1",
+            "title": "Site navigation",
+            "score": 0.58849,
+            "metric": "cosine",
+            "url": "/rag/sources/CBP-S01-v1-40f3df8f794e-2"
+          },
+          {
+            "id": "CBP-S02-v1-d8b616f8c5ce-1",
+            "source_id": "CBP-S02",
+            "version": "v1",
+            "title": "Understanding sample builds",
+            "score": 0.44773,
+            "metric": "cosine",
+            "url": "/rag/sources/CBP-S02-v1-d8b616f8c5ce-1"
+          },
+          {
+            "id": "CBP-S01-v1-40f3df8f794e-1",
+            "source_id": "CBP-S01",
+            "version": "v1",
+            "title": "Site navigation",
+            "score": 0.41917,
+            "metric": "cosine",
+            "url": "/rag/sources/CBP-S01-v1-40f3df8f794e-1"
+          }
+        ],
+        "generation": "gemini"
+      },
+      "opened_citations": [
+        {
+          "id": "CBP-S01-v1-40f3df8f794e-2",
+          "url": "https://carbuilders.192.81.212.73.sslip.io/rag/sources/CBP-S01-v1-40f3df8f794e-2",
+          "http_status": 200,
+          "passage": "Site navigation\nView Details opens an individual sample build detail page. The Skyline is at /builds/skyline, the Miata at /builds/miata, and the BMW at /builds/bmw. These pages show the example car and labeled modification categories. To look at the upgrades on one example car, open Car Builds and then View Details."
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "question": "Which role may access the administration page?",
+      "expected_source": "CBP-S04",
+      "http_status": 200,
+      "latency_seconds": 0.984,
+      "response": {
+        "answer": "Only the administrator role may access the administration page.",
+        "citations": [
+          {
+            "id": "CBP-S04-v1-a9408862c957-3",
+            "title": "Accounts and access",
+            "url": "/rag/sources/CBP-S04-v1-a9408862c957-3"
+          }
+        ],
+        "insufficient": false,
+        "trace": [
+          {
+            "id": "CBP-S04-v1-a9408862c957-3",
+            "source_id": "CBP-S04",
+            "version": "v1",
+            "title": "Accounts and access",
+            "score": 0.63688,
+            "metric": "cosine",
+            "url": "/rag/sources/CBP-S04-v1-a9408862c957-3"
+          },
+          {
+            "id": "CBP-S04-v1-a9408862c957-4",
+            "source_id": "CBP-S04",
+            "version": "v1",
+            "title": "Accounts and access",
+            "score": 0.4254,
+            "metric": "cosine",
+            "url": "/rag/sources/CBP-S04-v1-a9408862c957-4"
+          },
+          {
+            "id": "CBP-S04-v1-a9408862c957-1",
+            "source_id": "CBP-S04",
+            "version": "v1",
+            "title": "Accounts and access",
+            "score": 0.36013,
+            "metric": "cosine",
+            "url": "/rag/sources/CBP-S04-v1-a9408862c957-1"
+          }
+        ],
+        "generation": "gemini"
+      },
+      "opened_citations": [
+        {
+          "id": "CBP-S04-v1-a9408862c957-3",
+          "url": "https://carbuilders.192.81.212.73.sslip.io/rag/sources/CBP-S04-v1-a9408862c957-3",
+          "http_status": 200,
+          "passage": "Accounts and access\nOnly the administrator role may access the administration page and import the approved assistant documents. Members are denied administration access even if they request its API directly. The server checks the current database role on every protected request; hiding a navigation link is not authorization."
+        }
+      ]
+    },
+    {
+      "type": "glossary",
+      "question": "What does the suspension category describe in this assistant?",
+      "expected_source": "CBP-S03",
+      "http_status": 200,
+      "latency_seconds": 1.162,
+      "response": {
+        "answer": "Suspension describes the sample's ride-height and handling concept.",
+        "citations": [
+          {
+            "id": "CBP-S03-v1-b9ba1459dd37-2",
+            "title": "Modification categories",
+            "url": "/rag/sources/CBP-S03-v1-b9ba1459dd37-2"
+          }
+        ],
+        "insufficient": false,
+        "trace": [
+          {
+            "id": "CBP-S03-v1-b9ba1459dd37-2",
+            "source_id": "CBP-S03",
+            "version": "v1",
+            "title": "Modification categories",
+            "score": 0.63739,
+            "metric": "cosine",
+            "url": "/rag/sources/CBP-S03-v1-b9ba1459dd37-2"
+          },
+          {
+            "id": "CBP-S03-v1-b9ba1459dd37-3",
+            "source_id": "CBP-S03",
+            "version": "v1",
+            "title": "Modification categories",
+            "score": 0.39035,
+            "metric": "cosine",
+            "url": "/rag/sources/CBP-S03-v1-b9ba1459dd37-3"
+          },
+          {
+            "id": "CBP-S03-v1-b9ba1459dd37-4",
+            "source_id": "CBP-S03",
+            "version": "v1",
+            "title": "Modification categories",
+            "score": 0.38358,
+            "metric": "cosine",
+            "url": "/rag/sources/CBP-S03-v1-b9ba1459dd37-4"
+          }
+        ],
+        "generation": "gemini"
+      },
+      "opened_citations": [
+        {
+          "id": "CBP-S03-v1-b9ba1459dd37-2",
+          "url": "https://carbuilders.192.81.212.73.sslip.io/rag/sources/CBP-S03-v1-b9ba1459dd37-2",
+          "http_status": 200,
+          "passage": "Modification categories\nSuspension describes the sample's ride-height and handling concept. This glossary explains the category, not how to install or adjust suspension components."
+        }
+      ]
+    },
+    {
+      "type": "unanswerable",
+      "question": "What measured horsepower gain will this build give my car?",
+      "expected_source": "CBP-S05",
+      "http_status": 200,
+      "latency_seconds": 0.781,
+      "response": {
+        "answer": "Insufficient evidence in the approved corpus.",
+        "citations": [],
+        "insufficient": true,
+        "trace": [
+          {
+            "id": "CBP-S05-v1-9a017135492c-3",
+            "source_id": "CBP-S05",
+            "version": "v1",
+            "title": "Assistant scope and provenance",
+            "score": 0.40816,
+            "metric": "cosine",
+            "url": "/rag/sources/CBP-S05-v1-9a017135492c-3"
+          },
+          {
+            "id": "CBP-S01-v1-40f3df8f794e-2",
+            "source_id": "CBP-S01",
+            "version": "v1",
+            "title": "Site navigation",
+            "score": 0.31042,
+            "metric": "cosine",
+            "url": "/rag/sources/CBP-S01-v1-40f3df8f794e-2"
+          },
+          {
+            "id": "CBP-S03-v1-b9ba1459dd37-3",
+            "source_id": "CBP-S03",
+            "version": "v1",
+            "title": "Modification categories",
+            "score": 0.26739,
+            "metric": "cosine",
+            "url": "/rag/sources/CBP-S03-v1-b9ba1459dd37-3"
+          }
+        ],
+        "generation": "gemini"
+      },
+      "opened_citations": []
+    }
+  ],
+  "observed_failures": [
+    {
+      "type": "paraphrase",
+      "question": "Where can I look at the upgrades on one example car?",
+      "expected_source": "CBP-S01",
+      "http_status": 503,
+      "latency_seconds": 3.553,
+      "response": {
+        "detail": "Generation failed or returned invalid evidence. Please try again later.",
+        "trace": [
+          {
+            "id": "CBP-S01-v1-40f3df8f794e-2",
+            "source_id": "CBP-S01",
+            "version": "v1",
+            "title": "Site navigation",
+            "score": 0.58849,
+            "metric": "cosine",
+            "url": "/rag/sources/CBP-S01-v1-40f3df8f794e-2"
+          },
+          {
+            "id": "CBP-S02-v1-d8b616f8c5ce-1",
+            "source_id": "CBP-S02",
+            "version": "v1",
+            "title": "Understanding sample builds",
+            "score": 0.44773,
+            "metric": "cosine",
+            "url": "/rag/sources/CBP-S02-v1-d8b616f8c5ce-1"
+          },
+          {
+            "id": "CBP-S01-v1-40f3df8f794e-1",
+            "source_id": "CBP-S01",
+            "version": "v1",
+            "title": "Site navigation",
+            "score": 0.41917,
+            "metric": "cosine",
+            "url": "/rag/sources/CBP-S01-v1-40f3df8f794e-1"
+          }
+        ],
+        "generation": "unavailable"
+      }
+    }
+  ]
+}

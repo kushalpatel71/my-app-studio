@@ -1,0 +1,34 @@
+purpose:
+  stands_in_for: Gemini generateContent HTTP dependency, local simulation only
+  unblocks: Real client serialization, safe errors, timeout and citation checks without paid calls
+assumptions:
+  - id: caller-handles-modeled-provider-responses
+    status: supported
+    claim: The application handles the modeled JSON content shape, HTTP 503, invalid citations and a delayed response in the local simulation.
+    reason: Five executed tests drove the real HTTP client and one full import/vector/chat/source flow against the stand-in.
+    verification: On 2026-11-23, tests/test_rag_provider_http.py passed 5 cases with RAG_SIMULATION_URL pointing to loopback. Request events confirmed the generateContent path. Timeout responses were delayed one second; the test client timeout was 0.2 seconds. No real Gemini request was made.
+    source: tests/test_rag_provider_http.py; postman/mocks/gemini/default.js; app/rag_generation.py
+    updated_at: '2026-11-23'
+  - id: real-provider-project-access
+    status: supported
+    claim: On 2026-11-23 the configured replacement key permitted real generateContent answers for the five recorded public-corpus evaluation questions.
+    reason: Actual hosted HTTP 200 answers, retrieved citation IDs, opened passages and a complete real Chromium journey establish this bounded result; the simulation alone did not.
+    verification: Initially unknown without credentials. Later the owner configured a replacement key and confirmed Free tier with no billing linked. Actual sampling-zero calls timed out; changing only to the recommended default returned a cited answer in 0.87 seconds. The deployed fix then passed all five question types and browser source opening. One earlier paraphrase 503 remains in observed_failures. This is not a broad accuracy or first-attempt reliability guarantee.
+    source: docs/rag/hosted-generation-evidence.json; docs/rag/hosted-browser-evidence.json; https://ai.google.dev/gemini-api/docs/models/gemini-3.5-flash-lite
+    updated_at: '2026-11-23'
+  - id: free-tier-status-provenance
+    status: supported
+    claim: The owner confirmed that the configured project displayed Free tier and had no linked billing account on 2026-11-23.
+    reason: This is explicit owner confirmation, not an automated Cloud Billing audit; model metadata alone cannot establish tier.
+    verification: The owner configured a replacement secret privately and authorized only Free-tier generation. No billing account, paid upgrade or credits were enabled by this work. Recheck tier if the project configuration changes.
+    source: docs/review1/README.md; https://ai.google.dev/gemini-api/docs/billing
+    updated_at: '2026-11-23'
+fingerprints:
+  - id: build-working-tree
+    date: '2026-11-23'
+    commit: 1efd73e16552abf3336e0dd897c903300225db82 plus uncommitted Review 2 Build changes
+    cli: Postman 1.75.0
+  - id: real-provider-fix
+    date: '2026-11-23'
+    commit: 7aeaef6a48e13c1315af71208595a06403596279 plus uncommitted portfolio/evidence updates
+    cli: Postman 1.75.0

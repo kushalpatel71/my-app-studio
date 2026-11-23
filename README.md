@@ -157,3 +157,40 @@ application feature is required in these three lessons.
 
 [Instructor orientation and evaluation records](docs/instructor.md) are optional
 background; students start with this README.
+
+## Review 2 · additive portfolio and Knowledge Assistant
+
+The original Car Builders Place homepage remains at `/`, with its car pages,
+accounts and roles intact. The new public features are `/portfolio`,
+`/portfolio/projects/rag`, `/rag`, and indexed `/rag/sources/{id}` passages.
+
+The approved existing-server deployment is at
+[Car Builders Place](https://carbuilders.192.81.212.73.sslip.io/),
+[Portfolio](https://carbuilders.192.81.212.73.sslip.io/portfolio) and
+[Knowledge Assistant](https://carbuilders.192.81.212.73.sslip.io/rag).
+Read the [single evolving record](docs/review1/README.md) for actual checks,
+current generation status, contribution limits and the Canvas text. A loaded
+chat page or a simulation is not proof of a successful real AI answer.
+
+Semantic retrieval extras were verified on Python 3.12 on macOS/Linux. Keep the
+ordinary `.venv` and `python3 studio.py check` path for the existing application;
+use a separate optional environment for real Chroma/MiniLM checks:
+
+```sh
+python3.12 -m venv .venv-rag
+.venv-rag/bin/python -m pip install -r requirements-rag.txt
+.venv-rag/bin/python -m pytest -q tests -m "not e2e" contracts
+.venv-rag/bin/python scripts/evaluate_rag.py --index runtime/rag-evaluation
+```
+
+These retrieval checks need no generation key. The normal environment explicitly
+skips optional real-RAG tests if their runtime is absent; CI has a separate RAG
+job that installs the extras and runs the whole non-browser regression/contracts.
+Provider simulations are documented in the project record and never count as
+real hosted generation.
+
+See the [HTTP contract](docs/rag/API.md), [approved corpus](docs/rag/corpus/manifest.json)
+and [Docker deployment/restart/backup/rollback runbook](deploy/README.md). Keep
+all real credentials in the private server environment file, outside GitHub.
+Generation requires a valid key and confirmed Free-tier project; no paid usage
+is authorized by this setup.

@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Car Builds Knowledge Assistant{% endblock %}
+{% block content %}
+<section class="portfolio portfolio-section chat-shell"><p class="eyebrow">Car Builders Place · Evidence-backed exploration</p><h1>Knowledge Assistant</h1><p>Ask about navigation, sample builds, modification labels or public access rules. No repair, fitment or measured horsepower advice.</p><p><a href="/portfolio/projects/rag">How this assistant works</a> · <a href="/portfolio">Portfolio</a> · <a href="/builds">Explore car builds</a></p><p>{{ stats.documents }} approved documents · {{ stats.chunks }} indexed passages. Generation requires configured server credentials.</p>
+<p>Your question and selected public passages are sent to Google Gemini when generation is enabled. Questions are not saved by this app. Free-tier provider data terms apply.</p>
+{% if request.app.state.current_user(request) and request.app.state.current_user(request).role == "admin" %}<section><h2>Corpus administration</h2><p>Import the approved server-side Markdown corpus. No uploads or arbitrary paths.</p><button id="import-corpus" type="button">Import approved documents</button><p id="import-status" role="status"></p></section>{% endif %}
+<form id="rag-form"><label for="question">Your question</label><textarea id="question" name="question" minlength="3" maxlength="1000" rows="3" required placeholder="Where does View Details take me?"></textarea><button type="submit" id="ask-button">Ask the assistant</button></form>
+<p id="rag-status" role="status" aria-live="polite"></p><section id="rag-result" hidden aria-labelledby="answer-heading"><h2 id="answer-heading">Answer</h2><p id="rag-answer"></p><h3>Supporting sources</h3><ul id="rag-citations"></ul></section><details id="trace-panel" hidden><summary>Inspect retrieval trace</summary><p>Cosine similarity ranks passages; it does not establish factual support. Context threshold: 0.30.</p><ul id="rag-trace"></ul></details>
+</section><script src="/static/rag.js" defer></script>
+{% endblock %}

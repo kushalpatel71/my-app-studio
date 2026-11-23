@@ -1,0 +1,51 @@
+openapi: 3.0.3
+info:
+  title: Gemini generateContent dependency subset
+  version: '1.0'
+  description: Only the request path used by this application. Official Google REST contract; simulation is never real generation evidence.
+servers:
+  - url: https://generativelanguage.googleapis.com
+paths:
+  /v1beta/models/{model}:generateContent:
+    post:
+      parameters:
+        - in: path
+          name: model
+          required: true
+          schema: {type: string}
+        - in: header
+          name: x-goog-api-key
+          required: true
+          schema: {type: string}
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [contents]
+              properties:
+                contents: {type: array, items: {type: object}}
+                systemInstruction: {type: object}
+                generationConfig: {type: object}
+      responses:
+        '200':
+          description: Generated candidate content parts
+          content:
+            application/json:
+              schema: {type: object, required: [candidates]}
+              example:
+                candidates:
+                  - content:
+                      parts:
+                        - text: '{"answer":"Insufficient evidence in the approved corpus.","citations":[],"insufficient":true}'
+        '429':
+          description: Provider quota exceeded
+          content:
+            application/json:
+              example: {error: {code: 429, message: Resource exhausted, status: RESOURCE_EXHAUSTED}}
+        '503':
+          description: Provider unavailable
+          content:
+            application/json:
+              example: {error: {code: 503, message: Service unavailable, status: UNAVAILABLE}}

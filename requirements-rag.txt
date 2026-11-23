@@ -1,0 +1,6 @@
+# Optional runtime for semantic retrieval. Verified on Python 3.12, CPU x86_64.
+-r requirements.txt
+chromadb==1.5.9
+onnxruntime==1.23.2
+tokenizers==0.23.3
+numpy==2.5.5

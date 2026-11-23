@@ -1,0 +1,23 @@
+purpose:
+  stands_in_for: Gemini generateContent HTTP dependency, local simulation only
+  unblocks: Real client serialization, safe errors, timeout and citation checks without paid calls
+assumptions:
+  - id: caller-handles-modeled-provider-responses
+    status: supported
+    claim: The application handles the modeled JSON content shape, HTTP 503, invalid citations and a delayed response in the local simulation.
+    reason: Five executed tests drove the real HTTP client and one full import/vector/chat/source flow against the stand-in.
+    verification: On 2026-11-23, tests/test_rag_provider_http.py passed 5 cases with RAG_SIMULATION_URL pointing to loopback. Request events confirmed the generateContent path. Timeout responses were delayed one second; the test client timeout was 0.2 seconds. No real Gemini request was made.
+    source: tests/test_rag_provider_http.py; postman/mocks/gemini/default.js; app/rag_generation.py
+    updated_at: '2026-11-23'
+  - id: real-provider-project-access
+    status: unknown
+    claim: The owner's Gemini project permits the configured model on its free tier and produces grounded answers for this corpus.
+    reason: Credentials and project-tier confirmation have not been supplied. A simulation cannot establish this claim.
+    verification: Official model/pricing documentation checked on 2026-11-23; no authenticated live generation executed. Orbit's discovery example used an obsolete model identifier, so the current official model documentation governs model selection. A real configured provider journey remains required.
+    source: https://ai.google.dev/gemini-api/docs/models/gemini-3.5-flash-lite
+    updated_at: '2026-11-23'
+fingerprints:
+  - id: build-working-tree
+    date: '2026-11-23'
+    commit: 1efd73e16552abf3336e0dd897c903300225db82 plus uncommitted Review 2 Build changes
+    cli: Postman 1.75.0

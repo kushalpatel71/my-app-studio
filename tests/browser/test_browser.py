@@ -393,3 +393,48 @@ def test_admin_page_cli_changes_and_existing_session(page, server, width):
         page.get_by_role("heading", name="Your member space", exact=True)
     ).to_be_visible()
     expect(page.locator(".account-details")).to_contain_text("member")
+
+
+@pytest.mark.parametrize("width", [1440, 390, 320])
+def test_review2_public_portfolio_keyboard_and_layout(page, server, width):
+    """Additive portfolio links work without an account at narrow widths."""
+    page.set_viewport_size({"width": width, "height": 900})
+    page.goto(server.url + "/portfolio")
+    expect(page.get_by_role("heading", name="Kushal Patel", exact=True)).to_be_visible()
+    expect(
+        page.get_by_text("Contribution evidence pending", exact=True)
+    ).to_be_visible()
+    assert page.evaluate("document.documentElement.scrollWidth <= window.innerWidth")
+    page.get_by_role("link", name="Projects", exact=True).focus()
+    page.keyboard.press("Enter")
+    assert page.url.endswith("#projects")
+    page.get_by_role("link", name="Read RAG case study", exact=True).focus()
+    page.keyboard.press("Enter")
+    expect(page.get_by_role("heading", name="Evidence before answers.")).to_be_visible()
+    page.get_by_role("link", name="Open the assistant", exact=True).click()
+    expect(
+        page.get_by_role("heading", name="Knowledge Assistant", exact=True)
+    ).to_be_visible()
+    assert page.evaluate("document.documentElement.scrollWidth <= window.innerWidth")
+    page.get_by_label("Your question").fill("Where does View Details take me?")
+    page.get_by_role("button", name="Ask the assistant", exact=True).click()
+    expect(page.locator("#rag-answer")).to_have_text(
+        "Insufficient evidence in the approved corpus."
+    )
+    expect(
+        page.get_by_role("button", name="Ask the assistant", exact=True)
+    ).to_be_enabled()
+
+
+def test_review2_chat_error_state(page, server):
+    """UI-only failed-network fixture; not a provider or RAG success claim."""
+    page.goto(server.url + "/rag")
+    page.route("**/api/rag/ask", lambda route: route.abort())
+    page.get_by_label("Your question").fill("Where are the builds?")
+    page.get_by_role("button", name="Ask the assistant", exact=True).click()
+    expect(page.locator("#rag-status")).to_have_text(
+        "Connection failed. Please try again later."
+    )
+    expect(
+        page.get_by_role("button", name="Ask the assistant", exact=True)
+    ).to_be_enabled()

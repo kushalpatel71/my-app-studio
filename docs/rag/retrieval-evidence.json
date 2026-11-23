@@ -1,0 +1,294 @@
+{
+  "model": "all-MiniLM-L6-v2",
+  "index_config": "minilm-onnx-cosine-wordpiece200-v1",
+  "import": {
+    "status": "imported",
+    "generation": "c8f0e4d840fdef5f40a4f4ec",
+    "documents": 5,
+    "chunks": 18
+  },
+  "repeat_import": {
+    "status": "unchanged",
+    "generation": "c8f0e4d840fdef5f40a4f4ec",
+    "documents": 5,
+    "chunks": 18
+  },
+  "evaluation": [
+    {
+      "kind": "exact",
+      "question": "Where does View Details take me?",
+      "expected_source": "CBP-S01",
+      "vector": [
+        {
+          "id": "CBP-S01-v1-40f3df8f794e-2",
+          "source_id": "CBP-S01",
+          "version": "v1",
+          "score": 0.4277,
+          "metric": "cosine"
+        },
+        {
+          "id": "CBP-S02-v1-d8b616f8c5ce-2",
+          "source_id": "CBP-S02",
+          "version": "v1",
+          "score": 0.31188,
+          "metric": "cosine"
+        },
+        {
+          "id": "CBP-S01-v1-40f3df8f794e-3",
+          "source_id": "CBP-S01",
+          "version": "v1",
+          "score": 0.3114,
+          "metric": "cosine"
+        }
+      ],
+      "keyword": [
+        {
+          "id": "CBP-S01-v1-40f3df8f794e-2",
+          "source_id": "CBP-S01",
+          "version": "v1",
+          "score": 5.162923015688951,
+          "metric": "fts5-bm25"
+        },
+        {
+          "id": "CBP-S01-v1-40f3df8f794e-1",
+          "source_id": "CBP-S01",
+          "version": "v1",
+          "score": 2.048204628551274,
+          "metric": "fts5-bm25"
+        },
+        {
+          "id": "CBP-S04-v1-a9408862c957-4",
+          "source_id": "CBP-S04",
+          "version": "v1",
+          "score": 1.0002387367357513,
+          "metric": "fts5-bm25"
+        }
+      ],
+      "generation": {
+        "status": "not-executed",
+        "reason": "No --generate flag"
+      }
+    },
+    {
+      "kind": "paraphrase",
+      "question": "Where can I look at the upgrades on one example car?",
+      "expected_source": "CBP-S01",
+      "vector": [
+        {
+          "id": "CBP-S01-v1-40f3df8f794e-2",
+          "source_id": "CBP-S01",
+          "version": "v1",
+          "score": 0.58849,
+          "metric": "cosine"
+        },
+        {
+          "id": "CBP-S02-v1-d8b616f8c5ce-1",
+          "source_id": "CBP-S02",
+          "version": "v1",
+          "score": 0.44773,
+          "metric": "cosine"
+        },
+        {
+          "id": "CBP-S01-v1-40f3df8f794e-1",
+          "source_id": "CBP-S01",
+          "version": "v1",
+          "score": 0.41917,
+          "metric": "cosine"
+        }
+      ],
+      "keyword": [
+        {
+          "id": "CBP-S01-v1-40f3df8f794e-2",
+          "source_id": "CBP-S01",
+          "version": "v1",
+          "score": 11.31569801444677,
+          "metric": "fts5-bm25"
+        },
+        {
+          "id": "CBP-S01-v1-40f3df8f794e-1",
+          "source_id": "CBP-S01",
+          "version": "v1",
+          "score": 3.114479122458904,
+          "metric": "fts5-bm25"
+        },
+        {
+          "id": "CBP-S01-v1-40f3df8f794e-3",
+          "source_id": "CBP-S01",
+          "version": "v1",
+          "score": 2.786111663779007,
+          "metric": "fts5-bm25"
+        }
+      ],
+      "generation": {
+        "status": "not-executed",
+        "reason": "No --generate flag"
+      }
+    },
+    {
+      "kind": "relationship",
+      "question": "Which role may access the administration page?",
+      "expected_source": "CBP-S04",
+      "vector": [
+        {
+          "id": "CBP-S04-v1-a9408862c957-3",
+          "source_id": "CBP-S04",
+          "version": "v1",
+          "score": 0.63688,
+          "metric": "cosine"
+        },
+        {
+          "id": "CBP-S04-v1-a9408862c957-4",
+          "source_id": "CBP-S04",
+          "version": "v1",
+          "score": 0.42539,
+          "metric": "cosine"
+        },
+        {
+          "id": "CBP-S04-v1-a9408862c957-1",
+          "source_id": "CBP-S04",
+          "version": "v1",
+          "score": 0.36013,
+          "metric": "cosine"
+        }
+      ],
+      "keyword": [
+        {
+          "id": "CBP-S04-v1-a9408862c957-3",
+          "source_id": "CBP-S04",
+          "version": "v1",
+          "score": 9.591926570914485,
+          "metric": "fts5-bm25"
+        },
+        {
+          "id": "CBP-S04-v1-a9408862c957-4",
+          "source_id": "CBP-S04",
+          "version": "v1",
+          "score": 3.1022921179363765,
+          "metric": "fts5-bm25"
+        },
+        {
+          "id": "CBP-S05-v1-9a017135492c-4",
+          "source_id": "CBP-S05",
+          "version": "v1",
+          "score": 2.2367742682909446,
+          "metric": "fts5-bm25"
+        }
+      ],
+      "generation": {
+        "status": "not-executed",
+        "reason": "No --generate flag"
+      }
+    },
+    {
+      "kind": "ordinary",
+      "question": "What does the suspension category describe in this assistant?",
+      "expected_source": "CBP-S03",
+      "vector": [
+        {
+          "id": "CBP-S03-v1-b9ba1459dd37-2",
+          "source_id": "CBP-S03",
+          "version": "v1",
+          "score": 0.63739,
+          "metric": "cosine"
+        },
+        {
+          "id": "CBP-S03-v1-b9ba1459dd37-3",
+          "source_id": "CBP-S03",
+          "version": "v1",
+          "score": 0.39035,
+          "metric": "cosine"
+        },
+        {
+          "id": "CBP-S03-v1-b9ba1459dd37-4",
+          "source_id": "CBP-S03",
+          "version": "v1",
+          "score": 0.38358,
+          "metric": "cosine"
+        }
+      ],
+      "keyword": [
+        {
+          "id": "CBP-S03-v1-b9ba1459dd37-2",
+          "source_id": "CBP-S03",
+          "version": "v1",
+          "score": 7.2682852590788904,
+          "metric": "fts5-bm25"
+        },
+        {
+          "id": "CBP-S04-v1-a9408862c957-2",
+          "source_id": "CBP-S04",
+          "version": "v1",
+          "score": 2.5365592278748945,
+          "metric": "fts5-bm25"
+        },
+        {
+          "id": "CBP-S02-v1-d8b616f8c5ce-3",
+          "source_id": "CBP-S02",
+          "version": "v1",
+          "score": 1.9970468811221485,
+          "metric": "fts5-bm25"
+        }
+      ],
+      "generation": {
+        "status": "not-executed",
+        "reason": "No --generate flag"
+      }
+    },
+    {
+      "kind": "unanswerable",
+      "question": "What measured horsepower gain will this build give my car?",
+      "expected_source": "CBP-S05",
+      "vector": [
+        {
+          "id": "CBP-S05-v1-9a017135492c-3",
+          "source_id": "CBP-S05",
+          "version": "v1",
+          "score": 0.40816,
+          "metric": "cosine"
+        },
+        {
+          "id": "CBP-S01-v1-40f3df8f794e-2",
+          "source_id": "CBP-S01",
+          "version": "v1",
+          "score": 0.31042,
+          "metric": "cosine"
+        },
+        {
+          "id": "CBP-S03-v1-b9ba1459dd37-3",
+          "source_id": "CBP-S03",
+          "version": "v1",
+          "score": 0.26739,
+          "metric": "cosine"
+        }
+      ],
+      "keyword": [
+        {
+          "id": "CBP-S05-v1-9a017135492c-3",
+          "source_id": "CBP-S05",
+          "version": "v1",
+          "score": 3.7852484301047795,
+          "metric": "fts5-bm25"
+        },
+        {
+          "id": "CBP-S02-v1-d8b616f8c5ce-2",
+          "source_id": "CBP-S02",
+          "version": "v1",
+          "score": 3.2763875931124584,
+          "metric": "fts5-bm25"
+        },
+        {
+          "id": "CBP-S03-v1-b9ba1459dd37-2",
+          "source_id": "CBP-S03",
+          "version": "v1",
+          "score": 2.7730692887099875,
+          "metric": "fts5-bm25"
+        }
+      ],
+      "generation": {
+        "status": "not-executed",
+        "reason": "No --generate flag"
+      }
+    }
+  ],
+  "elapsed_seconds": 5.084
+}

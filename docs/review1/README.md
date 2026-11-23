@@ -1,11 +1,13 @@
-# IS373 Review 1 — evolving individual project record
+# IS373 Reviews 1–2 — evolving individual project record
 
-Plan due **November 17, 2026, 1:00 PM Eastern**. Research/audit checked November 9, 2026.
-Owner: Kushal Patel. This is the single individual record; extend its two sections through Build, Checked Release and Improve. Research is AI-assisted and recommendations remain provisional for student review. No portfolio or RAG implementation, hosted release, benchmark, or peer feedback is claimed here.
+Review 1 Plan due **November 17, 2026, 1:00 PM Eastern**. Review 2 Build deadline supplied by Canvas: **December 1, 2026, 1:00 PM Eastern**. Build audit/checks: November 23, 2026.
+Owner: Kushal Patel. This is the single individual record; extend its two sections through Build, Checked Release and Improve. Research and implementation are AI-assisted. The portfolio and RAG pipeline are now implemented and checked locally as detailed below. Live deployment approval and real Gemini credentials/free-tier confirmation are pending; no working hosted RAG journey or peer feedback is claimed. Earlier Plan prose is retained as historical evidence, not current implementation status.
 
-[Repository](https://github.com/kushalpatel71/my-app-studio) · [Plan branch](https://github.com/kushalpatel71/my-app-studio/tree/feature/review1-plan) · [Issue #7](https://github.com/kushalpatel71/my-app-studio/issues/7) · [PR #8](https://github.com/kushalpatel71/my-app-studio/pull/8) (open; not merged)
+[Repository](https://github.com/kushalpatel71/my-app-studio) · [Plan branch](https://github.com/kushalpatel71/my-app-studio/tree/feature/review1-plan) · [Issue #7](https://github.com/kushalpatel71/my-app-studio/issues/7) · [PR #8](https://github.com/kushalpatel71/my-app-studio/pull/8) (merged November 23, 2026 at `1efd73e`)
 
 ## Instructor requirements and repository audit
+
+**Review 2 access note (November 23):** the supplied current portfolio, individual and milestones pages returned a 114-byte client redirect stub to `/lander`; the GitHub source fallbacks returned 404. Their current contents could not be re-read. This Build follows the full Canvas requirements supplied in the task, including the authoritative December 1, 1 PM Eastern deadline. Prior November 9 source-reading notes below remain historical.
 
 All five required pages were read on November 9 using direct HTTPS retrieval after browser-tool errors:
 [milestones/rubric](https://kaw393939.github.io/is373-studio/course/milestones.html), [career handout](https://kaw393939.github.io/is373-studio/handouts/career-research.html), [database/RAG handout](https://kaw393939.github.io/is373-studio/handouts/database-rag-research.html), [record template](https://kaw393939.github.io/is373-studio/templates/project-record.html), [Plan example](https://kaw393939.github.io/is373-studio/examples/plan.html).
@@ -23,7 +25,25 @@ All three implementations are present on main; [studio.json](../../studio.json) 
 
 ### 1. Individual portfolio + career research
 
-**Status:** Research and Plan drafted; student reflection/selection review pending. Build (November 24), Checked Release (December 3) and Improve (December 10) are future work.
+#### Review 2 Build — current implementation, November 23, 2026
+
+**Status:** public portfolio implemented at `/portfolio`; RAG case study at `/portfolio/projects/rag`. **Hosted portfolio URL: not yet deployed/verified.** The proposed hostname in the Docker runbook is not a live-link claim. [Build issue #9](https://github.com/kushalpatel71/my-app-studio/issues/9); branch `feature/review2-build`, based on merged Review 1 main `1efd73e16552abf3336e0dd897c903300225db82`.
+
+- [Portfolio template](../../app/templates/portfolio.html), [case study](../../app/templates/rag_case.html), [additive routes](../../app/features/review2.py), and scoped CSS implement the evidence-first layout. NJIT student/developer identity and provisional AI Application / Product Engineering direction come from the owner’s task. No employment, credentials or independent AI expertise is invented.
+- About, Skills, Projects, Research and Contact anchors work by keyboard. Working links connect the existing car website, RAG case study, assistant, GitHub profile, application source, account/role PRs and project record. Car Builders Place remains at `/`; its build index/details, About, account, dashboard, logout and current-role behavior remain intact.
+- Car Builders Place’s case study points to actual FastAPI/authentication/authorization/SQLite/test work. RAG’s case study identifies five original guides, actual index count, retrieval flow, ONNX adaptation, checks and limitations. Group Content System remains **contribution evidence pending**: no verified group repo/task/diff was supplied, and no group files were modified. No individual group contribution is fabricated.
+- Review 1’s GovWell research emphasized grounded AI/evaluation; that finding motivated inspectable retrieved IDs, sources and explicit operational status. The Palantir comparison motivated reviewable delivery decisions. Evidence-first usefulness to recruiters is still a hypothesis, not a peer-tested result.
+- GitHub is the supplied public professional link. Dedicated public email/contact route awaits approval; LinkedIn and résumé are omitted because none was supplied. No inferred address from server configuration is published.
+
+**Actual checks:** the full `python3 studio.py check` passed Black/Pylint, 120 application/request tests (110 previous + 10 new), 18 unchanged instructor contracts through APP-003, and 15 real Chromium cases (11 previous + 4 new). The base Python 3.14 run explicitly skipped the optional real-Chroma module and five local-simulation cases; they ran separately under Python 3.12, as recorded in section 2. New browser cases verify anonymous access, anchor navigation, case-study → assistant links, 1440/390/320px layout without horizontal overflow, keyboard activation, answer/submit state with an empty test corpus, and a failed-network UI fixture. The UI fixture is not real generation. AI visually inspected actual desktop/mobile renders; no student observation is inferred. A separate browser run with the real index displayed missing-key failure, exposed cosine trace `CBP-S01-v1-40f3df8f794e-2` / `0.4277`, and opened its indexed source.
+
+**Implemented / unfinished:** routes, layout, evidence links, accurate labels and accessible controls are implemented. Dedicated contact information, verified group contribution, optional professional links, user/peer review and public hosting are unfinished. The individual record remains this file; historical Review 1 research follows.
+
+**Changed:** added public portfolio/case study and cross-navigation without replacing the car site. **Checked:** actual local regression, keyboard/layout cases, rendered pages and real retrieval-source opening. **Next:** approve the isolated existing-server deployment; supply public contact/group evidence; verify HTTPS and a real reader task. **My contributions / AI assistance:** owner selected the scope, topic, preservation constraints, provisional direction and Docker/Traefik requirement. AI authored code, corpus, tests, research synthesis and this factual record. Personal understanding/interpretation remains not yet evidenced for this Build; no fabricated reflection or peer review fills that gap.
+
+#### Historical Review 1 portfolio research and plan
+
+**Historical Plan status (November 9):** Research and Plan drafted; student reflection/selection review pending. The earlier November 24 Build date is superseded by the supplied Canvas December 1 deadline.
 
 #### Research: three original employer records
 
@@ -114,7 +134,69 @@ Choose **A** provisionally: it exposes inspectable work early for the target rea
 
 ### 2. Individual RAG app + technical research
 
-**Status:** proposed **Car Builds Knowledge Assistant**; research/design only. No import, vector, generated answer, benchmark or hosted RAG functionality exists or was tested in this task.
+#### Review 2 Build — current implementation, November 23, 2026
+
+**Status:** real approved-file ingestion, persistent vectors, semantic retrieval, keyword comparison, source UI and Gemini HTTP integration are implemented. **Hosted RAG URL: not yet deployed/verified. Actual Gemini answer: unavailable — no key or free-tier project confirmation supplied.** A mock is used only in isolated tests; no successful hosted generation is claimed.
+
+**Architecture and compatibility:** retain FastAPI/Jinja and the existing account/security services. Chroma `1.5.9`, ONNX Runtime `1.23.2`, tokenizers `0.23.3`, NumPy `2.5.5` were installed and exercised under Python 3.12.16. The existing Python 3.14 car environment has no matching ONNX Runtime wheel and the original unpinned Sentence Transformers/Chroma installation failed resolution. Use Chroma’s CPU ONNX export of Sentence Transformers `all-MiniLM-L6-v2` rather than the PyTorch-based package. This preserves genuine 384-dimensional neural embeddings while reducing runtime dependencies. ONNX intra/inter-op thread pools are explicitly one thread. Model archive SHA-256 is verified by the pinned Chroma implementation: `913d7300ceae3b2dbc2c50d1de4baacab4be7b9380491c27fab7418616a16ec3`.
+
+[Current official Gemini model documentation](https://ai.google.dev/gemini-api/docs/models/gemini-3.5-flash-lite) identifies `gemini-3.5-flash-lite` as supported with structured text output. Pricing checked November 23: free input/output on the documented free tier; standard paid rates $0.30 input / $2.50 output per million tokens. No paid project, billing or API usage was enabled. Free-tier content may be used to improve Google products; the chat UI discloses provider transfer. Real account/model/quota access is unverified. Orbit discovery found generateContent but returned an old model example; the current official model documentation governs the identifier. Postman CLI 1.75.0 lacks `status`, and signed-in owner mock search was unavailable; a local contract simulation was built instead. Neither that simulation nor model documentation supplies credentials.
+
+**Chosen comparison:** persistent cosine vectors are the semantic experiment, SQLite FTS5 is the simpler same-corpus keyword baseline. No graph database or hybrid fusion is implemented: the tiny evaluation does not show a retrieval miss requiring them. Both methods put the expected source first for all four supported questions. This does not demonstrate vector superiority; the authored paraphrase guide contains matching vocabulary. Broader queries and independent reader wording remain future evaluation.
+
+**Source/import manifest:** [manifest](../rag/corpus/manifest.json) contains five original AI-authored project guides requested by the owner for this Build. The task explicitly requested original permitted documents and provider context; attribution is not presented as independent student authorship. No third-party photos/manuals/employer prose/private account data is indexed.
+
+| ID | Title / file | Version / permission | Actual chunks |
+|---|---|---|---|
+| CBP-S01 | [Site navigation](../rag/corpus/navigation.md), checked against showcase routes | v1 / original project text, public/provider context | 3 |
+| CBP-S02 | [Understanding sample builds](../rag/corpus/sample-builds.md), checked against brand data | v1 / same permission | 3 |
+| CBP-S03 | [Modification categories](../rag/corpus/categories.md), original scope-limited glossary | v1 / same permission | 4 |
+| CBP-S04 | [Accounts and access](../rag/corpus/access.md), checked against account/role routes | v1 / same permission | 4 |
+| CBP-S05 | [Assistant scope and provenance](../rag/corpus/assistant-scope.md), original policy guide | v1 / same permission | 4 |
+
+Actual index generation: `c8f0e4d840fdef5f40a4f4ec`; **5 documents / 18 chunks**. [Machine-readable retrieval receipt](../rag/retrieval-evidence.json) records executed ranks/IDs/scores. [Importer](../../app/rag_store.py) validates fixed-root UTF-8 Markdown, ≤5 files/20 KB each, unique allowlisted IDs, version/provenance/permission, rejects symlinks/traversal/HTML, cleans CRLF and whitespace, and chunks by heading/paragraph with a real ≤200-word-piece cap. Chunk IDs include source ID/version/hash/ordinal. SQLite stores complete text/provenance/source hash; Chroma persists vectors under a staged snapshot. Activation changes atomically only after staging succeeds. Changed bytes require a version bump; stale/removed sources leave current retrieval, while historical indexed passages remain addressable. Source-span offsets and retention cleanup are not implemented; exact retained passage text and content hashes are available.
+
+**Actual retrieval evidence:** query “Where does View Details take me?” returned:
+
+| Rank | Chunk ID | Cosine similarity |
+|---|---|---|
+| 1 | `CBP-S01-v1-40f3df8f794e-2` | 0.42770 |
+| 2 | `CBP-S02-v1-d8b616f8c5ce-2` | 0.31188 |
+| 3 | `CBP-S01-v1-40f3df8f794e-3` | 0.31140 |
+
+Top passage begins “Site navigation” and explains that View Details opens an individual sample build detail page, with the three real detail paths. The source route `/rag/sources/CBP-S01-v1-40f3df8f794e-2` was actually opened in Chromium. Scores are relevance signals, not factual confidence. Top three passages scoring ≥0.30 become bounded provider context. Missing context returns insufficient evidence without a model call.
+
+| Evaluation question/type | Expected | Actual top vector source / cosine | Keyword baseline observation |
+|---|---|---|---|
+| Where does View Details take me? / exact | Navigation | CBP-S01 / 0.42770 | CBP-S01 first |
+| Where can I look at the upgrades on one example car? / paraphrase | Navigation/sample interpretation | CBP-S01 / 0.58849 | CBP-S01 first |
+| Which role may access the administration page? / relationship | Access guide, admin role | CBP-S04 / 0.63688 | CBP-S04 first |
+| What does the suspension category describe in this assistant? / ordinary | Glossary | CBP-S03 / 0.63739 | CBP-S03 first |
+| What measured horsepower gain will this build give my car? / unanswerable | No numeric claim; scope/abstention | CBP-S05 / 0.40816; passage explicitly lacks measurements | CBP-S05 first; real generated abstention pending |
+
+**Generation and security:** [provider boundary](../../app/rag_generation.py) makes a real server-side Gemini REST call only with a key and `RAG_PROVIDER_APPROVED=free-tier-confirmed`. It applies a 20-second timeout, 600-output-token cap, JSON parsing and retrieved-ID validation. Invalid/no citations invalidate a supported answer; an unsupported model answer is normalized to insufficient evidence. Text is escaped in HTML/assigned with `textContent`, never interpreted as model HTML. A valid ID still does not establish every claim’s support; human review remains necessary. [API contract](../rag/API.md) records input/status/trace behavior. Public questioning requires no account; import checks current admin status and existing CSRF. Fixed paths, 8192-byte body cap, 1000-character question limit, persistent five/minute socket-peer and 100/day attempted-generation limits, and a one-generation lock bound public use. Behind Traefik the peer limit is shared across visitors. No questions are retained, no vector/admin database port is exposed, and no private account record enters context. Missing keys, timeouts and provider failures return clear 503 errors with available retrieval traces.
+
+**Executed checks (expected → actual):**
+
+- Full car/application regression: Black/Pylint; 120 application tests, 18 unchanged contracts, 15 Chromium cases passed. Base environment explicitly skips optional dependencies/simulation; skips are not counted as RAG passes.
+- Real CPU/Chroma suite: **8 passed**. Five-document import → 5/18; 384-dimensional embedding → 384; repeat import → `unchanged`/same counts; exact/paraphrase/relationship/glossary → expected source ranked first; missing measurement → scope passage; changed bytes without version → rejected; v2 → no current v1 hits; removed source → excluded; invalid permission → active snapshot unchanged; new process → 5/18 and navigation retrieval retained.
+- Request/security suite: **10 passed** including public pages, body/schema/rate limits, empty-index abstention, invalid citations, missing key/approval and real auth/CSRF boundary. Anonymous import 401; member 403; promoted admin without CSRF 403; valid admin+CSRF reaches importer; arbitrary path/body 400; demotion on same session 403. The fast permission case uses a recording importer; real ingestion is tested separately.
+- Local Postman simulation with the **real HTTP client**: **5 passed**, including HTTP 503 HTML failure, invalid citation, actual delayed-response timeout, supported/insufficient JSON parsing, full real embedding/retrieval → simulated generation → actual source route, public missing-key 503 and timeout 503. Request events confirm generateContent was exercised. Test answer: “View Details opens an individual sample build detail page.” Citation was the actual retrieved `CBP-S01-v1-40f3df8f794e-2`. **This is a simulated answer, not an actual Gemini answer.**
+- Actual browser with real index: no horizontal overflow at 1440/390/320px; supported question → honest missing-key 503 + retrieval trace; trace link → exact indexed navigation passage. No live model answer is claimed.
+
+**Docker/hosting:** [production Dockerfile](../../deploy/Dockerfile), [Compose](../../deploy/compose.yml), [private-env example](../../deploy/app.env.example), and [build/deploy/restart/backup/rollback runbook](../../deploy/README.md) are prepared. Read-only existing-server audit confirmed authorized `is373-server` SSH, 1 CPU, 1967 MiB RAM / approximately 1421 MiB available, 44 GiB free disk, existing calculator/Traefik/practical-prod/practical-qa, Docker 29.1.3 and `hosting-web`. Existing proxy uses Docker labels with default HTTPS/Let's Encrypt on `websecure`; no proxy edit is needed. Proposed new isolated app uses one worker, 768 MiB/0.75 CPU cap, non-root/read-only filesystem, no published host port, one persistent named volume and a new noncolliding hostname. Existing services/volumes/routes are preserved. Live infrastructure changes and certificate provisioning await explicit owner approval. A proposed hostname is not a verified hosted URL.
+
+**Local container evidence:** image build executed successfully; Compose validation passed. A quoted tmpfs option was corrected after the first smoke launch rejected the YAML list split; no existing container/volume was deleted. The isolated local production container reached Docker `healthy` and HTTP `/health` returned `{"status":"ok","mode":"production"}`. Real container import returned 5 documents/18 chunks; repeat import was unchanged. Restart retained 5/18 and semantic navigation retrieval. Sampled memory was about 385 MiB while embedding runtime was present and about 54 MiB after the trusted import process exited; these are samples, not peak-load proof. A transient health timeout during initial indexing motivated explicitly bounded ONNX thread pools. Final-image/CI/live measurements will be recorded when executed. No remote container, volume or proxy config has been changed.
+
+**Reproduce:** `python3 studio.py check`; install `requirements-rag.txt` in Python 3.12; run `python -m pytest -q tests/test_rag_real.py tests/test_review2.py`; run `python scripts/evaluate_rag.py --index PRIVATE_INDEX_PATH`. For provider simulation: `postman simulation run postman/simulations/review2-provider.sim.yaml --port 4511 --no-history`, then `RAG_SIMULATION_URL=http://127.0.0.1:4511/gemini/v1beta/models/ python -m pytest -q tests/test_rag_provider_http.py`. No real API key is needed for simulations. `--generate` on the evaluation script explicitly requests actual generation and still requires approved credentials.
+
+**Limitations / December 3 Next:** obtain deployment approval and verify public HTTPS + all existing sites; configure an approved free-tier provider key privately and execute real generated answers/abstention/citation support review; verify backup/restore and measured import/query headroom on the server; supply contact/group evidence and a real student interpretation/reader observation. Improve corpus/query diversity, per-client trusted-proxy limiting, source offsets/retention and failure observability based on measured needs. No peer feedback, personal reflection or understanding is fabricated.
+
+**Changed:** implemented versioned ingestion, actual neural embeddings, persistent Chroma/FTS, public chat/source UI, real Gemini integration, security boundaries, tests and Docker deployment proposal. **Checked:** real import/vector/rank/lifecycle/persistence tests, direct auth/CSRF tests, local HTTP simulation and browser trace/source opening; simulated versus live evidence separated. **Next:** approval-gated deployment and real configured provider journey before claiming hosted completion. **My contributions / AI assistance:** owner supplied car topic, repositories, provisional direction, preservation requirements and Docker/Traefik scope. AI implemented, authored original guides/tests, executed the listed checks and drafted the record. Independent student reasoning and Build peer feedback remain not yet evidenced.
+
+#### Historical Review 1 technical research and plan
+
+**Historical Plan status (November 9):** proposed Car Builds Knowledge Assistant; research/design only at that time. The current Build status above supersedes these earlier planned-implementation statements.
 
 **Reader/task:** a Car Builders Place visitor asks how to navigate the sample builds and how to interpret illustrative modification information. Answer only from approximately five short owner-authored help documents. Exclude repair instructions, safety advice, measured performance, fitment claims and personal/account data. A small informational assistant provides a bounded portfolio case study.
 
@@ -275,7 +357,7 @@ Keep API credentials server-side in ignored environment/secret storage; no brows
 
 **Student review before submission:** confirm original job pages and eligibility privately; complete the private reflection in own words; review provisional direction/layout and explain why; author/approve five sources; choose professional contact and optionally supply resume/LinkedIn; supply real group project/contribution evidence; confirm budget/provider data terms and actual server constraints. These are open items, not actions completed by AI.
 
-## Canvas-ready individual Plan submission
+## Historical Canvas-ready individual Plan submission (Review 1)
 
 Copy this section after reviewing the pending decisions. No hosted URL is required at Plan.
 

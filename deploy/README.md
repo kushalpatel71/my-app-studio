@@ -159,3 +159,25 @@ compose -f deploy/compose.yml config --no-env-resolution --quiet`, without readi
 secrets. Docker Desktop could not launch locally (missing app executable); image
 build/startup/persistent restart verification runs in the dedicated GitHub CI job.
 These local/CI checks do not establish an updated production release.
+
+## Review 3 approved release — operational note
+
+The owner explicitly approved commit `05f8da7bc6ffc6ff3470a53fa9dbba98cb4011d4`
+on November 25. Production receipts and final status are in the existing individual
+record; PR merge and Issue #11 closure remain separately unauthorized.
+
+The first launch failed because the private release helper's `umask 077` propagated
+into public Git checkout files. Docker copied root-owned mode-0600 application
+source, which UID 10001 could not import. The health gate restored the prior image
+without restoring/deleting the volume or changing secrets. Only public tracked
+source-file/directory permissions were normalized; the same approved commit was
+rebuilt. Before recreating production, an isolated container using UID 10001,
+disposable tmpfs storage and no live credentials passed startup/routes/access denial.
+
+For future releases, keep private backup/env/receipt creation under `umask 077`,
+but use `umask 022` for public source checkout or explicitly verify its Git-tracked
+public file modes before building. Never recursively chmod private runtime data,
+`.git` credentials or server environment files. Run the isolated non-root startup
+probe before moving traffic. A Git SHA and passing CI do not verify server build-context
+permissions. Retain failed-attempt and downtime receipts; do not relabel a rollback
+as first-attempt success.

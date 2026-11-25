@@ -1,0 +1,110 @@
+{
+  "deployed_commit": "05f8da7bc6ffc6ff3470a53fa9dbba98cb4011d4",
+  "status": "verified on actual hosted app",
+  "previous_image": "517b03c947c4fb0e14947fbda98fab11b850a267",
+  "previous_image_retained": true,
+  "initial_failed_attempts_and_rollbacks": 3,
+  "final_attempt_rollback": false,
+  "provider_diagnostics": [
+    {
+      "http_status": 503,
+      "provider_status": "UNAVAILABLE",
+      "raw_response_or_key_exposed": false
+    },
+    {
+      "http_status": 200,
+      "generation_valid": true,
+      "citation": "CBP-S04-v1-a9408862c957-3",
+      "raw_response_or_key_exposed": false
+    }
+  ],
+  "deployment_verification_provider_attempts_total": 8,
+  "successful_generations_total": 6,
+  "provider_rejections_total": 2,
+  "final_attempt_provider_generations": 4,
+  "final_attempt_public_questions_including_browser": 5,
+  "observed_downtime_intervals": [
+    {
+      "first_failed_sample": "2026-11-25T18:53:01.753540+00:00",
+      "first_healthy_sample": "2026-11-25T18:53:39.147896+00:00",
+      "sample_interval_seconds": 1,
+      "observed_seconds": 37.39,
+      "attempt": 1
+    },
+    {
+      "first_failed_sample": "2026-11-25T18:53:51.738430+00:00",
+      "first_healthy_sample": "2026-11-25T18:55:55.472742+00:00",
+      "sample_interval_seconds": 1,
+      "observed_seconds": 123.73,
+      "attempt": 1
+    },
+    {
+      "first_failed_sample": "2026-11-25T19:00:52.443004+00:00",
+      "first_healthy_sample": "2026-11-25T19:01:02.723731+00:00",
+      "sample_interval_seconds": 1,
+      "attempt": 2,
+      "observed_seconds": 10.28
+    },
+    {
+      "first_failed_sample": "2026-11-25T19:01:05.891515+00:00",
+      "first_healthy_sample": "2026-11-25T19:01:16.352323+00:00",
+      "sample_interval_seconds": 1,
+      "attempt": 2,
+      "observed_seconds": 10.46
+    },
+    {
+      "first_failed_sample": "2026-11-25T19:02:22.432280+00:00",
+      "first_healthy_sample": "2026-11-25T19:02:30.807143+00:00",
+      "sample_interval_seconds": 1,
+      "attempt": 3,
+      "observed_seconds": 8.37
+    },
+    {
+      "first_failed_sample": "2026-11-25T19:02:36.068282+00:00",
+      "first_healthy_sample": "2026-11-25T19:02:44.439591+00:00",
+      "sample_interval_seconds": 1,
+      "attempt": 3,
+      "observed_seconds": 8.37
+    },
+    {
+      "first_failed_sample": "2026-11-25T19:03:04.590725+00:00",
+      "first_healthy_sample": "2026-11-25T19:03:13.835323+00:00",
+      "sample_interval_seconds": 1,
+      "attempt": 3,
+      "observed_seconds": 9.24
+    },
+    {
+      "first_failed_sample": "2026-11-25T19:06:43.550132+00:00",
+      "first_healthy_sample": "2026-11-25T19:06:52.967953+00:00",
+      "sample_interval_seconds": 1,
+      "attempt": 4,
+      "observed_seconds": 9.42
+    },
+    {
+      "first_failed_sample": "2026-11-25T19:06:58.236120+00:00",
+      "first_healthy_sample": "2026-11-25T19:07:06.604772+00:00",
+      "sample_interval_seconds": 1,
+      "attempt": 4,
+      "observed_seconds": 8.37
+    }
+  ],
+  "observed_downtime_seconds_total": 225.63,
+  "downtime_method": "One-second scheduled public /health samples with network latency and up to three-second timeouts; observed intervals are approximate, not exact server uptime. Includes backup, failed launches/rollbacks, final recreate and authorized persistence restart.",
+  "data_restored_to_live_volume": false,
+  "backup_and_offhost_checksum": "ce7852e34963ec0535ba230cdb6a8ae209c3dfe033080ec6c48a4050ed1e47e3",
+  "backup_bytes": 166377373,
+  "private_backup_or_keys_committed": false,
+  "final_checks": {
+    "deployed_commit": "05f8da7bc6ffc6ff3470a53fa9dbba98cb4011d4",
+    "healthy": true,
+    "secrets_and_private_env_unchanged": true,
+    "all_existing_accounts_and_roles_preserved": true,
+    "volume_preserved": true,
+    "proxy_limiting_disabled": true,
+    "original_services_unchanged": true,
+    "proxy_config_unchanged": true,
+    "previous_image_retained": true
+  },
+  "merge_performed": false,
+  "issue_closed": false
+}

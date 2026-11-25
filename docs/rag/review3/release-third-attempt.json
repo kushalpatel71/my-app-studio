@@ -1,0 +1,449 @@
+{
+  "release": "05f8da7bc6ffc6ff3470a53fa9dbba98cb4011d4",
+  "origin": "https://carbuilders.192.81.212.73.sslip.io",
+  "started_at": "2026-11-25T19:02:09.757403+00:00",
+  "proxy_aware_limiting": "disabled",
+  "stages": {
+    "backup": {
+      "action": "backup",
+      "start": "2026-11-25T18:53:00.967209+00:00",
+      "end_healthy": "2026-11-25T18:53:40.787740+00:00",
+      "bytes": 166377373,
+      "sha256": "ce7852e34963ec0535ba230cdb6a8ae209c3dfe033080ec6c48a4050ed1e47e3",
+      "old_app_restarted_healthy": true
+    },
+    "offhost_backup": {
+      "checksum_matches": true,
+      "private_file_mode": "0600",
+      "sqlite_integrity": [
+        "studio.sqlite3",
+        "manifest.sqlite3",
+        "chroma.sqlite3"
+      ],
+      "restored_stats": {
+        "documents": 5,
+        "chunks": 18
+      },
+      "actual_restored_semantic_retrieval": "CBP-S01"
+    },
+    "watchdog": {
+      "rollback_watchdog_armed": true,
+      "deadline_minutes": 30
+    },
+    "deploy": {
+      "action": "deploy",
+      "deployed_commit": "05f8da7bc6ffc6ff3470a53fa9dbba98cb4011d4",
+      "healthy": true,
+      "at": "2026-11-25T19:02:31.199106+00:00"
+    }
+  },
+  "questions": [
+    {
+      "kind": "exact",
+      "question": "Where does View Details take me?",
+      "status": 200,
+      "latency_seconds": 4.824,
+      "response": {
+        "answer": "View Details opens an individual sample build detail page.",
+        "citations": [
+          {
+            "id": "CBP-S01-v1-40f3df8f794e-2",
+            "title": "Site navigation",
+            "url": "/rag/sources/CBP-S01-v1-40f3df8f794e-2"
+          }
+        ],
+        "insufficient": false,
+        "trace": [
+          {
+            "id": "CBP-S01-v1-40f3df8f794e-2",
+            "source_id": "CBP-S01",
+            "version": "v1",
+            "title": "Site navigation",
+            "score": 0.4277,
+            "metric": "cosine",
+            "url": "/rag/sources/CBP-S01-v1-40f3df8f794e-2"
+          },
+          {
+            "id": "CBP-S02-v1-d8b616f8c5ce-2",
+            "source_id": "CBP-S02",
+            "version": "v1",
+            "title": "Understanding sample builds",
+            "score": 0.31188,
+            "metric": "cosine",
+            "url": "/rag/sources/CBP-S02-v1-d8b616f8c5ce-2"
+          },
+          {
+            "id": "CBP-S01-v1-40f3df8f794e-3",
+            "source_id": "CBP-S01",
+            "version": "v1",
+            "title": "Site navigation",
+            "score": 0.3114,
+            "metric": "cosine",
+            "url": "/rag/sources/CBP-S01-v1-40f3df8f794e-3"
+          }
+        ],
+        "generation": "gemini"
+      },
+      "citation_ids_valid": true,
+      "opened_citations": [
+        {
+          "id": "CBP-S01-v1-40f3df8f794e-2",
+          "url": "https://carbuilders.192.81.212.73.sslip.io/rag/sources/CBP-S01-v1-40f3df8f794e-2",
+          "status": 200,
+          "location_visible": true
+        }
+      ]
+    },
+    {
+      "kind": "roles",
+      "question": "Which role may access the administration page?",
+      "status": 503,
+      "latency_seconds": 0.949,
+      "response": {
+        "detail": "Generation failed: provider rejected the request. Please try again later.",
+        "error_code": "provider-http",
+        "trace": [
+          {
+            "id": "CBP-S04-v1-a9408862c957-3",
+            "source_id": "CBP-S04",
+            "version": "v1",
+            "title": "Accounts and access",
+            "score": 0.63688,
+            "metric": "cosine",
+            "url": "/rag/sources/CBP-S04-v1-a9408862c957-3"
+          },
+          {
+            "id": "CBP-S04-v1-a9408862c957-4",
+            "source_id": "CBP-S04",
+            "version": "v1",
+            "title": "Accounts and access",
+            "score": 0.4254,
+            "metric": "cosine",
+            "url": "/rag/sources/CBP-S04-v1-a9408862c957-4"
+          },
+          {
+            "id": "CBP-S04-v1-a9408862c957-1",
+            "source_id": "CBP-S04",
+            "version": "v1",
+            "title": "Accounts and access",
+            "score": 0.36013,
+            "metric": "cosine",
+            "url": "/rag/sources/CBP-S04-v1-a9408862c957-1"
+          }
+        ],
+        "generation": "unavailable"
+      }
+    }
+  ],
+  "actual_provider_calls": 1,
+  "session_valid_before_retry_recreate": true,
+  "backup_reused_after_startup_only_failure": true,
+  "routes": {
+    "/": 200,
+    "/builds": 200,
+    "/builds/skyline": 200,
+    "/builds/miata": 200,
+    "/builds/bmw": 200,
+    "/about": 200,
+    "/signup": 303,
+    "/login": 303,
+    "/portfolio": 200,
+    "/portfolio/projects/rag": 200,
+    "/rag": 200,
+    "/health": 200
+  },
+  "existing_session_valid_after_recreate": true,
+  "import": {
+    "status": "unchanged",
+    "generation": "c8f0e4d840fdef5f40a4f4ec",
+    "documents": 5,
+    "chunks": 18
+  },
+  "repeat_import": {
+    "status": "unchanged",
+    "generation": "c8f0e4d840fdef5f40a4f4ec",
+    "documents": 5,
+    "chunks": 18
+  },
+  "permissions": {
+    "anonymous_import": 401,
+    "member_import": 403,
+    "admin_without_csrf": 403,
+    "admin_bad_origin": 403,
+    "admin_with_csrf": 200,
+    "same_session_demotion": 403
+  },
+  "historical_source_and_new_location": {
+    "url": "https://carbuilders.192.81.212.73.sslip.io/rag/sources/CBP-S01-v1-40f3df8f794e-2",
+    "status": 200,
+    "file": "navigation.md",
+    "normalized_location_displayed": true
+  },
+  "same_session_and_source_survived_restart": true,
+  "status": "failed",
+  "failure_type": "AssertionError",
+  "rollback": {
+    "rolled_back": true,
+    "image": "517b03c947c4fb0e14947fbda98fab11b850a267",
+    "healthy": true
+  },
+  "rollback_executed": true,
+  "health_observations": [
+    {
+      "at": "2026-11-25T19:02:09.826943+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:02:10.942600+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:02:11.961259+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:02:12.998601+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:02:14.060801+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:02:15.091968+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:02:16.141098+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:02:17.188537+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:02:18.250888+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:02:19.329839+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:02:20.345093+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:02:21.382904+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:02:22.432280+00:00",
+      "status": 502
+    },
+    {
+      "at": "2026-11-25T19:02:24.553676+00:00",
+      "status": 404
+    },
+    {
+      "at": "2026-11-25T19:02:25.581205+00:00",
+      "status": 404
+    },
+    {
+      "at": "2026-11-25T19:02:26.613805+00:00",
+      "status": 404
+    },
+    {
+      "at": "2026-11-25T19:02:27.665448+00:00",
+      "status": 404
+    },
+    {
+      "at": "2026-11-25T19:02:28.728842+00:00",
+      "status": 404
+    },
+    {
+      "at": "2026-11-25T19:02:29.761350+00:00",
+      "status": 404
+    },
+    {
+      "at": "2026-11-25T19:02:30.807143+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:02:31.859689+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:02:32.914903+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:02:33.969115+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:02:35.009355+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:02:36.068282+00:00",
+      "status": 502
+    },
+    {
+      "at": "2026-11-25T19:02:38.148929+00:00",
+      "status": 404
+    },
+    {
+      "at": "2026-11-25T19:02:39.207822+00:00",
+      "status": 404
+    },
+    {
+      "at": "2026-11-25T19:02:40.254126+00:00",
+      "status": 404
+    },
+    {
+      "at": "2026-11-25T19:02:41.298157+00:00",
+      "status": 404
+    },
+    {
+      "at": "2026-11-25T19:02:42.352044+00:00",
+      "status": 404
+    },
+    {
+      "at": "2026-11-25T19:02:43.393925+00:00",
+      "status": 404
+    },
+    {
+      "at": "2026-11-25T19:02:44.439591+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:02:45.498458+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:02:46.545969+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:02:47.592066+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:02:49.045712+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:02:50.062030+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:02:51.080370+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:02:52.096278+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:02:53.107597+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:02:54.129956+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:02:55.145948+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:02:56.411098+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:02:57.433261+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:02:58.450312+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:02:59.468726+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:03:00.485359+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:03:01.539382+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:03:02.552131+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:03:03.573551+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:03:04.590725+00:00",
+      "status": 502
+    },
+    {
+      "at": "2026-11-25T19:03:05.602629+00:00",
+      "status": 502
+    },
+    {
+      "at": "2026-11-25T19:03:07.622054+00:00",
+      "status": 404
+    },
+    {
+      "at": "2026-11-25T19:03:08.635326+00:00",
+      "status": 404
+    },
+    {
+      "at": "2026-11-25T19:03:09.645852+00:00",
+      "status": 404
+    },
+    {
+      "at": "2026-11-25T19:03:10.662512+00:00",
+      "status": 404
+    },
+    {
+      "at": "2026-11-25T19:03:11.709961+00:00",
+      "status": 404
+    },
+    {
+      "at": "2026-11-25T19:03:12.752806+00:00",
+      "status": 404
+    },
+    {
+      "at": "2026-11-25T19:03:13.835323+00:00",
+      "status": 200
+    }
+  ],
+  "observed_downtime_intervals": [
+    {
+      "first_failed_sample": "2026-11-25T19:02:22.432280+00:00",
+      "first_healthy_sample": "2026-11-25T19:02:30.807143+00:00",
+      "sample_interval_seconds": 1
+    },
+    {
+      "first_failed_sample": "2026-11-25T19:02:36.068282+00:00",
+      "first_healthy_sample": "2026-11-25T19:02:44.439591+00:00",
+      "sample_interval_seconds": 1
+    },
+    {
+      "first_failed_sample": "2026-11-25T19:03:04.590725+00:00",
+      "first_healthy_sample": "2026-11-25T19:03:13.835323+00:00",
+      "sample_interval_seconds": 1
+    }
+  ],
+  "ended_at": "2026-11-25T19:03:14.312577+00:00",
+  "diagnosis": "Approved release passed health, auth/current-role/CSRF/reimport/source-location/restart and one genuine cited answer. Next actual model request received provider HTTP failure; automatic rollback restored old image healthy. Separate sanitized diagnostic returned Google HTTP 503 UNAVAILABLE, no quota violations/retry delay.",
+  "automatic_rollback_verified": true
+}

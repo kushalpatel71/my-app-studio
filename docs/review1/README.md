@@ -238,7 +238,7 @@ For Review 2, I worked on building a RAG application called the Car Builds Knowl
 
 I learned that RAG stands for Retrieval-Augmented Generation. My application takes five approved documents and divides them into 18 smaller chunks. MiniLM converts the text into embeddings, and Chroma stores those embeddings so the application can retrieve information related to a user's question. Gemini then uses the retrieved information to generate an answer with source citations.
 
-One important thing I learned is that AI-generated answers should be supported by real evidence. For example, when I asked where the View Details button takes a user, the application returned an answer with a citation to the supporting document.
+One important thing I learned is that AI-generated answers should be supported by real evidence. For example, during a recorded hosted test, the application was asked where the View Details button takes a user and returned an answer with a citation to the supporting document.
 
 Another important result was the horsepower question. Since the documents did not contain a verified horsepower measurement, the chatbot returned insufficient evidence instead of making up a number. This helped me understand why handling missing information is an important part of a reliable RAG system.
 

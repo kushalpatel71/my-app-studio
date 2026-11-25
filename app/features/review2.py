@@ -2,6 +2,7 @@
 
 import hashlib
 import json
+import os
 from pathlib import Path
 import threading
 import time
@@ -11,6 +12,7 @@ from fastapi.responses import JSONResponse
 from pydantic import BaseModel, ConfigDict, Field
 
 from app import security
+from app.rag_identity import client_identity, trusted_proxy_ips
 from app.rag_generation import GenerationError, generate
 from app.rag_store import CorpusError, RagStore
 
@@ -33,6 +35,9 @@ def initialize(application, settings):
     """Do not load/download embeddings during ordinary car-site startup."""
     application.state.rag_store = RagStore(Path(str(settings.database) + ".rag"))
     application.state.rag_generation_lock = threading.Lock()
+    application.state.rag_trusted_proxies = trusted_proxy_ips(
+        os.getenv("RAG_TRUSTED_PROXY_IPS", "")
+    )
     application.include_router(router)
 
 
@@ -94,8 +99,7 @@ def ask(request: Request, question: Question):
     """Embed → retrieve → bounded model context → validate citations."""
     index = store(request)
     now = int(time.time())
-    # Trust the socket peer, never an arbitrary client-controlled forwarding header.
-    peer = request.client.host if request.client else "unknown"
+    peer = client_identity(request, request.app.state.rag_trusted_proxies)
     bucket = hashlib.sha256(peer.encode()).hexdigest()
     if not index.consume(bucket, now // 60 * 60, 5):
         raise HTTPException(429, "Question limit reached. Try again in a minute.")
@@ -129,7 +133,12 @@ def ask(request: Request, question: Question):
         output = generate(question.question, selected)
     except GenerationError as error:
         return JSONResponse(
-            {"detail": str(error), "trace": trace, "generation": "unavailable"},
+            {
+                "detail": str(error),
+                "error_code": error.code,
+                "trace": trace,
+                "generation": "unavailable",
+            },
             status_code=503,
         )
     finally:

@@ -47,6 +47,20 @@ The public case study publishes only this high-level own-contribution summary: *
 
 **Changed:** added public portfolio/case study, accurate project/contribution labels and GitHub contact/navigation without replacing the car website. **Checked:** actual local/CI/browser/hosted access, layout, authentication and full cited-answer journey. **Next for December 3:** maintain current case-study/version links, add supplied optional professional material, and obtain the owner’s own interpretation/reader observation. **Contribution / AI assistance:** owner supplied direction/scope, approved Docker reuse, configured/rotated the key and confirmed the Free tier. AI authored implementation, original guides, tests and this factual record; AI browser observations are separate from human feedback. No personal reflection or understanding is fabricated.
 
+##### My Individual Interpretation — Portfolio (Review 2)
+
+**Student-supplied and approved interpretation:**
+
+For Review 2, my main goal was to build a working professional portfolio that shows my technical skills and the projects I have worked on. I chose an evidence-first design because I think it is more useful for someone to see my actual work rather than just read a list of skills.
+
+My portfolio includes Car Builders Place, my RAG Knowledge Assistant, and my documented group planning contributions. I focused on AI Application and Product Engineering because I am interested in developing applications that combine frontend, backend, databases, and AI technologies.
+
+One important thing I learned was that a portfolio should not only look good but should also work correctly on different devices. The tests checked navigation, mobile layouts, keyboard accessibility, and working links. I understand that passing these tests confirms the functionality that was tested, but it does not mean every possible issue has been discovered.
+
+I also learned how Docker and DigitalOcean can be used to make a project accessible online instead of running it only on my computer.
+
+Overall, I think Review 2 helped me understand the importance of presenting working projects with clear technical evidence. My next goal is to improve the portfolio based on actual user feedback and continue adding verified project accomplishments.
+
 #### Historical Review 1 portfolio research and plan
 
 **Historical Plan status (November 9):** Research and Plan drafted; student reflection/selection review pending. The earlier November 24 Build date is superseded by the supplied Canvas December 1 deadline.
@@ -215,6 +229,22 @@ Final browser, restart and real-generation checks used [deployed release 517b03c
 **Repeatable checks:** ordinary `python3 studio.py check`; Python 3.12 optional runtime via `requirements-rag.txt`; `python -m pytest -q tests -m "not e2e" contracts`; `python scripts/evaluate_rag.py --index PRIVATE_INDEX_PATH`. `--generate` explicitly requests actual approved generation. For local provider simulation use `postman simulation run postman/simulations/review2-provider.sim.yaml --port 4511 --no-history` and `RAG_SIMULATION_URL=http://127.0.0.1:4511/gemini/v1beta/models/ python -m pytest -q tests/test_rag_provider_http.py`. No real credential is used in mocks/CI.
 
 **Changed:** implemented actual import, neural embeddings, persistent vector/keyword retrieval, real Gemini generation, verified source UI, guarded administration, tests and existing-server Docker hosting. **Checked:** actual local/CI/container/hosted/browser outcomes above, with failures and simulation distinguished. **Next for December 3:** broaden independent query/load checks, improve structured-output observability/reliability, source offsets/retention and trusted-proxy per-client limiting based on measured needs; rehearse production rollback when separately approved and obtain the owner’s own interpretation/reader review. **Contribution / AI assistance:** owner selected scope/direction, approved deployment, configured/rotated the private key and confirmed Free-tier status. AI researched, authored code/corpus/tests, diagnosed dependency/sampling issues and executed the reported checks. No peer feedback, personal reflection or independent understanding is fabricated.
+
+##### My Individual Interpretation — RAG Application (Review 2)
+
+**Student-supplied and approved interpretation:**
+
+For Review 2, I worked on building a RAG application called the Car Builds Knowledge Assistant. My goal was to create a chatbot that could answer questions using information from approved documents instead of relying only on an AI model's general knowledge.
+
+I learned that RAG stands for Retrieval-Augmented Generation. My application takes five approved documents and divides them into 18 smaller chunks. MiniLM converts the text into embeddings, and Chroma stores those embeddings so the application can retrieve information related to a user's question. Gemini then uses the retrieved information to generate an answer with source citations.
+
+One important thing I learned is that AI-generated answers should be supported by real evidence. For example, during a recorded hosted test, the application was asked where the View Details button takes a user and returned an answer with a citation to the supporting document.
+
+Another important result was the horsepower question. Since the documents did not contain a verified horsepower measurement, the chatbot returned insufficient evidence instead of making up a number. This helped me understand why handling missing information is an important part of a reliable RAG system.
+
+I also learned why persistent storage matters. Using Docker and persistent storage allows the application to keep its documents and embeddings when the container restarts.
+
+Overall, I think the application met the main goals of Review 2. However, I understand that a few successful tests do not guarantee that every answer will be accurate. My next goal is to test more questions, improve error handling, and make the source references more detailed.
 
 #### Historical Review 1 technical research and plan
 
@@ -475,3 +505,179 @@ The deployed image/checkout remains `517b03c947c4fb0e14947fbda98fab11b850a267`, 
 [Actual post-merge HTTPS and real Gemini answer receipt](../rag/postmerge-evidence.json): homepage, all three car pages, About, portfolio, RAG case study, assistant, health, calculator and original production/QA returned trusted HTTPS 200. Gemini returned “View Details opens an individual sample build detail page.” The retrieved citation `CBP-S01-v1-40f3df8f794e-2` opened HTTP 200 and its supporting text was checked. No mock or credential value appears in this receipt.
 
 Post-merge local `python3 studio.py check` passed Black/Pylint, 120 application/request/tooling tests, 18 unchanged instructor contracts and 15 Chromium cases. The separate Python 3.12 optional real-vector regression/contracts passed 146 tests; five local HTTP-provider simulation cases were explicitly skipped because no simulation server was configured, and 15 browser cases were deselected and run separately by studio. All four original service snapshots and proxy hashes matched preflight. Latest main Actions are linked through the repository [Actions page](https://github.com/kushalpatel71/my-app-studio/actions?query=branch%3Amain); merge-specific CI is linked above.
+
+# Review 3 — Checked Release
+
+**Due:** December 3, 2026, 1:00 PM Eastern. Audit/check date: November 25, 2026.
+**Status:** owner-approved commit `05f8da7bc6ffc6ff3470a53fa9dbba98cb4011d4` is **deployed and verified on the actual hosted app**. Technical release is ready for owner final review. PR #12 remains unmerged and Issue #11 remains open; merge/closure are not authorized. Student interpretations are supplied and approved below; real reader/peer feedback remains pending.
+
+Starting main: [`34a93cee9105315a5538cc208cbe024b4cce998b`](https://github.com/kushalpatel71/my-app-studio/commit/34a93cee9105315a5538cc208cbe024b4cce998b). PR #10 merge `04db6b6` and [latest starting main CI](https://github.com/kushalpatel71/my-app-studio/actions/runs/45256376120) were verified. New branch: `feature/review3-checked-release`; [Issue #11](https://github.com/kushalpatel71/my-app-studio/issues/11), open. Implementation: [`572023c`](https://github.com/kushalpatel71/my-app-studio/commit/572023c); image probe/CI extension: [`1c545a8`](https://github.com/kushalpatel71/my-app-studio/commit/1c545a8). PR/CI publication receipts are recorded below after execution.
+
+**Instructor-source limitation:** the three requested HTML URLs were inaccessible through the web tool. The official repository Markdown was read: [portfolio](https://github.com/kaw393939/is373-studio/blob/main/docs/projects/portfolio.md), [individual RAG](https://github.com/kaw393939/is373-studio/blob/main/docs/projects/individual.md), [milestones](https://github.com/kaw393939/is373-studio/blob/main/docs/course/milestones.md). They confirm the December 3 Checked Release and four equal rubric categories. Supplied Canvas/task requirements govern; no optional roadmap requirement was added. A real peer try/fix/retest belongs to Improve; no peer feedback is invented here.
+
+## 1. Individual portfolio + career research
+
+**Changed**
+
+- Preserved the current charcoal/lime layout and accurate professional introduction, AI Application / Product Engineering direction, FDE comparison, linked technical skills, car/RAG case studies and limited group Plan contribution. No résumé, LinkedIn, employer experience or group implementation was invented. The separate group repository was not accessed or changed for Review 3.
+- Added four parametrized Chromium checks in [browser tests](../../tests/browser/test_browser.py) for **1440, 768, 390 and 320px**: actual Tab traversal and visible focus, overflow, heading order, sampled computed text contrast, image alt attributes/loading, internal links, form labeling, submit size and console errors. Existing assertions/contracts were retained.
+- The initial new test's mouse click changed the sequential focus starting point and caused three narrow-width failures. Fresh document navigation before keyboard traversal corrected the test setup. This was not a website defect and did not justify a redesign or weakened assertion.
+- Existing source links to main were already corrected after Review 2. The currently deployed image still has three working feature-branch evidence links; the retained branch remains available. A future approved app release will use the main links already in source.
+
+**Career research → design:** the historical Review 1 GovWell grounding/evaluation responsibilities informed visible retrieval/source evidence. The Palantir/FDE comparison informed inspectable delivery decisions and case studies. Showing tested projects before biography connects those responsibilities to actual course work; recruiter usefulness is still a hypothesis. This is a reference to the earlier dated research, not a claim that the postings are currently open or the student meets their qualifications.
+
+**Checked**
+
+- Baseline before edits: full studio check **120 application tests + 18 instructor contracts + 15 Chromium cases**, formatting/lint passed. Starting revision is above.
+- Updated local full `python3 studio.py check`: **144 application/request/tooling tests + 18 unchanged contracts + 19 Chromium cases**, Black/Pylint passed. Optional RAG/simulation skips in the base environment are explicitly recorded, not counted as passes. [Counts, environments, failures and scope](../rag/review3/checks.json).
+- AI inspected actual [tablet screenshot](../rag/review3/screenshots/portfolio-local-768.png) and [320px screenshot](../rag/review3/screenshots/portfolio-local-320.png); [desktop](../rag/review3/screenshots/portfolio-local-1440.png) and [390px](../rag/review3/screenshots/portfolio-local-390.png) captures are also retained. Text reflows and visible focus remain in the existing design. These are local current-code screenshots; automated contrast sampling is not a complete accessibility audit.
+- [Hosted route/link receipt](../rag/review3/hosted-routes-links.json) checks actual public pages, GitHub/project/evidence/contact links and existing hosted sites. Contact goes through GitHub's normal sign-in route when needed; no message was sent. [Actual hosted Chromium journey](../rag/review3/hosted-browser.json) exercised the four widths and real question → generated answer → opened passage on **existing live release `517b03c`**, not the unreleased Review 3 code.
+- Public [portfolio](https://carbuilders.192.81.212.73.sslip.io/portfolio), [car homepage](https://carbuilders.192.81.212.73.sslip.io/), [RAG case study](https://carbuilders.192.81.212.73.sslip.io/portfolio/projects/rag) and [assistant](https://carbuilders.192.81.212.73.sslip.io/rag) work over HTTPS. Existing car/account/role checks passed locally. No production restart/deployment was performed.
+
+**Next**
+
+The approved updated release is now verified in the deployment evidence below. For Improve, have a real reader identify the target direction, find skill evidence and open a project, then record their actual issue, a useful fix and retest. Optional professional material requires verified supplied information.
+
+**Student observation / interpretation: Supplied and approved by the student.**
+
+**AI assistance disclosure:** No first-person opinions, reader observations or understanding are inferred from authorization. AI performed implementation, automated/manual screenshot review, technical evaluation and factual record drafting. The owner's scope and preservation instructions are attributed only as instructions.
+
+### My Individual Interpretation — Portfolio
+
+For my portfolio, I decided to keep the evidence-first layout because I want people to see my actual projects, technical skills, and what I have accomplished rather than just reading about me. My portfolio includes Car Builders Place, my RAG application, and my documented group planning contributions.
+
+The browser testing results show that the portfolio works across desktop, tablet, and mobile screen sizes. The tests also checked navigation, keyboard accessibility, and working links. I understand that passing these tests means the tested features worked correctly, but it does not guarantee that every user will have the same experience.
+
+One important thing I learned is that a failed test does not always mean the website has a problem. For example, an initial keyboard test failed because of how the test started, and the issue was fixed by correcting the test setup.
+
+I think the portfolio is useful because it allows someone reviewing my work to open real projects and see evidence of my technical abilities. My next improvement would be to get feedback from another person and make changes based on what they find difficult to use.
+
+## 2. Individual RAG app + technical research
+
+**Changed**
+
+- [Source storage](../../app/rag_store.py) now rejects symlinked manifests and derives corpus filename, heading, line and end-exclusive Unicode character locations from the retained **LF-normalized, stripped Markdown**. Raw-file SHA-256, original versions, chunk IDs and database schema remain unchanged. This permits old citations and existing 5/18 data to work without re-embedding. Repeated/unmatched body text is labeled ambiguous/unresolved rather than assigned a guessed location. Raw-byte offsets were considered; explicit normalized character coordinates fit the existing normalized stored representation without an index migration.
+- [Generation boundary](../../app/rag_generation.py) requests JSON Schema-constrained output with the actual context IDs, then still validates shape and citations independently. It handles malformed nested provider payloads safely, including non-object parts that previously could raise uncaught `AttributeError`. Controlled error categories distinguish missing key, unapproved project, invalid model, HTTP rejection, timeout, network failure and invalid evidence. [API](../rag/API.md), [handler](../../app/features/review2.py) and [UI](../../app/static/rag.js) expose a safe reference code without provider bodies/credentials. Schema is not a factual verifier. Google's [REST discovery](https://generativelanguage.googleapis.com/$discovery/rest?version=v1beta) confirmed `responseJsonSchema` support; updated real-model acceptance remains a post-approval check.
+- [Proxy identity](../../app/rag_identity.py) is **opt-in**, accepting exact trusted socket IPs only. It walks X-Forwarded-For from right to left, stopping at the nearest untrusted address; forged left prefixes cannot replace the actual edge-appended client. Unknown sockets, malformed/duplicate/oversized chains use the socket bucket; Forwarded/X-Real-IP do not override it. Direct-client rotating-header and proxied forged-prefix tests preserve the five/minute limit; distinct clients get distinct buckets only when trust is explicitly enabled. The global 100-attempt UTC-day budget and single-generation lock remain. Trusting all forwarded headers or the Docker subnet was rejected. Default blank configuration preserves current conservative behavior.
+- Existing Traefik `hosting-web` address was observed as `172.18.0.4`; no shared insecure/trusted forwarding override was observed in the selected config check. [Traefik's documented append/trust behavior](https://doc.traefik.io/traefik/reference/install-configuration/entrypoints/) supports the chosen boundary. Exact address and edge sanitization must be reverified before enabling it; shared global proxy configuration was not modified. A proxy address change falls back to shared limiting.
+- Added [16-case repeatable evaluation](../../scripts/check_rag_release.py), [question expectations](../rag/review3/questions.json), [security/failure tests](../../tests/test_rag_release.py), expanded [real lifecycle/location tests](../../tests/test_rag_real.py) and [production image probe](../../scripts/check_release_image.py). [CI](../../.github/workflows/check.yml) now checks named-volume import/reimport, vectors/counters across a container restart, source location and HTTP routes/anonymous denials. This runs only in isolated CI, not production.
+
+**Checked**
+
+The corpus remains the five original permitted guides in the [existing manifest](../rag/corpus/manifest.json), generation `c8f0e4d840fdef5f40a4f4ec`, **5 documents / 18 chunks**, 384-dimensional `all-MiniLM-L6-v2` ONNX embeddings, Chroma cosine search and SQLite FTS5 baseline. No corpus source, permission, dependency/model or account record was added. Actual import/reimport and location traces are retained in [retrieval evaluation](../rag/review3/retrieval-evaluation.json).
+
+| Check / environment | Actual result / limit |
+| --- | --- |
+| Full local studio / Python 3.14 | Black/Pylint; 144 application, 18 contracts, 19 Chromium passed. Optional skips listed separately. |
+| Full Python 3.12 real-RAG regression/contracts | 172 passed, five optional local-provider simulation skips, 19 browser deselections tested separately. |
+| Same full environment with actual loopback HTTP simulation | **177 passed**, 19 browser deselections. Five HTTP success/timeout/failure/citation tests used Postman simulation, **not Gemini**. |
+| New real lifecycle/location tests | All 18 original chunks resolve to normalized source spans; unchanged reimport, version bump, removed-source exclusion, historical citations, invalid import, new-process persistence and controlled-ID lookup passed. |
+| Proxy/security failure suite | Trusted/untrusted/forged/duplicate/invalid/IPv6 headers, separate-client limits, broad-trust rejection, safe malformed provider payloads and categories passed. A three-thread/nine-attempt **local** counter check accepted exactly five and persisted its exhausted state. No production stress test. |
+| Isolated backup recovery | Restored the **November 23 off-host backup** into a private local directory: 5/18, same semantic hit and unchanged import; updated source location; new app instance retained an authenticated session; member admin denied; logout replay 401. Old `517b03c` code could still read/query/reimport after new code. Original signing key not copied; live data not restored. [Receipt](../rag/review3/recovery.json). |
+| Existing live release | Nine bounded public ask requests total: eight actual Gemini generations, one no-context abstention; eight-question evaluation plus one Chromium journey. No automatic retries, paid usage or secrets. This is the pre-approval baseline; updated generation/schema/location checks are now recorded in the approved deployment below. Proxy-aware limiting remains disabled. |
+| Docker | Compose syntax passed without reading the private env. Local Docker Desktop could not launch because the app executable was missing; local image success is not claimed. Dedicated CI performs build/startup/persistent named-volume restart/probes; final job outcomes are recorded after execution below. |
+
+**Measured retrieval comparison.** Of the 16 questions, 11 are answerable. Both vector and keyword achieved expected-source **top-1 10/11, top-3 11/11, MRR 0.95455**. These are source-level hits, not answer accuracy. No vector superiority is established. The suspension question's glossary source was rank two for both. The multi-part question retrieved only CBP-S02 among the top three, omitting CBP-S01: expected-source coverage was **0.5**. An offline alternative (six candidates, one chunk per source) raised that case's source coverage to **1.0**, without improving aggregate source-hit metrics; no diversified-context answer was generated and production selection was not changed. This bounded experiment suggests an Improve priority, not a demonstrated general win.
+
+**Actual hosted answers.** [Eight questions, traces, passages, latencies and AI support review](../rag/review3/hosted-evaluation.json): five supported questions answered completely; one supported multi-part answer was **partial** (photograph/parts caveat supported, requested navigation omitted); two unsupported questions correctly abstained. Seven responses used actual Gemini; weather abstained before generation at a top similarity of 0.11265. All six non-abstaining answers' returned citation IDs were retrieved context IDs and their source pages opened HTTP 200. The absent-horsepower response came from real Gemini and invented no measurement. The exact query generated **“View Details opens an individual sample build detail page.”**, with [`CBP-S01-v1-40f3df8f794e-2`](https://carbuilders.192.81.212.73.sslip.io/rag/sources/CBP-S01-v1-40f3df8f794e-2), cosine **0.42770**. Public HTTP latency samples ranged **0.2163–3.3548 seconds**, including the no-model case; these are samples, not load/availability guarantees. Four other unsupported/private/procedure questions were evaluated for retrieval only, without generation; retrieval alone does not establish safe answers to them.
+
+**Trace one source through the system:**
+
+1. **Sources:** permitted original Markdown and manifest identify origin, author/AI assistance, permission, version and raw hash; private account data is excluded.
+2. **Import/chunking:** validate the fixed allowlist before staging; normalize whitespace, preserve heading/paragraph meaning and cap real wordpieces at 200. Hash/version/ordinal form stable chunk IDs. Derived locations refer to the retained normalized Markdown, not raw-file byte positions.
+3. **Embeddings:** CPU MiniLM converts each chunk and question into 384-dimensional vectors representing textual similarity; it does not measure truth.
+4. **Chroma:** persist vectors and retrieve the top three cosine-ranked chunks in the active generation. Only passages scoring at least 0.30 enter model context. An atomic SQLite active pointer excludes retired versions; old citation text remains readable.
+5. **Keyword baseline:** FTS5 ranks exact-term overlap over the same active text. It is a comparison, not an additional model or proof that one approach is better.
+6. **Gemini:** send the public question and selected passages to the privately configured, owner-confirmed Free-tier model. No relevant context means no provider call; provider failure means an explicit error, not a fabricated answer.
+7. **Citations:** validate returned IDs against the selected context and open controlled stored-source routes. Even valid IDs do not prove each answer fully supports every requested fact—the multi-part miss demonstrates this.
+8. **Persistence/security:** one non-root private-volume app keeps accounts separate from retrieval; current admin role and CSRF gate import. Input bounds, limits and generation lock constrain public use. No database port, key, original signer, private environment or user records are published.
+
+**Next**
+
+The owner approved the [app-only deployment/rollback plan](../../deploy/README.md#review-3-release-plan--approval-required-not-executed); actual updated HTTPS/Gemini/source/persistence checks passed below. Proxy-aware identity remains disabled because no live edge behavior proof was added. Do not merge or close Issue #11 before separate approval. For Improve: test the source-diversity alternative on more multi-part queries, validate unsupported/private requests with bounded real calls, measure reliability beyond a tiny sample, and obtain genuine peer observations with fix/retest. Dynamic proxy-IP changes and historical-source retention remain operational limitations; schema cannot guarantee factual completeness.
+
+**Student interpretation: Supplied and approved by the student.**
+
+**AI assistance disclosure:** The explanation above is AI-authored technical support for presentation, not a claim the student independently understands it. AI authored code, tests, original guides, evaluation and factual writing; prior user decisions are attributed only where already evidenced. No new learner quotation, personal reflection or peer review was invented.
+
+### My Individual Interpretation — RAG Application
+
+For my RAG application, I learned how document retrieval and AI-generated answers work together. My system uses five approved documents, which are divided into 18 chunks. MiniLM converts the text into embeddings, and Chroma stores those embeddings so the application can find information related to a user's question. Gemini then uses the retrieved information to generate an answer with source citations.
+
+I understand that retrieval does not guarantee the answer will be completely correct. The source citations are important because they allow users to check where the information came from.
+
+During evaluation, both vector search and keyword search ranked the expected source first for 10 out of 11 answerable questions. This showed me that vector search was not automatically better than keyword search for my small document collection.
+
+One limitation was that a multi-part question received only a partial answer. The application also correctly responded with insufficient evidence when asked about horsepower measurements that were not available in the documents.
+
+I think the system is working well for its tested purpose, but it still needs improvement. My next priority would be improving answers to questions requiring information from multiple sources and testing the application with more questions. I also understand why persistent storage, restricted document imports, and proper error handling are important for keeping the application reliable and secure.
+
+### Rubric crosswalk
+
+| Category | Actual evidence and remaining boundary |
+| --- | --- |
+| Complete | Preserved car application plus updated hosted portfolio/RAG release verified at approved 05f8da7; deployment, source, import, model, browser and recovery receipts linked below. |
+| Thoughtful | Preserve working design; normalized locations avoid migration; default-off exact proxy trust; measured keyword/vector and diversity comparison; graph alternative remains researched historical evidence rather than unnecessary new infrastructure. |
+| Checked | Versioned test/HTTP/browser/recovery receipts, real vectors and Gemini distinguished from simulation, retained partial answer and initial test failures. CI outcomes are recorded separately after execution. |
+| Understood | Student-supplied interpretations explain the evidence-first layout, test limits, retrieval/citations, keyword comparison and multi-part-answer limitation. The AI technical explanation and assistance remain disclosed; real reader/peer feedback remains pending. |
+
+### Review 3 publication and CI evidence
+
+[PR #12](https://github.com/kushalpatel71/my-app-studio/pull/12), **unmerged**, tracks open [Issue #11](https://github.com/kushalpatel71/my-app-studio/issues/11). [Published implementation/evidence `268f973`](https://github.com/kushalpatel71/my-app-studio/commit/268f973b0a87a46b5c1b35f4baf8cbf29f67c9d4) passed all three jobs in [Actions run 45677232803](https://github.com/kushalpatel71/my-app-studio/actions/runs/45677232803): Linux **144 + 18 contracts + 19 Chromium**; Windows **142 + 18 + 19** (two existing POSIX-only differences); RAG **172 passed / five optional simulation skips / 19 browser deselections**, followed by successful Docker build/startup, five-document/18-chunk import/reimport, persistent vector/counter/source checks across container restart, public route probes and anonymous protected-route 401s. [Machine-readable CI receipt](../rag/review3/ci.json). The final evidence-only revision is verified through [PR checks](https://github.com/kushalpatel71/my-app-studio/pull/12/checks); job outcomes belong to their actual SHA, not a prediction.
+
+[Final safe server preservation receipt](../rag/review3/hosted-preservation.json): all four original container snapshots matched preflight, shared proxy hashes unchanged, app healthy/non-root/read-only with existing volume, no critical/traceback lines in the inspected hour. Deployed app/runtime file hashes match `517b03c`. Production changes during Review 3: **none**. Public health also passed two actual Postman assertions with external event reporting disabled.
+
+### Approved production release — November 25, 2026
+
+The owner explicitly approved **05f8da7bc6ffc6ff3470a53fa9dbba98cb4011d4** for the existing `cbp-review2` application. [Deployed source commit](https://github.com/kushalpatel71/my-app-studio/commit/05f8da7bc6ffc6ff3470a53fa9dbba98cb4011d4) · [actual release checks](../rag/review3/deployed-release.json) · [deployment/rollback/downtime summary](../rag/review3/deployment-summary.json) · [new live Chromium journey](../rag/review3/deployed-browser.json) · [actual generated answer screenshot](../rag/review3/screenshots/rag-review3-deployed-390.png).
+
+**Backup and preservation:** stopped only this app for a consistent full-volume archive, restarted the old app healthy, retained an owner-only off-host copy, matched SHA-256, checked all three SQLite databases and actual restored semantic retrieval (5 documents/18 chunks). Archive: 166,377,373 bytes; SHA-256 `ce7852e34963ec0535ba230cdb6a8ae209c3dfe033080ec6c48a4050ed1e47e3`. Private archives, restored accounts, hashes of private account/secret state and raw server logs are not committed. The pre-deployment backup was reused after startup/checker-only failures; rollback changed images, **never restored or deleted live data**. Previous working image `517b03c947c4fb0e14947fbda98fab11b850a267` is retained.
+
+**Failures retained, with actual rollback:**
+
+1. [Attempt 1](../rag/review3/release-first-attempt.json) failed startup because the AI release helper's private `umask 077` propagated to public source files; Docker copied root-owned 0600 files that UID 10001 could not import. Health verification restored the old image. Normalizing only Git-tracked public source permissions and rebuilding the **same approved source bytes** fixed this. A separate disposable, non-root image startup/routes/access probe passed before retry. No private data/env permissions were changed.
+2. [Attempt 2](../rag/review3/release-second-attempt.json) passed startup but the release checker wrongly required 200 on signup/login for an already authenticated client. The app correctly returned existing-contract 303 redirects. The guard restored the old image. The checker was corrected to require authenticated 303 and anonymous 200; no application assertion or instructor contract was weakened.
+3. [Attempt 3](../rag/review3/release-third-attempt.json) passed auth/import/restart and an actual exact-answer/citation check, then a role question received a provider HTTP failure. The guard restored the old image. One sanitized diagnostic showed Google HTTP **503 UNAVAILABLE** without quota/retry details; one bounded post-wait recheck returned HTTP 200 with the correct cited administrator answer. No model/key/billing change or raw provider body was exposed.
+4. The final guarded attempt passed. Its two supported API answers, real Gemini insufficient-evidence response, no-context outside-scope response and full actual Chromium answer/source journey were verified. Across release verification plus diagnostics there were **eight provider attempts: six successful generations and two provider rejections**; the final attempt made **four real generations** across five public questions including the browser. No unbounded retry loop, paid service or rate-limit reset was used.
+
+**Final hosted results:** container `cbp-review2-app-1` healthy on `cbp-review2:05f8da7bc6ffc6ff3470a53fa9dbba98cb4011d4`. Runtime app/dependency source-byte checks match the approved commit. All existing account/password/role fingerprints, the original signing secret, Gemini key and private env file matched private preflight comparisons. The same volume `cbp-review2_app-data` was preserved. Authenticated session survived recreate and restart; dashboard 200, member admin/import 403, anonymous import 401, admin with valid CSRF import 200, missing/bad-origin CSRF 403, same-session demotion 403, logout token replay 401. Three unchanged imports/reimports across the release retained **5/18**, the active snapshot and old citation IDs. Source pages show `navigation.md`, line 5 and normalized character locations, backed by the actual passage. Old references remain usable after restart.
+
+The exact question generated **“View Details opens an individual sample build detail page.”**, citing the opened `CBP-S01-v1-40f3df8f794e-2` at cosine 0.42770. The role question generated **“Only the administrator role may access the administration page.”**, citing the opened access guide. The horsepower request returned **“Insufficient evidence in the approved corpus.”** from real Gemini, with no fabricated measurement/citation. Weather abstained with no provider call. Chromium traversed portfolio → case study → public question → real answer → trace → opened source with the new location field, also checking 1440/768/390/320px. Missing-key, forced timeout and invalid-citation cases remain isolated test evidence; production secrets were never unset to simulate them.
+
+**Downtime:** approximate observed public `/health` unavailability totaled **225.63 seconds (about 3 minutes 46 seconds)** across backup, failed launch/rollback intervals, final recreate and the approved persistence restart. One-second scheduled sampling includes network latency/timeouts, so this is an observation rather than exact server uptime. The successful final attempt's two sampled intervals totaled 17.79 seconds. All individual intervals are retained in the summary. Four unrelated service identities/start times/restart counts/ports/networks and proxy configuration hashes matched preflight; calculator and original production/QA returned HTTPS 200. No shared Traefik setting, paid service, unrelated container or group project was modified. Proxy-aware rate limiting stays **disabled**; the conservative shared five/minute limit and persistent daily budget remain.
+
+**Final review boundary:** technical deployment and hosted verification passed. The transient provider error and original multi-part-answer limitation remain known risks, not erased failures. Improve priorities remain broader query/reliability evaluation, source diversity/completeness, private upstream-status observability, retention and genuine reader/peer fix/retest. Student interpretations are supplied and approved above; real reader/peer feedback remains pending. PR #12 is for review only; do not merge or close Issue #11 without separate authorization. This evidence update changes documentation/receipts only; it does not require another production deployment.
+
+### Canvas-ready Review 3 submission — verified hosted release
+
+Due December 3, 2026, 1:00 PM Eastern. Prepared text only; not submitted to Canvas.
+
+### 1. Individual portfolio + career research
+
+**Changed:** Preserved the evidence-first portfolio and added repeatable four-width accessibility/navigation verification. Review 1 career research links the provisional AI Application / Product Engineering direction and FDE comparison to actual project, testing and grounding evidence. No new credentials or group implementation are invented.
+
+**Checked:** The approved release `05f8da7bc6ffc6ff3470a53fa9dbba98cb4011d4` is deployed and verified. Public [portfolio](https://carbuilders.192.81.212.73.sslip.io/portfolio), [car website](https://carbuilders.192.81.212.73.sslip.io/) and [RAG case study](https://carbuilders.192.81.212.73.sslip.io/portfolio/projects/rag) work over HTTPS. Chromium checked 1440/768/390/320px, keyboard focus, headings, sampled contrast, image alternatives, links, labels and overflow. [Actual live browser evidence](https://github.com/kushalpatel71/my-app-studio/blob/feature/review3-checked-release/docs/rag/review3/deployed-browser.json).
+
+Full local studio passed Black/Pylint, 144 application tests, 18 unchanged instructor contracts and 19 Chromium cases. Linux, Windows and RAG checks passed on [the approved commit](https://github.com/kushalpatel71/my-app-studio/actions/runs/45677813666); [latest PR checks](https://github.com/kushalpatel71/my-app-studio/pull/12/checks) verify subsequent evidence-only changes. Existing accounts, roles and unrelated hosted services were preserved. Initial deployment/checker failures and rollbacks are recorded, not counted as passes.
+
+**Next:** Obtain owner final review and collect genuine reader feedback with a meaningful fix/retest for Improve. PR merge and issue closure remain unauthorized. AI assisted implementation, testing, deployment and factual writing; personal understanding/peer observations are not fabricated.
+
+[Repository](https://github.com/kushalpatel71/my-app-studio) · [Single evolving record](https://github.com/kushalpatel71/my-app-studio/blob/feature/review3-checked-release/docs/review1/README.md#review-3--checked-release) · [Issue #11, open](https://github.com/kushalpatel71/my-app-studio/issues/11) · [PR #12, unmerged](https://github.com/kushalpatel71/my-app-studio/pull/12)
+
+### 2. Individual RAG app + technical research
+
+**Changed:** Added normalized source file/heading/line/character locations without changing historical citation IDs/schema; symlink-manifest rejection; structured Gemini requests with independent citation validation; safe error references; and tested, default-off proxy identity. Preserved five permitted sources, 18 persistent chunks, MiniLM/Chroma, SQLite keyword baseline, admin/CSRF controls and Free-tier limits.
+
+**Checked:** The updated [live RAG assistant](https://carbuilders.192.81.212.73.sslip.io/rag) completed real retrieval → context → Gemini → valid citation → source passage in actual Chromium. [Deployed release receipt](https://github.com/kushalpatel71/my-app-studio/blob/feature/review3-checked-release/docs/rag/review3/deployed-release.json). Gemini answered “View Details opens an individual sample build detail page.” Its [actual citation](https://carbuilders.192.81.212.73.sslip.io/rag/sources/CBP-S01-v1-40f3df8f794e-2) opened with supporting text and source location. The role answer cited the access guide; an absent horsepower measurement returned insufficient evidence; weather abstained without a model call.
+
+Actual repeat imports stayed five documents/18 chunks. Sessions, data and source references survived restart; role/CSRF denials and logout replay passed. A consistent backup was checksum-verified off-host and tested through isolated database/retrieval checks. Previous image is retained. All existing users, secrets, volume and unrelated services matched preservation checks. Proxy-aware limiting remains disabled.
+
+[Deployment/rollback evidence](https://github.com/kushalpatel71/my-app-studio/blob/feature/review3-checked-release/docs/rag/review3/deployment-summary.json) retains three failed attempts and automatic image rollbacks, including a Google HTTP 503 followed by bounded recovery. Observed aggregate downtime was about 3 minutes 46 seconds; live volume/secrets were preserved throughout. No paid service was enabled. Eight deployment-verification provider attempts were bounded; the final attempt passed four real generations plus one no-model abstention.
+
+The [16-query retrieval comparison](https://github.com/kushalpatel71/my-app-studio/blob/feature/review3-checked-release/docs/rag/review3/retrieval-evaluation.json) measured vector and keyword equally: top-1 10/11, top-3 11/11, MRR 0.95455 on answerable source expectations. The earlier hosted evaluation retained one partial multi-part answer. Offline diversity recovered its missing source, but was not deployed or used for generation. No general vector superiority or perfect answer accuracy is claimed.
+
+Separate full Python 3.12 regression with real vectors and isolated HTTP simulation passed 177 tests; simulation is not Gemini evidence. Without simulation: 172 passed/five explicit skips. CI passed Docker build/startup, named-volume import/reimport/restart, source/counter/vector checks and protected-route denials.
+
+**Next:** Final owner review, broader query/reliability and multi-part coverage checks, safe upstream-status diagnostics, retention, and genuine peer fix/retest for Improve. Student interpretation is supplied and approved above; real peer feedback remains pending. Implementation, original guides, tests, deployment and record drafting were AI-assisted.
+
+[Source manifest](https://github.com/kushalpatel71/my-app-studio/blob/feature/review3-checked-release/docs/rag/corpus/manifest.json) · [Deployment/rollback runbook](https://github.com/kushalpatel71/my-app-studio/blob/feature/review3-checked-release/deploy/README.md) · [PR #12](https://github.com/kushalpatel71/my-app-studio/pull/12) · [Issue #11](https://github.com/kushalpatel71/my-app-studio/issues/11) · [CI](https://github.com/kushalpatel71/my-app-studio/actions/runs/45677813666)

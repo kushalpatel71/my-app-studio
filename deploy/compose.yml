@@ -14,6 +14,8 @@ services:
       APP_DATABASE: /data/studio.sqlite3
       HOME: /data
       STUDIO_LIVE_RELOAD: '0'
+      # Empty preserves the shared socket limit; opt in only after edge verification.
+      RAG_TRUSTED_PROXY_IPS: ${RAG_TRUSTED_PROXY_IPS:-}
     volumes:
       - app-data:/data
     networks: [web]

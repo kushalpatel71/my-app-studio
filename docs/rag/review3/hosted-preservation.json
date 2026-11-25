@@ -1,0 +1,40 @@
+{
+  "checked_at": "2026-11-25T18:39:42.298252+00:00",
+  "original_services": {
+    "/is373-studio-calculator-calculator-1": {
+      "baseline_matches": true,
+      "status": "running"
+    },
+    "/studio-edge-traefik-1": {
+      "baseline_matches": true,
+      "status": "running"
+    },
+    "/practical-prod": {
+      "baseline_matches": true,
+      "status": "running"
+    },
+    "/practical-qa": {
+      "baseline_matches": true,
+      "status": "running"
+    }
+  },
+  "proxy_hashes_unchanged": true,
+  "app": {
+    "image": "cbp-review2:517b03c947c4fb0e14947fbda98fab11b850a267",
+    "health": "healthy",
+    "user": "10001:10001",
+    "readonly_root": true,
+    "volume_names": [
+      "cbp-review2_app-data"
+    ]
+  },
+  "critical_or_traceback_log_lines": 0,
+  "production_changes_this_task": false,
+  "deployed_file_hashes_match_release": {
+    "app/rag_store.py": true,
+    "app/rag_generation.py": true,
+    "app/features/review2.py": true,
+    "app/main.py": true,
+    "requirements-rag.txt": true
+  }
+}

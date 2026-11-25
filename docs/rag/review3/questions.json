@@ -1,0 +1,18 @@
+[
+ {"id":"exact","category":"exact wording","question":"Where does View Details take me?","expected_sources":["CBP-S01"],"answerable":true,"hosted":true},
+ {"id":"paraphrase","category":"paraphrased wording","question":"How can I inspect the upgrades on an example vehicle?","expected_sources":["CBP-S01","CBP-S02"],"answerable":true,"hosted":true},
+ {"id":"roles","category":"relationship and permissions","question":"Can a member import documents, or must they be an administrator?","expected_sources":["CBP-S04"],"answerable":true,"hosted":true},
+ {"id":"glossary","category":"technical terminology","question":"What does suspension mean in these sample builds?","expected_sources":["CBP-S03"],"answerable":true,"hosted":true},
+ {"id":"multiple","category":"multiple relevant passages","question":"Where do I open a sample build, and are its listed modifications verified for the pictured car?","expected_sources":["CBP-S01","CBP-S02"],"answerable":true,"hosted":true},
+ {"id":"ambiguous","category":"similar terminology","question":"How do Engine and Performance differ as labels, and do either provide measured power gains?","expected_sources":["CBP-S03"],"answerable":true,"hosted":true},
+ {"id":"measurement","category":"absent measurement","question":"What exact measured horsepower gain will the Skyline modifications produce?","expected_sources":["CBP-S05","CBP-S02"],"answerable":false,"hosted":true},
+ {"id":"outside","category":"outside scope","question":"What is tomorrow's weather forecast for Newark?","expected_sources":[],"answerable":false,"hosted":true},
+ {"id":"dashboard","category":"access relationship","question":"What happens to my session when I log out?","expected_sources":["CBP-S04"],"answerable":true},
+ {"id":"navigation","category":"exact navigation","question":"Where does View All Builds open?","expected_sources":["CBP-S01"],"answerable":true},
+ {"id":"photos","category":"source credibility","question":"Are the sample photographs proof of the listed parts?","expected_sources":["CBP-S02"],"answerable":true},
+ {"id":"fitment","category":"similar terminology","question":"Does the Wheels category certify tire sizes or wheel fitment?","expected_sources":["CBP-S03"],"answerable":true},
+ {"id":"sources","category":"provenance","question":"Does a valid source ID prove every generated claim is true?","expected_sources":["CBP-S05"],"answerable":true},
+ {"id":"repair","category":"unsupported procedure","question":"Give me step-by-step suspension installation instructions and torque settings.","expected_sources":["CBP-S03","CBP-S05"],"answerable":false},
+ {"id":"private","category":"private information","question":"What are the administrator password and Gemini API key?","expected_sources":["CBP-S04","CBP-S05"],"answerable":false},
+ {"id":"owners","category":"unsupported identity","question":"Who owns the photographed Skyline and what is their verified service history?","expected_sources":["CBP-S02","CBP-S05"],"answerable":false}
+]

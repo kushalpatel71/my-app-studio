@@ -438,3 +438,84 @@ def test_review2_chat_error_state(page, server):
     expect(
         page.get_by_role("button", name="Ask the assistant", exact=True)
     ).to_be_enabled()
+
+
+@pytest.mark.parametrize("width", [1440, 768, 390, 320])
+def test_review3_accessibility_and_links(page, server, width):
+    """Keyboard, headings, contrast samples and real links across four widths."""
+    errors = []
+    page.on("pageerror", lambda error: errors.append(str(error)))
+    page.on(
+        "console",
+        lambda message: (
+            errors.append(message.text) if message.type == "error" else None
+        ),
+    )
+    page.set_viewport_size({"width": width, "height": 900})
+    for path in ["/portfolio", "/portfolio/projects/rag", "/rag"]:
+        assert page.goto(server.url + path).status == 200
+        assert page.evaluate("document.documentElement.scrollWidth <= innerWidth")
+        assert page.locator("main h1").count() == 1
+        levels = page.locator("main h1,main h2,main h3").evaluate_all(
+            "els => els.map(e => Number(e.tagName[1]))"
+        )
+        assert all(b <= a + 1 for a, b in zip(levels, levels[1:]))
+        assert page.locator("img:not([alt])").count() == 0
+        assert page.locator("img").evaluate_all(
+            "els => els.every(e => e.complete && e.naturalWidth > 0)"
+        )
+        # Sample actual rendered text against its nearest opaque ancestor.
+        contrast = page.locator("main p,main h1,main h2,main h3,main a").evaluate_all(
+            """els => {
+          const rgb = c => (c.match(/[\\d.]+/g)||[]).map(Number);
+          const lum = c => { const v=c.slice(0,3).map(x=>{x/=255;return x<=.04045?x/12.92:((x+.055)/1.055)**2.4});return .2126*v[0]+.7152*v[1]+.0722*v[2] };
+          return els.filter(e=>e.getClientRects().length).map(e=>{
+            let b=e,bg;while(b){bg=rgb(getComputedStyle(b).backgroundColor);if(bg.length===3||bg[3]===1)break;b=b.parentElement}
+            if(!b)bg=[255,255,255];
+            const s=getComputedStyle(e),fg=rgb(s.color),l1=lum(fg),l2=lum(bg),ratio=(Math.max(l1,l2)+.05)/(Math.min(l1,l2)+.05);
+            const large=parseFloat(s.fontSize)>=24||(parseFloat(s.fontSize)>=18.66&&parseInt(s.fontWeight)>=700);
+            return {text:e.innerText.slice(0,50),ratio,minimum:large?3:4.5};
+          });
+        }"""
+        )
+        assert contrast and all(c["ratio"] >= c["minimum"] for c in contrast), contrast
+        if path == "/portfolio":
+            # Tab through actual focus order, not programmatic focus alone.
+            page.goto(server.url + path)
+            focus_count = page.locator("a:visible,button:visible").count()
+            for _ in range(focus_count):
+                page.keyboard.press("Tab")
+                state = page.evaluate(
+                    """() => { const e=document.activeElement,s=getComputedStyle(e); return {tag:e.tagName,outline:s.outlineStyle,width:parseFloat(s.outlineWidth)} }"""
+                )
+                assert state["tag"] in ["A", "BUTTON"]
+                assert state["outline"] != "none" and state["width"] >= 2, state
+            for link in page.locator("main a[href^='#']").all():
+                assert page.locator(link.get_attribute("href")).count() == 1
+            paths = set(
+                page.locator("a[href^='/']").evaluate_all(
+                    "els=>els.map(e=>e.getAttribute('href'))"
+                )
+            )
+            assert all(
+                page.request.get(server.url + url).status == 200 for url in paths
+            )
+        if path == "/rag":
+            expect(page.get_by_label("Your question")).to_have_attribute(
+                "maxlength", "1000"
+            )
+            assert (
+                page.get_by_role("button", name="Ask the assistant").bounding_box()[
+                    "height"
+                ]
+                >= 44
+            )
+        evidence = os.getenv("RAG_BROWSER_EVIDENCE_DIR")
+        if evidence:
+            target = Path(evidence)
+            target.mkdir(parents=True, exist_ok=True)
+            page.screenshot(
+                path=str(target / f"{path.strip('/').replace('/','-')}-{width}.png"),
+                full_page=True,
+            )
+    assert errors == []

@@ -1,0 +1,223 @@
+{
+  "release": "05f8da7bc6ffc6ff3470a53fa9dbba98cb4011d4",
+  "origin": "https://carbuilders.192.81.212.73.sslip.io",
+  "started_at": "2026-11-25T19:00:38.870034+00:00",
+  "proxy_aware_limiting": "disabled",
+  "stages": {
+    "backup": {
+      "action": "backup",
+      "start": "2026-11-25T18:53:00.967209+00:00",
+      "end_healthy": "2026-11-25T18:53:40.787740+00:00",
+      "bytes": 166377373,
+      "sha256": "ce7852e34963ec0535ba230cdb6a8ae209c3dfe033080ec6c48a4050ed1e47e3",
+      "old_app_restarted_healthy": true
+    },
+    "offhost_backup": {
+      "checksum_matches": true,
+      "private_file_mode": "0600",
+      "sqlite_integrity": [
+        "studio.sqlite3",
+        "manifest.sqlite3",
+        "chroma.sqlite3"
+      ],
+      "restored_stats": {
+        "documents": 5,
+        "chunks": 18
+      },
+      "actual_restored_semantic_retrieval": "CBP-S01"
+    },
+    "watchdog": {
+      "rollback_watchdog_armed": true,
+      "deadline_minutes": 30
+    },
+    "deploy": {
+      "action": "deploy",
+      "deployed_commit": "05f8da7bc6ffc6ff3470a53fa9dbba98cb4011d4",
+      "healthy": true,
+      "at": "2026-11-25T19:01:04.173383+00:00"
+    }
+  },
+  "questions": [],
+  "actual_provider_calls": 0,
+  "session_valid_before_retry_recreate": true,
+  "backup_reused_after_startup_only_failure": true,
+  "routes": {
+    "/": 200,
+    "/builds": 200,
+    "/builds/skyline": 200,
+    "/builds/miata": 200,
+    "/builds/bmw": 200,
+    "/about": 200,
+    "/signup": 303,
+    "/login": 303,
+    "/portfolio": 200,
+    "/portfolio/projects/rag": 200,
+    "/rag": 200,
+    "/health": 200
+  },
+  "status": "failed",
+  "failure_type": "AssertionError",
+  "rollback": {
+    "rolled_back": true,
+    "image": "517b03c947c4fb0e14947fbda98fab11b850a267",
+    "healthy": true
+  },
+  "rollback_executed": true,
+  "health_observations": [
+    {
+      "at": "2026-11-25T19:00:38.960595+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:00:40.078802+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:00:41.097101+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:00:42.128204+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:00:43.145726+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:00:44.164244+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:00:45.187323+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:00:46.219027+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:00:47.255172+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:00:48.272721+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:00:49.391223+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:00:50.408434+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:00:51.424187+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:00:52.443004+00:00",
+      "status": 502
+    },
+    {
+      "at": "2026-11-25T19:00:55.543634+00:00",
+      "status": 404
+    },
+    {
+      "at": "2026-11-25T19:00:56.557953+00:00",
+      "status": 404
+    },
+    {
+      "at": "2026-11-25T19:00:57.572508+00:00",
+      "status": 404
+    },
+    {
+      "at": "2026-11-25T19:00:58.585776+00:00",
+      "status": 404
+    },
+    {
+      "at": "2026-11-25T19:00:59.610700+00:00",
+      "status": 404
+    },
+    {
+      "at": "2026-11-25T19:01:00.627390+00:00",
+      "status": 404
+    },
+    {
+      "at": "2026-11-25T19:01:01.674097+00:00",
+      "status": 404
+    },
+    {
+      "at": "2026-11-25T19:01:02.723731+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:01:03.774945+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:01:04.829464+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:01:05.891515+00:00",
+      "status": 502
+    },
+    {
+      "at": "2026-11-25T19:01:06.935625+00:00",
+      "status": 502
+    },
+    {
+      "at": "2026-11-25T19:01:09.035336+00:00",
+      "status": 404
+    },
+    {
+      "at": "2026-11-25T19:01:10.065853+00:00",
+      "status": 404
+    },
+    {
+      "at": "2026-11-25T19:01:11.118902+00:00",
+      "status": 404
+    },
+    {
+      "at": "2026-11-25T19:01:12.159258+00:00",
+      "status": 404
+    },
+    {
+      "at": "2026-11-25T19:01:13.209502+00:00",
+      "status": 404
+    },
+    {
+      "at": "2026-11-25T19:01:14.268271+00:00",
+      "status": 404
+    },
+    {
+      "at": "2026-11-25T19:01:15.316113+00:00",
+      "status": 404
+    },
+    {
+      "at": "2026-11-25T19:01:16.352323+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:01:17.435656+00:00",
+      "status": 200
+    }
+  ],
+  "observed_downtime_intervals": [
+    {
+      "first_failed_sample": "2026-11-25T19:00:52.443004+00:00",
+      "first_healthy_sample": "2026-11-25T19:01:02.723731+00:00",
+      "sample_interval_seconds": 1
+    },
+    {
+      "first_failed_sample": "2026-11-25T19:01:05.891515+00:00",
+      "first_healthy_sample": "2026-11-25T19:01:16.352323+00:00",
+      "sample_interval_seconds": 1
+    }
+  ],
+  "ended_at": "2026-11-25T19:01:18.172369+00:00",
+  "diagnosis": "Authenticated signup/login correctly returned 303 dashboard redirects; release checker incorrectly required 200 on every route. Checker corrected to preserve the existing contract. Guard restored old image healthy; application source unchanged.",
+  "automatic_rollback_verified": true
+}

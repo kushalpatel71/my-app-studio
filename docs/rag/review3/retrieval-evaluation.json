@@ -1,0 +1,3138 @@
+{
+  "checked_at": "2026-11-25T18:32:31.688905+00:00",
+  "revision": "34a93cee9105315a5538cc208cbe024b4cce998b",
+  "working_tree_dirty": true,
+  "import": {
+    "status": "unchanged",
+    "generation": "c8f0e4d840fdef5f40a4f4ec",
+    "documents": 5,
+    "chunks": 18
+  },
+  "repeat_import": {
+    "status": "unchanged",
+    "generation": "c8f0e4d840fdef5f40a4f4ec",
+    "documents": 5,
+    "chunks": 18
+  },
+  "generation_target": "not-executed",
+  "maximum_hosted_requests": 8,
+  "evaluation": [
+    {
+      "id": "exact",
+      "category": "exact wording",
+      "question": "Where does View Details take me?",
+      "expected_sources": [
+        "CBP-S01"
+      ],
+      "answerable": true,
+      "hosted": true,
+      "vector": {
+        "latency_seconds": 1.0349,
+        "hits": [
+          {
+            "id": "CBP-S01-v1-40f3df8f794e-2",
+            "source_id": "CBP-S01",
+            "version": "v1",
+            "score": 0.4277,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "navigation.md",
+              "heading": "Site navigation",
+              "start_char": 158,
+              "end_char": 460,
+              "start_line": 5,
+              "end_line": 5,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S02-v1-d8b616f8c5ce-2",
+            "source_id": "CBP-S02",
+            "version": "v1",
+            "score": 0.31188,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "sample-builds.md",
+              "heading": "Understanding sample builds",
+              "start_char": 208,
+              "end_char": 502,
+              "start_line": 5,
+              "end_line": 5,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S01-v1-40f3df8f794e-3",
+            "source_id": "CBP-S01",
+            "version": "v1",
+            "score": 0.3114,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "navigation.md",
+              "heading": "Site navigation",
+              "start_char": 462,
+              "end_char": 650,
+              "start_line": 7,
+              "end_line": 7,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          }
+        ],
+        "metrics": {
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "reciprocal_rank": 1.0,
+          "expected_source_coverage_at_3": 1.0
+        }
+      },
+      "keyword": {
+        "latency_seconds": 0.0041,
+        "hits": [
+          {
+            "id": "CBP-S01-v1-40f3df8f794e-2",
+            "source_id": "CBP-S01",
+            "version": "v1",
+            "score": 5.162923015688951,
+            "metric": "fts5-bm25",
+            "location": {
+              "status": "located",
+              "file": "navigation.md",
+              "heading": "Site navigation",
+              "start_char": 158,
+              "end_char": 460,
+              "start_line": 5,
+              "end_line": 5,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S01-v1-40f3df8f794e-1",
+            "source_id": "CBP-S01",
+            "version": "v1",
+            "score": 2.048204628551274,
+            "metric": "fts5-bm25",
+            "location": {
+              "status": "located",
+              "file": "navigation.md",
+              "heading": "Site navigation",
+              "start_char": 19,
+              "end_char": 156,
+              "start_line": 3,
+              "end_line": 3,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S04-v1-a9408862c957-4",
+            "source_id": "CBP-S04",
+            "version": "v1",
+            "score": 1.0002387367357513,
+            "metric": "fts5-bm25",
+            "location": {
+              "status": "located",
+              "file": "access.md",
+              "heading": "Accounts and access",
+              "start_char": 689,
+              "end_char": 867,
+              "start_line": 9,
+              "end_line": 9,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          }
+        ],
+        "metrics": {
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "reciprocal_rank": 1.0,
+          "expected_source_coverage_at_3": 1.0
+        }
+      },
+      "diversified_experiment": {
+        "latency_seconds": 0.0733,
+        "hits": [
+          {
+            "id": "CBP-S01-v1-40f3df8f794e-2",
+            "source_id": "CBP-S01",
+            "version": "v1",
+            "score": 0.4277,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "navigation.md",
+              "heading": "Site navigation",
+              "start_char": 158,
+              "end_char": 460,
+              "start_line": 5,
+              "end_line": 5,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S02-v1-d8b616f8c5ce-2",
+            "source_id": "CBP-S02",
+            "version": "v1",
+            "score": 0.31188,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "sample-builds.md",
+              "heading": "Understanding sample builds",
+              "start_char": 208,
+              "end_char": 502,
+              "start_line": 5,
+              "end_line": 5,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S04-v1-a9408862c957-1",
+            "source_id": "CBP-S04",
+            "version": "v1",
+            "score": 0.24501,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "access.md",
+              "heading": "Accounts and access",
+              "start_char": 23,
+              "end_char": 188,
+              "start_line": 3,
+              "end_line": 3,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          }
+        ],
+        "metrics": {
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "reciprocal_rank": 1.0,
+          "expected_source_coverage_at_3": 1.0
+        },
+        "production_behavior_changed": false
+      }
+    },
+    {
+      "id": "paraphrase",
+      "category": "paraphrased wording",
+      "question": "How can I inspect the upgrades on an example vehicle?",
+      "expected_sources": [
+        "CBP-S01",
+        "CBP-S02"
+      ],
+      "answerable": true,
+      "hosted": true,
+      "vector": {
+        "latency_seconds": 0.0738,
+        "hits": [
+          {
+            "id": "CBP-S01-v1-40f3df8f794e-2",
+            "source_id": "CBP-S01",
+            "version": "v1",
+            "score": 0.47997,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "navigation.md",
+              "heading": "Site navigation",
+              "start_char": 158,
+              "end_char": 460,
+              "start_line": 5,
+              "end_line": 5,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S05-v1-9a017135492c-3",
+            "source_id": "CBP-S05",
+            "version": "v1",
+            "score": 0.3963,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "assistant-scope.md",
+              "heading": "Assistant scope and provenance",
+              "start_char": 466,
+              "end_char": 743,
+              "start_line": 7,
+              "end_line": 7,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S02-v1-d8b616f8c5ce-1",
+            "source_id": "CBP-S02",
+            "version": "v1",
+            "score": 0.36526,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "sample-builds.md",
+              "heading": "Understanding sample builds",
+              "start_char": 31,
+              "end_char": 206,
+              "start_line": 3,
+              "end_line": 3,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          }
+        ],
+        "metrics": {
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "reciprocal_rank": 1.0,
+          "expected_source_coverage_at_3": 1.0
+        }
+      },
+      "keyword": {
+        "latency_seconds": 0.0028,
+        "hits": [
+          {
+            "id": "CBP-S01-v1-40f3df8f794e-2",
+            "source_id": "CBP-S01",
+            "version": "v1",
+            "score": 5.674473100227117,
+            "metric": "fts5-bm25",
+            "location": {
+              "status": "located",
+              "file": "navigation.md",
+              "heading": "Site navigation",
+              "start_char": 158,
+              "end_char": 460,
+              "start_line": 5,
+              "end_line": 5,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S05-v1-9a017135492c-4",
+            "source_id": "CBP-S05",
+            "version": "v1",
+            "score": 3.591617206143495,
+            "metric": "fts5-bm25",
+            "location": {
+              "status": "located",
+              "file": "assistant-scope.md",
+              "heading": "Assistant scope and provenance",
+              "start_char": 745,
+              "end_char": 1005,
+              "start_line": 9,
+              "end_line": 9,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S02-v1-d8b616f8c5ce-1",
+            "source_id": "CBP-S02",
+            "version": "v1",
+            "score": 3.5277915302921623,
+            "metric": "fts5-bm25",
+            "location": {
+              "status": "located",
+              "file": "sample-builds.md",
+              "heading": "Understanding sample builds",
+              "start_char": 31,
+              "end_char": 206,
+              "start_line": 3,
+              "end_line": 3,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          }
+        ],
+        "metrics": {
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "reciprocal_rank": 1.0,
+          "expected_source_coverage_at_3": 1.0
+        }
+      },
+      "diversified_experiment": {
+        "latency_seconds": 0.0669,
+        "hits": [
+          {
+            "id": "CBP-S01-v1-40f3df8f794e-2",
+            "source_id": "CBP-S01",
+            "version": "v1",
+            "score": 0.47997,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "navigation.md",
+              "heading": "Site navigation",
+              "start_char": 158,
+              "end_char": 460,
+              "start_line": 5,
+              "end_line": 5,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S05-v1-9a017135492c-3",
+            "source_id": "CBP-S05",
+            "version": "v1",
+            "score": 0.3963,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "assistant-scope.md",
+              "heading": "Assistant scope and provenance",
+              "start_char": 466,
+              "end_char": 743,
+              "start_line": 7,
+              "end_line": 7,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S02-v1-d8b616f8c5ce-1",
+            "source_id": "CBP-S02",
+            "version": "v1",
+            "score": 0.36526,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "sample-builds.md",
+              "heading": "Understanding sample builds",
+              "start_char": 31,
+              "end_char": 206,
+              "start_line": 3,
+              "end_line": 3,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          }
+        ],
+        "metrics": {
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "reciprocal_rank": 1.0,
+          "expected_source_coverage_at_3": 1.0
+        },
+        "production_behavior_changed": false
+      }
+    },
+    {
+      "id": "roles",
+      "category": "relationship and permissions",
+      "question": "Can a member import documents, or must they be an administrator?",
+      "expected_sources": [
+        "CBP-S04"
+      ],
+      "answerable": true,
+      "hosted": true,
+      "vector": {
+        "latency_seconds": 0.061,
+        "hits": [
+          {
+            "id": "CBP-S04-v1-a9408862c957-3",
+            "source_id": "CBP-S04",
+            "version": "v1",
+            "score": 0.60108,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "access.md",
+              "heading": "Accounts and access",
+              "start_char": 381,
+              "end_char": 687,
+              "start_line": 7,
+              "end_line": 7,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S04-v1-a9408862c957-4",
+            "source_id": "CBP-S04",
+            "version": "v1",
+            "score": 0.57729,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "access.md",
+              "heading": "Accounts and access",
+              "start_char": 689,
+              "end_char": 867,
+              "start_line": 9,
+              "end_line": 9,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S04-v1-a9408862c957-1",
+            "source_id": "CBP-S04",
+            "version": "v1",
+            "score": 0.3874,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "access.md",
+              "heading": "Accounts and access",
+              "start_char": 23,
+              "end_char": 188,
+              "start_line": 3,
+              "end_line": 3,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          }
+        ],
+        "metrics": {
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "reciprocal_rank": 1.0,
+          "expected_source_coverage_at_3": 1.0
+        }
+      },
+      "keyword": {
+        "latency_seconds": 0.0019,
+        "hits": [
+          {
+            "id": "CBP-S04-v1-a9408862c957-3",
+            "source_id": "CBP-S04",
+            "version": "v1",
+            "score": 6.669548622738207,
+            "metric": "fts5-bm25",
+            "location": {
+              "status": "located",
+              "file": "access.md",
+              "heading": "Accounts and access",
+              "start_char": 381,
+              "end_char": 687,
+              "start_line": 7,
+              "end_line": 7,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S02-v1-d8b616f8c5ce-1",
+            "source_id": "CBP-S02",
+            "version": "v1",
+            "score": 5.083169598279124,
+            "metric": "fts5-bm25",
+            "location": {
+              "status": "located",
+              "file": "sample-builds.md",
+              "heading": "Understanding sample builds",
+              "start_char": 31,
+              "end_char": 206,
+              "start_line": 3,
+              "end_line": 3,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S04-v1-a9408862c957-4",
+            "source_id": "CBP-S04",
+            "version": "v1",
+            "score": 4.439487930030545,
+            "metric": "fts5-bm25",
+            "location": {
+              "status": "located",
+              "file": "access.md",
+              "heading": "Accounts and access",
+              "start_char": 689,
+              "end_char": 867,
+              "start_line": 9,
+              "end_line": 9,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          }
+        ],
+        "metrics": {
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "reciprocal_rank": 1.0,
+          "expected_source_coverage_at_3": 1.0
+        }
+      },
+      "diversified_experiment": {
+        "latency_seconds": 0.062,
+        "hits": [
+          {
+            "id": "CBP-S04-v1-a9408862c957-3",
+            "source_id": "CBP-S04",
+            "version": "v1",
+            "score": 0.60108,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "access.md",
+              "heading": "Accounts and access",
+              "start_char": 381,
+              "end_char": 687,
+              "start_line": 7,
+              "end_line": 7,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S05-v1-9a017135492c-1",
+            "source_id": "CBP-S05",
+            "version": "v1",
+            "score": 0.27399,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "assistant-scope.md",
+              "heading": "Assistant scope and provenance",
+              "start_char": 34,
+              "end_char": 235,
+              "start_line": 3,
+              "end_line": 3,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          }
+        ],
+        "metrics": {
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "reciprocal_rank": 1.0,
+          "expected_source_coverage_at_3": 1.0
+        },
+        "production_behavior_changed": false
+      }
+    },
+    {
+      "id": "glossary",
+      "category": "technical terminology",
+      "question": "What does suspension mean in these sample builds?",
+      "expected_sources": [
+        "CBP-S03"
+      ],
+      "answerable": true,
+      "hosted": true,
+      "vector": {
+        "latency_seconds": 0.0612,
+        "hits": [
+          {
+            "id": "CBP-S02-v1-d8b616f8c5ce-3",
+            "source_id": "CBP-S02",
+            "version": "v1",
+            "score": 0.47379,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "sample-builds.md",
+              "heading": "Understanding sample builds",
+              "start_char": 504,
+              "end_char": 699,
+              "start_line": 7,
+              "end_line": 7,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S03-v1-b9ba1459dd37-2",
+            "source_id": "CBP-S03",
+            "version": "v1",
+            "score": 0.47105,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "categories.md",
+              "heading": "Modification categories",
+              "start_char": 177,
+              "end_char": 333,
+              "start_line": 5,
+              "end_line": 5,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S02-v1-d8b616f8c5ce-1",
+            "source_id": "CBP-S02",
+            "version": "v1",
+            "score": 0.41832,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "sample-builds.md",
+              "heading": "Understanding sample builds",
+              "start_char": 31,
+              "end_char": 206,
+              "start_line": 3,
+              "end_line": 3,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          }
+        ],
+        "metrics": {
+          "hit_at_1": false,
+          "hit_at_3": true,
+          "reciprocal_rank": 0.5,
+          "expected_source_coverage_at_3": 1.0
+        }
+      },
+      "keyword": {
+        "latency_seconds": 0.004,
+        "hits": [
+          {
+            "id": "CBP-S02-v1-d8b616f8c5ce-3",
+            "source_id": "CBP-S02",
+            "version": "v1",
+            "score": 4.024204372679732,
+            "metric": "fts5-bm25",
+            "location": {
+              "status": "located",
+              "file": "sample-builds.md",
+              "heading": "Understanding sample builds",
+              "start_char": 504,
+              "end_char": 699,
+              "start_line": 7,
+              "end_line": 7,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S03-v1-b9ba1459dd37-2",
+            "source_id": "CBP-S03",
+            "version": "v1",
+            "score": 2.8155311952671522,
+            "metric": "fts5-bm25",
+            "location": {
+              "status": "located",
+              "file": "categories.md",
+              "heading": "Modification categories",
+              "start_char": 177,
+              "end_char": 333,
+              "start_line": 5,
+              "end_line": 5,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S04-v1-a9408862c957-2",
+            "source_id": "CBP-S04",
+            "version": "v1",
+            "score": 2.5365575127324655,
+            "metric": "fts5-bm25",
+            "location": {
+              "status": "located",
+              "file": "access.md",
+              "heading": "Accounts and access",
+              "start_char": 190,
+              "end_char": 379,
+              "start_line": 5,
+              "end_line": 5,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          }
+        ],
+        "metrics": {
+          "hit_at_1": false,
+          "hit_at_3": true,
+          "reciprocal_rank": 0.5,
+          "expected_source_coverage_at_3": 1.0
+        }
+      },
+      "diversified_experiment": {
+        "latency_seconds": 0.0705,
+        "hits": [
+          {
+            "id": "CBP-S02-v1-d8b616f8c5ce-3",
+            "source_id": "CBP-S02",
+            "version": "v1",
+            "score": 0.47379,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "sample-builds.md",
+              "heading": "Understanding sample builds",
+              "start_char": 504,
+              "end_char": 699,
+              "start_line": 7,
+              "end_line": 7,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S03-v1-b9ba1459dd37-2",
+            "source_id": "CBP-S03",
+            "version": "v1",
+            "score": 0.47105,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "categories.md",
+              "heading": "Modification categories",
+              "start_char": 177,
+              "end_char": 333,
+              "start_line": 5,
+              "end_line": 5,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          }
+        ],
+        "metrics": {
+          "hit_at_1": false,
+          "hit_at_3": true,
+          "reciprocal_rank": 0.5,
+          "expected_source_coverage_at_3": 1.0
+        },
+        "production_behavior_changed": false
+      }
+    },
+    {
+      "id": "multiple",
+      "category": "multiple relevant passages",
+      "question": "Where do I open a sample build, and are its listed modifications verified for the pictured car?",
+      "expected_sources": [
+        "CBP-S01",
+        "CBP-S02"
+      ],
+      "answerable": true,
+      "hosted": true,
+      "vector": {
+        "latency_seconds": 0.0701,
+        "hits": [
+          {
+            "id": "CBP-S02-v1-d8b616f8c5ce-1",
+            "source_id": "CBP-S02",
+            "version": "v1",
+            "score": 0.67816,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "sample-builds.md",
+              "heading": "Understanding sample builds",
+              "start_char": 31,
+              "end_char": 206,
+              "start_line": 3,
+              "end_line": 3,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S02-v1-d8b616f8c5ce-2",
+            "source_id": "CBP-S02",
+            "version": "v1",
+            "score": 0.60694,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "sample-builds.md",
+              "heading": "Understanding sample builds",
+              "start_char": 208,
+              "end_char": 502,
+              "start_line": 5,
+              "end_line": 5,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S02-v1-d8b616f8c5ce-3",
+            "source_id": "CBP-S02",
+            "version": "v1",
+            "score": 0.57528,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "sample-builds.md",
+              "heading": "Understanding sample builds",
+              "start_char": 504,
+              "end_char": 699,
+              "start_line": 7,
+              "end_line": 7,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          }
+        ],
+        "metrics": {
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "reciprocal_rank": 1.0,
+          "expected_source_coverage_at_3": 0.5
+        }
+      },
+      "keyword": {
+        "latency_seconds": 0.002,
+        "hits": [
+          {
+            "id": "CBP-S02-v1-d8b616f8c5ce-2",
+            "source_id": "CBP-S02",
+            "version": "v1",
+            "score": 6.713692347434853,
+            "metric": "fts5-bm25",
+            "location": {
+              "status": "located",
+              "file": "sample-builds.md",
+              "heading": "Understanding sample builds",
+              "start_char": 208,
+              "end_char": 502,
+              "start_line": 5,
+              "end_line": 5,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S02-v1-d8b616f8c5ce-3",
+            "source_id": "CBP-S02",
+            "version": "v1",
+            "score": 4.522124741347685,
+            "metric": "fts5-bm25",
+            "location": {
+              "status": "located",
+              "file": "sample-builds.md",
+              "heading": "Understanding sample builds",
+              "start_char": 504,
+              "end_char": 699,
+              "start_line": 7,
+              "end_line": 7,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S05-v1-9a017135492c-2",
+            "source_id": "CBP-S05",
+            "version": "v1",
+            "score": 3.680047770669566,
+            "metric": "fts5-bm25",
+            "location": {
+              "status": "located",
+              "file": "assistant-scope.md",
+              "heading": "Assistant scope and provenance",
+              "start_char": 237,
+              "end_char": 464,
+              "start_line": 5,
+              "end_line": 5,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          }
+        ],
+        "metrics": {
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "reciprocal_rank": 1.0,
+          "expected_source_coverage_at_3": 0.5
+        }
+      },
+      "diversified_experiment": {
+        "latency_seconds": 0.063,
+        "hits": [
+          {
+            "id": "CBP-S02-v1-d8b616f8c5ce-1",
+            "source_id": "CBP-S02",
+            "version": "v1",
+            "score": 0.67816,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "sample-builds.md",
+              "heading": "Understanding sample builds",
+              "start_char": 31,
+              "end_char": 206,
+              "start_line": 3,
+              "end_line": 3,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S01-v1-40f3df8f794e-2",
+            "source_id": "CBP-S01",
+            "version": "v1",
+            "score": 0.51812,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "navigation.md",
+              "heading": "Site navigation",
+              "start_char": 158,
+              "end_char": 460,
+              "start_line": 5,
+              "end_line": 5,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S03-v1-b9ba1459dd37-1",
+            "source_id": "CBP-S03",
+            "version": "v1",
+            "score": 0.42403,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "categories.md",
+              "heading": "Modification categories",
+              "start_char": 27,
+              "end_char": 175,
+              "start_line": 3,
+              "end_line": 3,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          }
+        ],
+        "metrics": {
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "reciprocal_rank": 1.0,
+          "expected_source_coverage_at_3": 1.0
+        },
+        "production_behavior_changed": false
+      }
+    },
+    {
+      "id": "ambiguous",
+      "category": "similar terminology",
+      "question": "How do Engine and Performance differ as labels, and do either provide measured power gains?",
+      "expected_sources": [
+        "CBP-S03"
+      ],
+      "answerable": true,
+      "hosted": true,
+      "vector": {
+        "latency_seconds": 0.0612,
+        "hits": [
+          {
+            "id": "CBP-S03-v1-b9ba1459dd37-3",
+            "source_id": "CBP-S03",
+            "version": "v1",
+            "score": 0.54135,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "categories.md",
+              "heading": "Modification categories",
+              "start_char": 335,
+              "end_char": 533,
+              "start_line": 7,
+              "end_line": 7,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S05-v1-9a017135492c-3",
+            "source_id": "CBP-S05",
+            "version": "v1",
+            "score": 0.36528,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "assistant-scope.md",
+              "heading": "Assistant scope and provenance",
+              "start_char": 466,
+              "end_char": 743,
+              "start_line": 7,
+              "end_line": 7,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S03-v1-b9ba1459dd37-4",
+            "source_id": "CBP-S03",
+            "version": "v1",
+            "score": 0.33296,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "categories.md",
+              "heading": "Modification categories",
+              "start_char": 535,
+              "end_char": 737,
+              "start_line": 9,
+              "end_line": 9,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          }
+        ],
+        "metrics": {
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "reciprocal_rank": 1.0,
+          "expected_source_coverage_at_3": 1.0
+        }
+      },
+      "keyword": {
+        "latency_seconds": 0.0019,
+        "hits": [
+          {
+            "id": "CBP-S03-v1-b9ba1459dd37-3",
+            "source_id": "CBP-S03",
+            "version": "v1",
+            "score": 11.261741196728423,
+            "metric": "fts5-bm25",
+            "location": {
+              "status": "located",
+              "file": "categories.md",
+              "heading": "Modification categories",
+              "start_char": 335,
+              "end_char": 533,
+              "start_line": 7,
+              "end_line": 7,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S04-v1-a9408862c957-1",
+            "source_id": "CBP-S04",
+            "version": "v1",
+            "score": 5.333030846725753,
+            "metric": "fts5-bm25",
+            "location": {
+              "status": "located",
+              "file": "access.md",
+              "heading": "Accounts and access",
+              "start_char": 23,
+              "end_char": 188,
+              "start_line": 3,
+              "end_line": 3,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S02-v1-d8b616f8c5ce-3",
+            "source_id": "CBP-S02",
+            "version": "v1",
+            "score": 3.994095878803039,
+            "metric": "fts5-bm25",
+            "location": {
+              "status": "located",
+              "file": "sample-builds.md",
+              "heading": "Understanding sample builds",
+              "start_char": 504,
+              "end_char": 699,
+              "start_line": 7,
+              "end_line": 7,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          }
+        ],
+        "metrics": {
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "reciprocal_rank": 1.0,
+          "expected_source_coverage_at_3": 1.0
+        }
+      },
+      "diversified_experiment": {
+        "latency_seconds": 0.0751,
+        "hits": [
+          {
+            "id": "CBP-S03-v1-b9ba1459dd37-3",
+            "source_id": "CBP-S03",
+            "version": "v1",
+            "score": 0.54135,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "categories.md",
+              "heading": "Modification categories",
+              "start_char": 335,
+              "end_char": 533,
+              "start_line": 7,
+              "end_line": 7,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S05-v1-9a017135492c-3",
+            "source_id": "CBP-S05",
+            "version": "v1",
+            "score": 0.36528,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "assistant-scope.md",
+              "heading": "Assistant scope and provenance",
+              "start_char": 466,
+              "end_char": 743,
+              "start_line": 7,
+              "end_line": 7,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S02-v1-d8b616f8c5ce-3",
+            "source_id": "CBP-S02",
+            "version": "v1",
+            "score": 0.26823,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "sample-builds.md",
+              "heading": "Understanding sample builds",
+              "start_char": 504,
+              "end_char": 699,
+              "start_line": 7,
+              "end_line": 7,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          }
+        ],
+        "metrics": {
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "reciprocal_rank": 1.0,
+          "expected_source_coverage_at_3": 1.0
+        },
+        "production_behavior_changed": false
+      }
+    },
+    {
+      "id": "measurement",
+      "category": "absent measurement",
+      "question": "What exact measured horsepower gain will the Skyline modifications produce?",
+      "expected_sources": [
+        "CBP-S05",
+        "CBP-S02"
+      ],
+      "answerable": false,
+      "hosted": true,
+      "vector": {
+        "latency_seconds": 0.0668,
+        "hits": [
+          {
+            "id": "CBP-S01-v1-40f3df8f794e-2",
+            "source_id": "CBP-S01",
+            "version": "v1",
+            "score": 0.50793,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "navigation.md",
+              "heading": "Site navigation",
+              "start_char": 158,
+              "end_char": 460,
+              "start_line": 5,
+              "end_line": 5,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S05-v1-9a017135492c-3",
+            "source_id": "CBP-S05",
+            "version": "v1",
+            "score": 0.44424,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "assistant-scope.md",
+              "heading": "Assistant scope and provenance",
+              "start_char": 466,
+              "end_char": 743,
+              "start_line": 7,
+              "end_line": 7,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S03-v1-b9ba1459dd37-3",
+            "source_id": "CBP-S03",
+            "version": "v1",
+            "score": 0.32344,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "categories.md",
+              "heading": "Modification categories",
+              "start_char": 335,
+              "end_char": 533,
+              "start_line": 7,
+              "end_line": 7,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          }
+        ],
+        "metrics": {
+          "hit_at_1": false,
+          "hit_at_3": true,
+          "reciprocal_rank": 0.5,
+          "expected_source_coverage_at_3": 0.5
+        }
+      },
+      "keyword": {
+        "latency_seconds": 0.0018,
+        "hits": [
+          {
+            "id": "CBP-S02-v1-d8b616f8c5ce-1",
+            "source_id": "CBP-S02",
+            "version": "v1",
+            "score": 3.9448290150626635,
+            "metric": "fts5-bm25",
+            "location": {
+              "status": "located",
+              "file": "sample-builds.md",
+              "heading": "Understanding sample builds",
+              "start_char": 31,
+              "end_char": 206,
+              "start_line": 3,
+              "end_line": 3,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S05-v1-9a017135492c-3",
+            "source_id": "CBP-S05",
+            "version": "v1",
+            "score": 3.7852493405703584,
+            "metric": "fts5-bm25",
+            "location": {
+              "status": "located",
+              "file": "assistant-scope.md",
+              "heading": "Assistant scope and provenance",
+              "start_char": 466,
+              "end_char": 743,
+              "start_line": 7,
+              "end_line": 7,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S02-v1-d8b616f8c5ce-2",
+            "source_id": "CBP-S02",
+            "version": "v1",
+            "score": 3.008313215922902,
+            "metric": "fts5-bm25",
+            "location": {
+              "status": "located",
+              "file": "sample-builds.md",
+              "heading": "Understanding sample builds",
+              "start_char": 208,
+              "end_char": 502,
+              "start_line": 5,
+              "end_line": 5,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          }
+        ],
+        "metrics": {
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "reciprocal_rank": 1.0,
+          "expected_source_coverage_at_3": 1.0
+        }
+      },
+      "diversified_experiment": {
+        "latency_seconds": 0.0656,
+        "hits": [
+          {
+            "id": "CBP-S01-v1-40f3df8f794e-2",
+            "source_id": "CBP-S01",
+            "version": "v1",
+            "score": 0.50793,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "navigation.md",
+              "heading": "Site navigation",
+              "start_char": 158,
+              "end_char": 460,
+              "start_line": 5,
+              "end_line": 5,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S05-v1-9a017135492c-3",
+            "source_id": "CBP-S05",
+            "version": "v1",
+            "score": 0.44424,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "assistant-scope.md",
+              "heading": "Assistant scope and provenance",
+              "start_char": 466,
+              "end_char": 743,
+              "start_line": 7,
+              "end_line": 7,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S03-v1-b9ba1459dd37-3",
+            "source_id": "CBP-S03",
+            "version": "v1",
+            "score": 0.32344,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "categories.md",
+              "heading": "Modification categories",
+              "start_char": 335,
+              "end_char": 533,
+              "start_line": 7,
+              "end_line": 7,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          }
+        ],
+        "metrics": {
+          "hit_at_1": false,
+          "hit_at_3": true,
+          "reciprocal_rank": 0.5,
+          "expected_source_coverage_at_3": 0.5
+        },
+        "production_behavior_changed": false
+      }
+    },
+    {
+      "id": "outside",
+      "category": "outside scope",
+      "question": "What is tomorrow's weather forecast for Newark?",
+      "expected_sources": [],
+      "answerable": false,
+      "hosted": true,
+      "vector": {
+        "latency_seconds": 0.0651,
+        "hits": [
+          {
+            "id": "CBP-S02-v1-d8b616f8c5ce-1",
+            "source_id": "CBP-S02",
+            "version": "v1",
+            "score": 0.11265,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "sample-builds.md",
+              "heading": "Understanding sample builds",
+              "start_char": 31,
+              "end_char": 206,
+              "start_line": 3,
+              "end_line": 3,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S01-v1-40f3df8f794e-2",
+            "source_id": "CBP-S01",
+            "version": "v1",
+            "score": 0.10804,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "navigation.md",
+              "heading": "Site navigation",
+              "start_char": 158,
+              "end_char": 460,
+              "start_line": 5,
+              "end_line": 5,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S01-v1-40f3df8f794e-1",
+            "source_id": "CBP-S01",
+            "version": "v1",
+            "score": 0.0821,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "navigation.md",
+              "heading": "Site navigation",
+              "start_char": 19,
+              "end_char": 156,
+              "start_line": 3,
+              "end_line": 3,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          }
+        ],
+        "metrics": {
+          "hit_at_1": null,
+          "hit_at_3": null,
+          "reciprocal_rank": null
+        }
+      },
+      "keyword": {
+        "latency_seconds": 0.0021,
+        "hits": [
+          {
+            "id": "CBP-S03-v1-b9ba1459dd37-1",
+            "source_id": "CBP-S03",
+            "version": "v1",
+            "score": 3.1067431126941734,
+            "metric": "fts5-bm25",
+            "location": {
+              "status": "located",
+              "file": "categories.md",
+              "heading": "Modification categories",
+              "start_char": 27,
+              "end_char": 175,
+              "start_line": 3,
+              "end_line": 3,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S05-v1-9a017135492c-2",
+            "source_id": "CBP-S05",
+            "version": "v1",
+            "score": 1.9242022738182252,
+            "metric": "fts5-bm25",
+            "location": {
+              "status": "located",
+              "file": "assistant-scope.md",
+              "heading": "Assistant scope and provenance",
+              "start_char": 237,
+              "end_char": 464,
+              "start_line": 5,
+              "end_line": 5,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S03-v1-b9ba1459dd37-4",
+            "source_id": "CBP-S03",
+            "version": "v1",
+            "score": 1.2229890479962462,
+            "metric": "fts5-bm25",
+            "location": {
+              "status": "located",
+              "file": "categories.md",
+              "heading": "Modification categories",
+              "start_char": 535,
+              "end_char": 737,
+              "start_line": 9,
+              "end_line": 9,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          }
+        ],
+        "metrics": {
+          "hit_at_1": null,
+          "hit_at_3": null,
+          "reciprocal_rank": null
+        }
+      },
+      "diversified_experiment": {
+        "latency_seconds": 0.0656,
+        "hits": [
+          {
+            "id": "CBP-S02-v1-d8b616f8c5ce-1",
+            "source_id": "CBP-S02",
+            "version": "v1",
+            "score": 0.11265,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "sample-builds.md",
+              "heading": "Understanding sample builds",
+              "start_char": 31,
+              "end_char": 206,
+              "start_line": 3,
+              "end_line": 3,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S01-v1-40f3df8f794e-2",
+            "source_id": "CBP-S01",
+            "version": "v1",
+            "score": 0.10804,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "navigation.md",
+              "heading": "Site navigation",
+              "start_char": 158,
+              "end_char": 460,
+              "start_line": 5,
+              "end_line": 5,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S03-v1-b9ba1459dd37-4",
+            "source_id": "CBP-S03",
+            "version": "v1",
+            "score": 0.01498,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "categories.md",
+              "heading": "Modification categories",
+              "start_char": 535,
+              "end_char": 737,
+              "start_line": 9,
+              "end_line": 9,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          }
+        ],
+        "metrics": {
+          "hit_at_1": null,
+          "hit_at_3": null,
+          "reciprocal_rank": null
+        },
+        "production_behavior_changed": false
+      }
+    },
+    {
+      "id": "dashboard",
+      "category": "access relationship",
+      "question": "What happens to my session when I log out?",
+      "expected_sources": [
+        "CBP-S04"
+      ],
+      "answerable": true,
+      "vector": {
+        "latency_seconds": 0.0623,
+        "hits": [
+          {
+            "id": "CBP-S04-v1-a9408862c957-2",
+            "source_id": "CBP-S04",
+            "version": "v1",
+            "score": 0.55831,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "access.md",
+              "heading": "Accounts and access",
+              "start_char": 190,
+              "end_char": 379,
+              "start_line": 5,
+              "end_line": 5,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S04-v1-a9408862c957-1",
+            "source_id": "CBP-S04",
+            "version": "v1",
+            "score": 0.17921,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "access.md",
+              "heading": "Accounts and access",
+              "start_char": 23,
+              "end_char": 188,
+              "start_line": 3,
+              "end_line": 3,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S04-v1-a9408862c957-3",
+            "source_id": "CBP-S04",
+            "version": "v1",
+            "score": 0.12567,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "access.md",
+              "heading": "Accounts and access",
+              "start_char": 381,
+              "end_char": 687,
+              "start_line": 7,
+              "end_line": 7,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          }
+        ],
+        "metrics": {
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "reciprocal_rank": 1.0,
+          "expected_source_coverage_at_3": 1.0
+        }
+      },
+      "keyword": {
+        "latency_seconds": 0.0017,
+        "hits": [
+          {
+            "id": "CBP-S04-v1-a9408862c957-2",
+            "source_id": "CBP-S04",
+            "version": "v1",
+            "score": 3.452709734775887,
+            "metric": "fts5-bm25",
+            "location": {
+              "status": "located",
+              "file": "access.md",
+              "heading": "Accounts and access",
+              "start_char": 190,
+              "end_char": 379,
+              "start_line": 5,
+              "end_line": 5,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S03-v1-b9ba1459dd37-2",
+            "source_id": "CBP-S03",
+            "version": "v1",
+            "score": 1.01356209435384,
+            "metric": "fts5-bm25",
+            "location": {
+              "status": "located",
+              "file": "categories.md",
+              "heading": "Modification categories",
+              "start_char": 177,
+              "end_char": 333,
+              "start_line": 5,
+              "end_line": 5,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S01-v1-40f3df8f794e-1",
+            "source_id": "CBP-S01",
+            "version": "v1",
+            "score": 0.9746159227966003,
+            "metric": "fts5-bm25",
+            "location": {
+              "status": "located",
+              "file": "navigation.md",
+              "heading": "Site navigation",
+              "start_char": 19,
+              "end_char": 156,
+              "start_line": 3,
+              "end_line": 3,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          }
+        ],
+        "metrics": {
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "reciprocal_rank": 1.0,
+          "expected_source_coverage_at_3": 1.0
+        }
+      },
+      "diversified_experiment": {
+        "latency_seconds": 0.068,
+        "hits": [
+          {
+            "id": "CBP-S04-v1-a9408862c957-2",
+            "source_id": "CBP-S04",
+            "version": "v1",
+            "score": 0.55831,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "access.md",
+              "heading": "Accounts and access",
+              "start_char": 190,
+              "end_char": 379,
+              "start_line": 5,
+              "end_line": 5,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S01-v1-40f3df8f794e-3",
+            "source_id": "CBP-S01",
+            "version": "v1",
+            "score": 0.04705,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "navigation.md",
+              "heading": "Site navigation",
+              "start_char": 462,
+              "end_char": 650,
+              "start_line": 7,
+              "end_line": 7,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S05-v1-9a017135492c-2",
+            "source_id": "CBP-S05",
+            "version": "v1",
+            "score": 0.02736,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "assistant-scope.md",
+              "heading": "Assistant scope and provenance",
+              "start_char": 237,
+              "end_char": 464,
+              "start_line": 5,
+              "end_line": 5,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          }
+        ],
+        "metrics": {
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "reciprocal_rank": 1.0,
+          "expected_source_coverage_at_3": 1.0
+        },
+        "production_behavior_changed": false
+      }
+    },
+    {
+      "id": "navigation",
+      "category": "exact navigation",
+      "question": "Where does View All Builds open?",
+      "expected_sources": [
+        "CBP-S01"
+      ],
+      "answerable": true,
+      "vector": {
+        "latency_seconds": 0.073,
+        "hits": [
+          {
+            "id": "CBP-S01-v1-40f3df8f794e-1",
+            "source_id": "CBP-S01",
+            "version": "v1",
+            "score": 0.60835,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "navigation.md",
+              "heading": "Site navigation",
+              "start_char": 19,
+              "end_char": 156,
+              "start_line": 3,
+              "end_line": 3,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S01-v1-40f3df8f794e-2",
+            "source_id": "CBP-S01",
+            "version": "v1",
+            "score": 0.53182,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "navigation.md",
+              "heading": "Site navigation",
+              "start_char": 158,
+              "end_char": 460,
+              "start_line": 5,
+              "end_line": 5,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S02-v1-d8b616f8c5ce-1",
+            "source_id": "CBP-S02",
+            "version": "v1",
+            "score": 0.40509,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "sample-builds.md",
+              "heading": "Understanding sample builds",
+              "start_char": 31,
+              "end_char": 206,
+              "start_line": 3,
+              "end_line": 3,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          }
+        ],
+        "metrics": {
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "reciprocal_rank": 1.0,
+          "expected_source_coverage_at_3": 1.0
+        }
+      },
+      "keyword": {
+        "latency_seconds": 0.0027,
+        "hits": [
+          {
+            "id": "CBP-S01-v1-40f3df8f794e-1",
+            "source_id": "CBP-S01",
+            "version": "v1",
+            "score": 5.462990905809282,
+            "metric": "fts5-bm25",
+            "location": {
+              "status": "located",
+              "file": "navigation.md",
+              "heading": "Site navigation",
+              "start_char": 19,
+              "end_char": 156,
+              "start_line": 3,
+              "end_line": 3,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S01-v1-40f3df8f794e-2",
+            "source_id": "CBP-S01",
+            "version": "v1",
+            "score": 4.439125988136775,
+            "metric": "fts5-bm25",
+            "location": {
+              "status": "located",
+              "file": "navigation.md",
+              "heading": "Site navigation",
+              "start_char": 158,
+              "end_char": 460,
+              "start_line": 5,
+              "end_line": 5,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S05-v1-9a017135492c-2",
+            "source_id": "CBP-S05",
+            "version": "v1",
+            "score": 1.7558419507873464,
+            "metric": "fts5-bm25",
+            "location": {
+              "status": "located",
+              "file": "assistant-scope.md",
+              "heading": "Assistant scope and provenance",
+              "start_char": 237,
+              "end_char": 464,
+              "start_line": 5,
+              "end_line": 5,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          }
+        ],
+        "metrics": {
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "reciprocal_rank": 1.0,
+          "expected_source_coverage_at_3": 1.0
+        }
+      },
+      "diversified_experiment": {
+        "latency_seconds": 0.0834,
+        "hits": [
+          {
+            "id": "CBP-S01-v1-40f3df8f794e-1",
+            "source_id": "CBP-S01",
+            "version": "v1",
+            "score": 0.60835,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "navigation.md",
+              "heading": "Site navigation",
+              "start_char": 19,
+              "end_char": 156,
+              "start_line": 3,
+              "end_line": 3,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S02-v1-d8b616f8c5ce-1",
+            "source_id": "CBP-S02",
+            "version": "v1",
+            "score": 0.40509,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "sample-builds.md",
+              "heading": "Understanding sample builds",
+              "start_char": 31,
+              "end_char": 206,
+              "start_line": 3,
+              "end_line": 3,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S05-v1-9a017135492c-1",
+            "source_id": "CBP-S05",
+            "version": "v1",
+            "score": 0.2228,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "assistant-scope.md",
+              "heading": "Assistant scope and provenance",
+              "start_char": 34,
+              "end_char": 235,
+              "start_line": 3,
+              "end_line": 3,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          }
+        ],
+        "metrics": {
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "reciprocal_rank": 1.0,
+          "expected_source_coverage_at_3": 1.0
+        },
+        "production_behavior_changed": false
+      }
+    },
+    {
+      "id": "photos",
+      "category": "source credibility",
+      "question": "Are the sample photographs proof of the listed parts?",
+      "expected_sources": [
+        "CBP-S02"
+      ],
+      "answerable": true,
+      "vector": {
+        "latency_seconds": 0.0705,
+        "hits": [
+          {
+            "id": "CBP-S02-v1-d8b616f8c5ce-2",
+            "source_id": "CBP-S02",
+            "version": "v1",
+            "score": 0.64338,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "sample-builds.md",
+              "heading": "Understanding sample builds",
+              "start_char": 208,
+              "end_char": 502,
+              "start_line": 5,
+              "end_line": 5,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S02-v1-d8b616f8c5ce-3",
+            "source_id": "CBP-S02",
+            "version": "v1",
+            "score": 0.42449,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "sample-builds.md",
+              "heading": "Understanding sample builds",
+              "start_char": 504,
+              "end_char": 699,
+              "start_line": 7,
+              "end_line": 7,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S02-v1-d8b616f8c5ce-1",
+            "source_id": "CBP-S02",
+            "version": "v1",
+            "score": 0.30216,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "sample-builds.md",
+              "heading": "Understanding sample builds",
+              "start_char": 31,
+              "end_char": 206,
+              "start_line": 3,
+              "end_line": 3,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          }
+        ],
+        "metrics": {
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "reciprocal_rank": 1.0,
+          "expected_source_coverage_at_3": 1.0
+        }
+      },
+      "keyword": {
+        "latency_seconds": 0.0016,
+        "hits": [
+          {
+            "id": "CBP-S02-v1-d8b616f8c5ce-2",
+            "source_id": "CBP-S02",
+            "version": "v1",
+            "score": 7.200582682349406,
+            "metric": "fts5-bm25",
+            "location": {
+              "status": "located",
+              "file": "sample-builds.md",
+              "heading": "Understanding sample builds",
+              "start_char": 208,
+              "end_char": 502,
+              "start_line": 5,
+              "end_line": 5,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S02-v1-d8b616f8c5ce-3",
+            "source_id": "CBP-S02",
+            "version": "v1",
+            "score": 2.9473210038118953,
+            "metric": "fts5-bm25",
+            "location": {
+              "status": "located",
+              "file": "sample-builds.md",
+              "heading": "Understanding sample builds",
+              "start_char": 504,
+              "end_char": 699,
+              "start_line": 7,
+              "end_line": 7,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S02-v1-d8b616f8c5ce-1",
+            "source_id": "CBP-S02",
+            "version": "v1",
+            "score": 2.5678458430204882,
+            "metric": "fts5-bm25",
+            "location": {
+              "status": "located",
+              "file": "sample-builds.md",
+              "heading": "Understanding sample builds",
+              "start_char": 31,
+              "end_char": 206,
+              "start_line": 3,
+              "end_line": 3,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          }
+        ],
+        "metrics": {
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "reciprocal_rank": 1.0,
+          "expected_source_coverage_at_3": 1.0
+        }
+      },
+      "diversified_experiment": {
+        "latency_seconds": 0.068,
+        "hits": [
+          {
+            "id": "CBP-S02-v1-d8b616f8c5ce-2",
+            "source_id": "CBP-S02",
+            "version": "v1",
+            "score": 0.64338,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "sample-builds.md",
+              "heading": "Understanding sample builds",
+              "start_char": 208,
+              "end_char": 502,
+              "start_line": 5,
+              "end_line": 5,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S03-v1-b9ba1459dd37-4",
+            "source_id": "CBP-S03",
+            "version": "v1",
+            "score": 0.24859,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "categories.md",
+              "heading": "Modification categories",
+              "start_char": 535,
+              "end_char": 737,
+              "start_line": 9,
+              "end_line": 9,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S05-v1-9a017135492c-2",
+            "source_id": "CBP-S05",
+            "version": "v1",
+            "score": 0.23508,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "assistant-scope.md",
+              "heading": "Assistant scope and provenance",
+              "start_char": 237,
+              "end_char": 464,
+              "start_line": 5,
+              "end_line": 5,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          }
+        ],
+        "metrics": {
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "reciprocal_rank": 1.0,
+          "expected_source_coverage_at_3": 1.0
+        },
+        "production_behavior_changed": false
+      }
+    },
+    {
+      "id": "fitment",
+      "category": "similar terminology",
+      "question": "Does the Wheels category certify tire sizes or wheel fitment?",
+      "expected_sources": [
+        "CBP-S03"
+      ],
+      "answerable": true,
+      "vector": {
+        "latency_seconds": 0.064,
+        "hits": [
+          {
+            "id": "CBP-S03-v1-b9ba1459dd37-1",
+            "source_id": "CBP-S03",
+            "version": "v1",
+            "score": 0.66897,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "categories.md",
+              "heading": "Modification categories",
+              "start_char": 27,
+              "end_char": 175,
+              "start_line": 3,
+              "end_line": 3,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S03-v1-b9ba1459dd37-4",
+            "source_id": "CBP-S03",
+            "version": "v1",
+            "score": 0.30514,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "categories.md",
+              "heading": "Modification categories",
+              "start_char": 535,
+              "end_char": 737,
+              "start_line": 9,
+              "end_line": 9,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S02-v1-d8b616f8c5ce-3",
+            "source_id": "CBP-S02",
+            "version": "v1",
+            "score": 0.2572,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "sample-builds.md",
+              "heading": "Understanding sample builds",
+              "start_char": 504,
+              "end_char": 699,
+              "start_line": 7,
+              "end_line": 7,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          }
+        ],
+        "metrics": {
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "reciprocal_rank": 1.0,
+          "expected_source_coverage_at_3": 1.0
+        }
+      },
+      "keyword": {
+        "latency_seconds": 0.0018,
+        "hits": [
+          {
+            "id": "CBP-S03-v1-b9ba1459dd37-1",
+            "source_id": "CBP-S03",
+            "version": "v1",
+            "score": 17.580521998916677,
+            "metric": "fts5-bm25",
+            "location": {
+              "status": "located",
+              "file": "categories.md",
+              "heading": "Modification categories",
+              "start_char": 27,
+              "end_char": 175,
+              "start_line": 3,
+              "end_line": 3,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S03-v1-b9ba1459dd37-4",
+            "source_id": "CBP-S03",
+            "version": "v1",
+            "score": 3.1318337280532633,
+            "metric": "fts5-bm25",
+            "location": {
+              "status": "located",
+              "file": "categories.md",
+              "heading": "Modification categories",
+              "start_char": 535,
+              "end_char": 737,
+              "start_line": 9,
+              "end_line": 9,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S02-v1-d8b616f8c5ce-3",
+            "source_id": "CBP-S02",
+            "version": "v1",
+            "score": 2.220670935844891,
+            "metric": "fts5-bm25",
+            "location": {
+              "status": "located",
+              "file": "sample-builds.md",
+              "heading": "Understanding sample builds",
+              "start_char": 504,
+              "end_char": 699,
+              "start_line": 7,
+              "end_line": 7,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          }
+        ],
+        "metrics": {
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "reciprocal_rank": 1.0,
+          "expected_source_coverage_at_3": 1.0
+        }
+      },
+      "diversified_experiment": {
+        "latency_seconds": 0.0616,
+        "hits": [
+          {
+            "id": "CBP-S03-v1-b9ba1459dd37-1",
+            "source_id": "CBP-S03",
+            "version": "v1",
+            "score": 0.66897,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "categories.md",
+              "heading": "Modification categories",
+              "start_char": 27,
+              "end_char": 175,
+              "start_line": 3,
+              "end_line": 3,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S02-v1-d8b616f8c5ce-3",
+            "source_id": "CBP-S02",
+            "version": "v1",
+            "score": 0.2572,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "sample-builds.md",
+              "heading": "Understanding sample builds",
+              "start_char": 504,
+              "end_char": 699,
+              "start_line": 7,
+              "end_line": 7,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S05-v1-9a017135492c-3",
+            "source_id": "CBP-S05",
+            "version": "v1",
+            "score": 0.2514,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "assistant-scope.md",
+              "heading": "Assistant scope and provenance",
+              "start_char": 466,
+              "end_char": 743,
+              "start_line": 7,
+              "end_line": 7,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          }
+        ],
+        "metrics": {
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "reciprocal_rank": 1.0,
+          "expected_source_coverage_at_3": 1.0
+        },
+        "production_behavior_changed": false
+      }
+    },
+    {
+      "id": "sources",
+      "category": "provenance",
+      "question": "Does a valid source ID prove every generated claim is true?",
+      "expected_sources": [
+        "CBP-S05"
+      ],
+      "answerable": true,
+      "vector": {
+        "latency_seconds": 0.0628,
+        "hits": [
+          {
+            "id": "CBP-S05-v1-9a017135492c-4",
+            "source_id": "CBP-S05",
+            "version": "v1",
+            "score": 0.67505,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "assistant-scope.md",
+              "heading": "Assistant scope and provenance",
+              "start_char": 745,
+              "end_char": 1005,
+              "start_line": 9,
+              "end_line": 9,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S05-v1-9a017135492c-2",
+            "source_id": "CBP-S05",
+            "version": "v1",
+            "score": 0.5114,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "assistant-scope.md",
+              "heading": "Assistant scope and provenance",
+              "start_char": 237,
+              "end_char": 464,
+              "start_line": 5,
+              "end_line": 5,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S05-v1-9a017135492c-3",
+            "source_id": "CBP-S05",
+            "version": "v1",
+            "score": 0.34267,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "assistant-scope.md",
+              "heading": "Assistant scope and provenance",
+              "start_char": 466,
+              "end_char": 743,
+              "start_line": 7,
+              "end_line": 7,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          }
+        ],
+        "metrics": {
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "reciprocal_rank": 1.0,
+          "expected_source_coverage_at_3": 1.0
+        }
+      },
+      "keyword": {
+        "latency_seconds": 0.0018,
+        "hits": [
+          {
+            "id": "CBP-S05-v1-9a017135492c-4",
+            "source_id": "CBP-S05",
+            "version": "v1",
+            "score": 17.02626015916601,
+            "metric": "fts5-bm25",
+            "location": {
+              "status": "located",
+              "file": "assistant-scope.md",
+              "heading": "Assistant scope and provenance",
+              "start_char": 745,
+              "end_char": 1005,
+              "start_line": 9,
+              "end_line": 9,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S05-v1-9a017135492c-2",
+            "source_id": "CBP-S05",
+            "version": "v1",
+            "score": 5.321593183015919,
+            "metric": "fts5-bm25",
+            "location": {
+              "status": "located",
+              "file": "assistant-scope.md",
+              "heading": "Assistant scope and provenance",
+              "start_char": 237,
+              "end_char": 464,
+              "start_line": 5,
+              "end_line": 5,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S04-v1-a9408862c957-4",
+            "source_id": "CBP-S04",
+            "version": "v1",
+            "score": 3.1022921179363765,
+            "metric": "fts5-bm25",
+            "location": {
+              "status": "located",
+              "file": "access.md",
+              "heading": "Accounts and access",
+              "start_char": 689,
+              "end_char": 867,
+              "start_line": 9,
+              "end_line": 9,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          }
+        ],
+        "metrics": {
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "reciprocal_rank": 1.0,
+          "expected_source_coverage_at_3": 1.0
+        }
+      },
+      "diversified_experiment": {
+        "latency_seconds": 0.0631,
+        "hits": [
+          {
+            "id": "CBP-S05-v1-9a017135492c-4",
+            "source_id": "CBP-S05",
+            "version": "v1",
+            "score": 0.67505,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "assistant-scope.md",
+              "heading": "Assistant scope and provenance",
+              "start_char": 745,
+              "end_char": 1005,
+              "start_line": 9,
+              "end_line": 9,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S02-v1-d8b616f8c5ce-2",
+            "source_id": "CBP-S02",
+            "version": "v1",
+            "score": 0.17383,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "sample-builds.md",
+              "heading": "Understanding sample builds",
+              "start_char": 208,
+              "end_char": 502,
+              "start_line": 5,
+              "end_line": 5,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          }
+        ],
+        "metrics": {
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "reciprocal_rank": 1.0,
+          "expected_source_coverage_at_3": 1.0
+        },
+        "production_behavior_changed": false
+      }
+    },
+    {
+      "id": "repair",
+      "category": "unsupported procedure",
+      "question": "Give me step-by-step suspension installation instructions and torque settings.",
+      "expected_sources": [
+        "CBP-S03",
+        "CBP-S05"
+      ],
+      "answerable": false,
+      "vector": {
+        "latency_seconds": 0.0652,
+        "hits": [
+          {
+            "id": "CBP-S03-v1-b9ba1459dd37-2",
+            "source_id": "CBP-S03",
+            "version": "v1",
+            "score": 0.4737,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "categories.md",
+              "heading": "Modification categories",
+              "start_char": 177,
+              "end_char": 333,
+              "start_line": 5,
+              "end_line": 5,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S02-v1-d8b616f8c5ce-3",
+            "source_id": "CBP-S02",
+            "version": "v1",
+            "score": 0.26286,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "sample-builds.md",
+              "heading": "Understanding sample builds",
+              "start_char": 504,
+              "end_char": 699,
+              "start_line": 7,
+              "end_line": 7,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S03-v1-b9ba1459dd37-4",
+            "source_id": "CBP-S03",
+            "version": "v1",
+            "score": 0.237,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "categories.md",
+              "heading": "Modification categories",
+              "start_char": 535,
+              "end_char": 737,
+              "start_line": 9,
+              "end_line": 9,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          }
+        ],
+        "metrics": {
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "reciprocal_rank": 1.0,
+          "expected_source_coverage_at_3": 0.5
+        }
+      },
+      "keyword": {
+        "latency_seconds": 0.0019,
+        "hits": [
+          {
+            "id": "CBP-S01-v1-40f3df8f794e-1",
+            "source_id": "CBP-S01",
+            "version": "v1",
+            "score": 5.333027939483059,
+            "metric": "fts5-bm25",
+            "location": {
+              "status": "located",
+              "file": "navigation.md",
+              "heading": "Site navigation",
+              "start_char": 19,
+              "end_char": 156,
+              "start_line": 3,
+              "end_line": 3,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S03-v1-b9ba1459dd37-2",
+            "source_id": "CBP-S03",
+            "version": "v1",
+            "score": 2.8155311952671522,
+            "metric": "fts5-bm25",
+            "location": {
+              "status": "located",
+              "file": "categories.md",
+              "heading": "Modification categories",
+              "start_char": 177,
+              "end_char": 333,
+              "start_line": 5,
+              "end_line": 5,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S04-v1-a9408862c957-4",
+            "source_id": "CBP-S04",
+            "version": "v1",
+            "score": 2.1020537462681714,
+            "metric": "fts5-bm25",
+            "location": {
+              "status": "located",
+              "file": "access.md",
+              "heading": "Accounts and access",
+              "start_char": 689,
+              "end_char": 867,
+              "start_line": 9,
+              "end_line": 9,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          }
+        ],
+        "metrics": {
+          "hit_at_1": false,
+          "hit_at_3": true,
+          "reciprocal_rank": 0.5,
+          "expected_source_coverage_at_3": 0.5
+        }
+      },
+      "diversified_experiment": {
+        "latency_seconds": 0.0646,
+        "hits": [
+          {
+            "id": "CBP-S03-v1-b9ba1459dd37-2",
+            "source_id": "CBP-S03",
+            "version": "v1",
+            "score": 0.4737,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "categories.md",
+              "heading": "Modification categories",
+              "start_char": 177,
+              "end_char": 333,
+              "start_line": 5,
+              "end_line": 5,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S02-v1-d8b616f8c5ce-3",
+            "source_id": "CBP-S02",
+            "version": "v1",
+            "score": 0.26286,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "sample-builds.md",
+              "heading": "Understanding sample builds",
+              "start_char": 504,
+              "end_char": 699,
+              "start_line": 7,
+              "end_line": 7,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S05-v1-9a017135492c-3",
+            "source_id": "CBP-S05",
+            "version": "v1",
+            "score": 0.22694,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "assistant-scope.md",
+              "heading": "Assistant scope and provenance",
+              "start_char": 466,
+              "end_char": 743,
+              "start_line": 7,
+              "end_line": 7,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          }
+        ],
+        "metrics": {
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "reciprocal_rank": 1.0,
+          "expected_source_coverage_at_3": 1.0
+        },
+        "production_behavior_changed": false
+      }
+    },
+    {
+      "id": "private",
+      "category": "private information",
+      "question": "What are the administrator password and Gemini API key?",
+      "expected_sources": [
+        "CBP-S04",
+        "CBP-S05"
+      ],
+      "answerable": false,
+      "vector": {
+        "latency_seconds": 0.0636,
+        "hits": [
+          {
+            "id": "CBP-S04-v1-a9408862c957-3",
+            "source_id": "CBP-S04",
+            "version": "v1",
+            "score": 0.43704,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "access.md",
+              "heading": "Accounts and access",
+              "start_char": 381,
+              "end_char": 687,
+              "start_line": 7,
+              "end_line": 7,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S04-v1-a9408862c957-4",
+            "source_id": "CBP-S04",
+            "version": "v1",
+            "score": 0.38734,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "access.md",
+              "heading": "Accounts and access",
+              "start_char": 689,
+              "end_char": 867,
+              "start_line": 9,
+              "end_line": 9,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S04-v1-a9408862c957-2",
+            "source_id": "CBP-S04",
+            "version": "v1",
+            "score": 0.34063,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "access.md",
+              "heading": "Accounts and access",
+              "start_char": 190,
+              "end_char": 379,
+              "start_line": 5,
+              "end_line": 5,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          }
+        ],
+        "metrics": {
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "reciprocal_rank": 1.0,
+          "expected_source_coverage_at_3": 0.5
+        }
+      },
+      "keyword": {
+        "latency_seconds": 0.0017,
+        "hits": [
+          {
+            "id": "CBP-S04-v1-a9408862c957-3",
+            "source_id": "CBP-S04",
+            "version": "v1",
+            "score": 4.529125719667688,
+            "metric": "fts5-bm25",
+            "location": {
+              "status": "located",
+              "file": "access.md",
+              "heading": "Accounts and access",
+              "start_char": 381,
+              "end_char": 687,
+              "start_line": 7,
+              "end_line": 7,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S04-v1-a9408862c957-4",
+            "source_id": "CBP-S04",
+            "version": "v1",
+            "score": 2.102054860192222,
+            "metric": "fts5-bm25",
+            "location": {
+              "status": "located",
+              "file": "access.md",
+              "heading": "Accounts and access",
+              "start_char": 689,
+              "end_char": 867,
+              "start_line": 9,
+              "end_line": 9,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S02-v1-d8b616f8c5ce-2",
+            "source_id": "CBP-S02",
+            "version": "v1",
+            "score": 1.1391701870276894,
+            "metric": "fts5-bm25",
+            "location": {
+              "status": "located",
+              "file": "sample-builds.md",
+              "heading": "Understanding sample builds",
+              "start_char": 208,
+              "end_char": 502,
+              "start_line": 5,
+              "end_line": 5,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          }
+        ],
+        "metrics": {
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "reciprocal_rank": 1.0,
+          "expected_source_coverage_at_3": 0.5
+        }
+      },
+      "diversified_experiment": {
+        "latency_seconds": 0.0646,
+        "hits": [
+          {
+            "id": "CBP-S04-v1-a9408862c957-3",
+            "source_id": "CBP-S04",
+            "version": "v1",
+            "score": 0.43704,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "access.md",
+              "heading": "Accounts and access",
+              "start_char": 381,
+              "end_char": 687,
+              "start_line": 7,
+              "end_line": 7,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S05-v1-9a017135492c-1",
+            "source_id": "CBP-S05",
+            "version": "v1",
+            "score": 0.16583,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "assistant-scope.md",
+              "heading": "Assistant scope and provenance",
+              "start_char": 34,
+              "end_char": 235,
+              "start_line": 3,
+              "end_line": 3,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S01-v1-40f3df8f794e-2",
+            "source_id": "CBP-S01",
+            "version": "v1",
+            "score": 0.0767,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "navigation.md",
+              "heading": "Site navigation",
+              "start_char": 158,
+              "end_char": 460,
+              "start_line": 5,
+              "end_line": 5,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          }
+        ],
+        "metrics": {
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "reciprocal_rank": 1.0,
+          "expected_source_coverage_at_3": 1.0
+        },
+        "production_behavior_changed": false
+      }
+    },
+    {
+      "id": "owners",
+      "category": "unsupported identity",
+      "question": "Who owns the photographed Skyline and what is their verified service history?",
+      "expected_sources": [
+        "CBP-S02",
+        "CBP-S05"
+      ],
+      "answerable": false,
+      "vector": {
+        "latency_seconds": 0.0615,
+        "hits": [
+          {
+            "id": "CBP-S01-v1-40f3df8f794e-2",
+            "source_id": "CBP-S01",
+            "version": "v1",
+            "score": 0.45876,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "navigation.md",
+              "heading": "Site navigation",
+              "start_char": 158,
+              "end_char": 460,
+              "start_line": 5,
+              "end_line": 5,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S02-v1-d8b616f8c5ce-2",
+            "source_id": "CBP-S02",
+            "version": "v1",
+            "score": 0.29418,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "sample-builds.md",
+              "heading": "Understanding sample builds",
+              "start_char": 208,
+              "end_char": 502,
+              "start_line": 5,
+              "end_line": 5,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S01-v1-40f3df8f794e-1",
+            "source_id": "CBP-S01",
+            "version": "v1",
+            "score": 0.25853,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "navigation.md",
+              "heading": "Site navigation",
+              "start_char": 19,
+              "end_char": 156,
+              "start_line": 3,
+              "end_line": 3,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          }
+        ],
+        "metrics": {
+          "hit_at_1": false,
+          "hit_at_3": true,
+          "reciprocal_rank": 0.5,
+          "expected_source_coverage_at_3": 0.5
+        }
+      },
+      "keyword": {
+        "latency_seconds": 0.0018,
+        "hits": [
+          {
+            "id": "CBP-S05-v1-9a017135492c-3",
+            "source_id": "CBP-S05",
+            "version": "v1",
+            "score": 2.6259482412014252,
+            "metric": "fts5-bm25",
+            "location": {
+              "status": "located",
+              "file": "assistant-scope.md",
+              "heading": "Assistant scope and provenance",
+              "start_char": 466,
+              "end_char": 743,
+              "start_line": 7,
+              "end_line": 7,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S01-v1-40f3df8f794e-2",
+            "source_id": "CBP-S01",
+            "version": "v1",
+            "score": 2.59095993773738,
+            "metric": "fts5-bm25",
+            "location": {
+              "status": "located",
+              "file": "navigation.md",
+              "heading": "Site navigation",
+              "start_char": 158,
+              "end_char": 460,
+              "start_line": 5,
+              "end_line": 5,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S02-v1-d8b616f8c5ce-1",
+            "source_id": "CBP-S02",
+            "version": "v1",
+            "score": 1.9724159246883464,
+            "metric": "fts5-bm25",
+            "location": {
+              "status": "located",
+              "file": "sample-builds.md",
+              "heading": "Understanding sample builds",
+              "start_char": 31,
+              "end_char": 206,
+              "start_line": 3,
+              "end_line": 3,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          }
+        ],
+        "metrics": {
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "reciprocal_rank": 1.0,
+          "expected_source_coverage_at_3": 1.0
+        }
+      },
+      "diversified_experiment": {
+        "latency_seconds": 0.0661,
+        "hits": [
+          {
+            "id": "CBP-S01-v1-40f3df8f794e-2",
+            "source_id": "CBP-S01",
+            "version": "v1",
+            "score": 0.45876,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "navigation.md",
+              "heading": "Site navigation",
+              "start_char": 158,
+              "end_char": 460,
+              "start_line": 5,
+              "end_line": 5,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S02-v1-d8b616f8c5ce-2",
+            "source_id": "CBP-S02",
+            "version": "v1",
+            "score": 0.29418,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "sample-builds.md",
+              "heading": "Understanding sample builds",
+              "start_char": 208,
+              "end_char": 502,
+              "start_line": 5,
+              "end_line": 5,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          },
+          {
+            "id": "CBP-S05-v1-9a017135492c-3",
+            "source_id": "CBP-S05",
+            "version": "v1",
+            "score": 0.20941,
+            "metric": "cosine",
+            "location": {
+              "status": "located",
+              "file": "assistant-scope.md",
+              "heading": "Assistant scope and provenance",
+              "start_char": 466,
+              "end_char": 743,
+              "start_line": 7,
+              "end_line": 7,
+              "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+            }
+          }
+        ],
+        "metrics": {
+          "hit_at_1": false,
+          "hit_at_3": true,
+          "reciprocal_rank": 0.5,
+          "expected_source_coverage_at_3": 1.0
+        },
+        "production_behavior_changed": false
+      }
+    }
+  ],
+  "actual_hosted_requests": 0,
+  "metrics_note": "Source-level retrieval metrics; unsupported cases measure scope-source retrieval, not factual answer correctness. Latency includes cold startup on first vector call.",
+  "aggregate_supported_source_metrics": {
+    "vector": {
+      "answerable_questions": 11,
+      "source_hit_at_1_count": 10,
+      "source_hit_at_3_count": 11,
+      "mean_reciprocal_rank": 0.95455
+    },
+    "keyword": {
+      "answerable_questions": 11,
+      "source_hit_at_1_count": 10,
+      "source_hit_at_3_count": 11,
+      "mean_reciprocal_rank": 0.95455
+    },
+    "diversified_experiment": {
+      "answerable_questions": 11,
+      "source_hit_at_1_count": 10,
+      "source_hit_at_3_count": 11,
+      "mean_reciprocal_rank": 0.95455
+    }
+  },
+  "experiment_note": "Diversification raises expected-source coverage for multiple from 0.5 to 1.0, but no answer with diversified context was generated. Production selection unchanged. Source hits are not complete-answer accuracy."
+}

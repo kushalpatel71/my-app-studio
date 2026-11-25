@@ -1,0 +1,33 @@
+{
+  "revision": "572023ccf35afc44c9dd1f34be4037551d0395f5",
+  "working_tree_dirty": true,
+  "backup": "private off-host Review 2 backup; raw archive excluded from GitHub",
+  "stats": {
+    "documents": 5,
+    "chunks": 18
+  },
+  "reimport": "unchanged",
+  "source_location": {
+    "status": "located",
+    "file": "navigation.md",
+    "heading": "Site navigation",
+    "start_char": 158,
+    "end_char": 460,
+    "start_line": 5,
+    "end_line": 5,
+    "coordinate_system": "LF-normalized stripped Markdown; Unicode characters"
+  },
+  "new_app_session_survives_restart": true,
+  "member_admin_denied": 403,
+  "logout_replay": 401,
+  "old_deployed_code_can_read_after_review3": {
+    "stats": {
+      "documents": 5,
+      "chunks": 18
+    },
+    "top": "CBP-S01",
+    "repeat": "unchanged"
+  },
+  "live_restart_or_rollback_executed": false,
+  "original_server_signing_secret_copied": false
+}

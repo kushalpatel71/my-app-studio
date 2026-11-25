@@ -104,3 +104,39 @@ def test_restart_persistence_in_new_process(index):
     )
     data = json.loads(result.stdout)
     assert data == {"stats": {"documents": 5, "chunks": 18}, "top": "CBP-S01"}
+
+
+def test_legacy_ids_and_exact_locations_survive_reopen(index):
+    """Additional derived provenance requires no reimport or ID/schema migration."""
+    with index.connect() as db:
+        ids = [
+            r[0]
+            for r in db.execute(
+                "SELECT id FROM chunks WHERE generation=?", (index.active(),)
+            )
+        ]
+    reopened = RagStore(index.directory)
+    assert len(ids) == 18
+    for ident in ids:
+        source = reopened.source(ident)
+        location = source["location"]
+        assert location["status"] == "located"
+        original = source["provenance"]["text"][
+            location["start_char"] : location["end_char"]
+        ]
+        assert " ".join(original.split()) == source["text"].partition("\n")[2]
+        assert source["provenance"]["sha256"][:12] in ident
+    assert reopened.ingest()["status"] == "unchanged"
+
+
+def test_public_source_locations_and_path_denial(client, index):
+    client.app.state.rag_store = index
+    source = index.retrieve("View Details")[0]
+    response = client.get(source["url"])
+    assert response.status_code == 200
+    assert (
+        "LF-normalized" in response.text
+        and source["provenance"]["file"] in response.text
+    )
+    for ident in ["not-indexed", "CBP-S01' OR 1=1--", "%2Fetc%2Fpasswd"]:
+        assert client.get("/rag/sources/" + ident).status_code == 404

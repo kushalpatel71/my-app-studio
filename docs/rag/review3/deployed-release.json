@@ -1,0 +1,821 @@
+{
+  "release": "05f8da7bc6ffc6ff3470a53fa9dbba98cb4011d4",
+  "origin": "https://carbuilders.192.81.212.73.sslip.io",
+  "started_at": "2026-11-25T19:06:31.842770+00:00",
+  "proxy_aware_limiting": "disabled",
+  "stages": {
+    "backup": {
+      "action": "backup",
+      "start": "2026-11-25T18:53:00.967209+00:00",
+      "end_healthy": "2026-11-25T18:53:40.787740+00:00",
+      "bytes": 166377373,
+      "sha256": "ce7852e34963ec0535ba230cdb6a8ae209c3dfe033080ec6c48a4050ed1e47e3",
+      "old_app_restarted_healthy": true
+    },
+    "offhost_backup": {
+      "checksum_matches": true,
+      "private_file_mode": "0600",
+      "sqlite_integrity": [
+        "studio.sqlite3",
+        "manifest.sqlite3",
+        "chroma.sqlite3"
+      ],
+      "restored_stats": {
+        "documents": 5,
+        "chunks": 18
+      },
+      "actual_restored_semantic_retrieval": "CBP-S01"
+    },
+    "watchdog": {
+      "rollback_watchdog_armed": true,
+      "deadline_minutes": 30
+    },
+    "deploy": {
+      "action": "deploy",
+      "deployed_commit": "05f8da7bc6ffc6ff3470a53fa9dbba98cb4011d4",
+      "healthy": true,
+      "at": "2026-11-25T19:06:52.977812+00:00"
+    },
+    "final_server": {
+      "deployed_commit": "05f8da7bc6ffc6ff3470a53fa9dbba98cb4011d4",
+      "healthy": true,
+      "secrets_and_private_env_unchanged": true,
+      "all_existing_accounts_and_roles_preserved": true,
+      "volume_preserved": true,
+      "proxy_limiting_disabled": true,
+      "original_services_unchanged": true,
+      "proxy_config_unchanged": true,
+      "previous_image_retained": true
+    },
+    "finalized": {
+      "watchdog_disarmed_after_verification": true
+    }
+  },
+  "questions": [
+    {
+      "kind": "exact",
+      "question": "Where does View Details take me?",
+      "status": 200,
+      "latency_seconds": 4.629,
+      "response": {
+        "answer": "View Details opens an individual sample build detail page.",
+        "citations": [
+          {
+            "id": "CBP-S01-v1-40f3df8f794e-2",
+            "title": "Site navigation",
+            "url": "/rag/sources/CBP-S01-v1-40f3df8f794e-2"
+          }
+        ],
+        "insufficient": false,
+        "trace": [
+          {
+            "id": "CBP-S01-v1-40f3df8f794e-2",
+            "source_id": "CBP-S01",
+            "version": "v1",
+            "title": "Site navigation",
+            "score": 0.4277,
+            "metric": "cosine",
+            "url": "/rag/sources/CBP-S01-v1-40f3df8f794e-2"
+          },
+          {
+            "id": "CBP-S02-v1-d8b616f8c5ce-2",
+            "source_id": "CBP-S02",
+            "version": "v1",
+            "title": "Understanding sample builds",
+            "score": 0.31188,
+            "metric": "cosine",
+            "url": "/rag/sources/CBP-S02-v1-d8b616f8c5ce-2"
+          },
+          {
+            "id": "CBP-S01-v1-40f3df8f794e-3",
+            "source_id": "CBP-S01",
+            "version": "v1",
+            "title": "Site navigation",
+            "score": 0.3114,
+            "metric": "cosine",
+            "url": "/rag/sources/CBP-S01-v1-40f3df8f794e-3"
+          }
+        ],
+        "generation": "gemini"
+      },
+      "citation_ids_valid": true,
+      "opened_citations": [
+        {
+          "id": "CBP-S01-v1-40f3df8f794e-2",
+          "url": "https://carbuilders.192.81.212.73.sslip.io/rag/sources/CBP-S01-v1-40f3df8f794e-2",
+          "status": 200,
+          "location_visible": true
+        }
+      ]
+    },
+    {
+      "kind": "roles",
+      "question": "Which role may access the administration page?",
+      "status": 200,
+      "latency_seconds": 1.542,
+      "response": {
+        "answer": "Only the administrator role may access the administration page.",
+        "citations": [
+          {
+            "id": "CBP-S04-v1-a9408862c957-3",
+            "title": "Accounts and access",
+            "url": "/rag/sources/CBP-S04-v1-a9408862c957-3"
+          }
+        ],
+        "insufficient": false,
+        "trace": [
+          {
+            "id": "CBP-S04-v1-a9408862c957-3",
+            "source_id": "CBP-S04",
+            "version": "v1",
+            "title": "Accounts and access",
+            "score": 0.63688,
+            "metric": "cosine",
+            "url": "/rag/sources/CBP-S04-v1-a9408862c957-3"
+          },
+          {
+            "id": "CBP-S04-v1-a9408862c957-4",
+            "source_id": "CBP-S04",
+            "version": "v1",
+            "title": "Accounts and access",
+            "score": 0.4254,
+            "metric": "cosine",
+            "url": "/rag/sources/CBP-S04-v1-a9408862c957-4"
+          },
+          {
+            "id": "CBP-S04-v1-a9408862c957-1",
+            "source_id": "CBP-S04",
+            "version": "v1",
+            "title": "Accounts and access",
+            "score": 0.36013,
+            "metric": "cosine",
+            "url": "/rag/sources/CBP-S04-v1-a9408862c957-1"
+          }
+        ],
+        "generation": "gemini"
+      },
+      "citation_ids_valid": true,
+      "opened_citations": [
+        {
+          "id": "CBP-S04-v1-a9408862c957-3",
+          "url": "https://carbuilders.192.81.212.73.sslip.io/rag/sources/CBP-S04-v1-a9408862c957-3",
+          "status": 200,
+          "location_visible": true
+        }
+      ]
+    },
+    {
+      "kind": "unsupported",
+      "question": "What exact measured horsepower gain will the Skyline modifications produce?",
+      "status": 200,
+      "latency_seconds": 1.524,
+      "response": {
+        "answer": "Insufficient evidence in the approved corpus.",
+        "citations": [],
+        "insufficient": true,
+        "trace": [
+          {
+            "id": "CBP-S01-v1-40f3df8f794e-2",
+            "source_id": "CBP-S01",
+            "version": "v1",
+            "title": "Site navigation",
+            "score": 0.50793,
+            "metric": "cosine",
+            "url": "/rag/sources/CBP-S01-v1-40f3df8f794e-2"
+          },
+          {
+            "id": "CBP-S05-v1-9a017135492c-3",
+            "source_id": "CBP-S05",
+            "version": "v1",
+            "title": "Assistant scope and provenance",
+            "score": 0.44424,
+            "metric": "cosine",
+            "url": "/rag/sources/CBP-S05-v1-9a017135492c-3"
+          },
+          {
+            "id": "CBP-S03-v1-b9ba1459dd37-3",
+            "source_id": "CBP-S03",
+            "version": "v1",
+            "title": "Modification categories",
+            "score": 0.32344,
+            "metric": "cosine",
+            "url": "/rag/sources/CBP-S03-v1-b9ba1459dd37-3"
+          }
+        ],
+        "generation": "gemini"
+      },
+      "citation_ids_valid": true,
+      "opened_citations": []
+    },
+    {
+      "kind": "outside",
+      "question": "What is tomorrow weather in Newark?",
+      "status": 200,
+      "latency_seconds": 0.232,
+      "response": {
+        "answer": "Insufficient evidence in the approved corpus.",
+        "citations": [],
+        "insufficient": true,
+        "trace": [
+          {
+            "id": "CBP-S02-v1-d8b616f8c5ce-1",
+            "source_id": "CBP-S02",
+            "version": "v1",
+            "title": "Understanding sample builds",
+            "score": 0.09604,
+            "metric": "cosine",
+            "url": "/rag/sources/CBP-S02-v1-d8b616f8c5ce-1"
+          },
+          {
+            "id": "CBP-S01-v1-40f3df8f794e-2",
+            "source_id": "CBP-S01",
+            "version": "v1",
+            "title": "Site navigation",
+            "score": 0.05953,
+            "metric": "cosine",
+            "url": "/rag/sources/CBP-S01-v1-40f3df8f794e-2"
+          },
+          {
+            "id": "CBP-S01-v1-40f3df8f794e-1",
+            "source_id": "CBP-S01",
+            "version": "v1",
+            "title": "Site navigation",
+            "score": 0.04468,
+            "metric": "cosine",
+            "url": "/rag/sources/CBP-S01-v1-40f3df8f794e-1"
+          }
+        ],
+        "generation": "not-called"
+      },
+      "citation_ids_valid": true,
+      "opened_citations": []
+    }
+  ],
+  "actual_provider_calls": 4,
+  "session_valid_before_retry_recreate": true,
+  "backup_reused_after_startup_only_failure": true,
+  "routes": {
+    "/": 200,
+    "/builds": 200,
+    "/builds/skyline": 200,
+    "/builds/miata": 200,
+    "/builds/bmw": 200,
+    "/about": 200,
+    "/signup": 303,
+    "/login": 303,
+    "/portfolio": 200,
+    "/portfolio/projects/rag": 200,
+    "/rag": 200,
+    "/health": 200,
+    "https://calc.192.81.212.73.sslip.io/health": 200,
+    "https://192.81.212.73.sslip.io/": 200,
+    "https://qa.192.81.212.73.sslip.io/": 200
+  },
+  "existing_session_valid_after_recreate": true,
+  "import": {
+    "status": "unchanged",
+    "generation": "c8f0e4d840fdef5f40a4f4ec",
+    "documents": 5,
+    "chunks": 18
+  },
+  "repeat_import": {
+    "status": "unchanged",
+    "generation": "c8f0e4d840fdef5f40a4f4ec",
+    "documents": 5,
+    "chunks": 18
+  },
+  "permissions": {
+    "anonymous_import": 401,
+    "member_import": 403,
+    "admin_without_csrf": 403,
+    "admin_bad_origin": 403,
+    "admin_with_csrf": 200,
+    "same_session_demotion": 403
+  },
+  "historical_source_and_new_location": {
+    "url": "https://carbuilders.192.81.212.73.sslip.io/rag/sources/CBP-S01-v1-40f3df8f794e-2",
+    "status": 200,
+    "file": "navigation.md",
+    "normalized_location_displayed": true
+  },
+  "same_session_and_source_survived_restart": true,
+  "logout_replay_status": 401,
+  "browser": {
+    "origin": "https://carbuilders.192.81.212.73.sslip.io",
+    "release": "05f8da7bc6ffc6ff3470a53fa9dbba98cb4011d4",
+    "checked_date": "2026-11-25",
+    "real_generated_journey": true,
+    "layout": [
+      {
+        "width": 1440,
+        "overflow": false,
+        "keyboard_navigation": "passed"
+      },
+      {
+        "width": 768,
+        "overflow": false,
+        "keyboard_navigation": "passed"
+      },
+      {
+        "width": 390,
+        "overflow": false,
+        "keyboard_navigation": "passed"
+      },
+      {
+        "width": 320,
+        "overflow": false,
+        "keyboard_navigation": "passed"
+      }
+    ],
+    "rag_answer_layout": [
+      {
+        "width": 320,
+        "overflow": false
+      },
+      {
+        "width": 390,
+        "overflow": false
+      }
+    ],
+    "steps": [
+      "public portfolio",
+      "keyboard project link",
+      "RAG case study",
+      "assistant",
+      "question submitted",
+      "real vector trace",
+      "real Gemini answer",
+      "verified citation opened"
+    ],
+    "answer": "View Details opens an individual sample build detail page.",
+    "citations": [
+      {
+        "id": "CBP-S01-v1-40f3df8f794e-2",
+        "title": "Site navigation",
+        "url": "/rag/sources/CBP-S01-v1-40f3df8f794e-2"
+      }
+    ],
+    "trace": [
+      {
+        "id": "CBP-S01-v1-40f3df8f794e-2",
+        "source_id": "CBP-S01",
+        "version": "v1",
+        "title": "Site navigation",
+        "score": 0.4277,
+        "metric": "cosine",
+        "url": "/rag/sources/CBP-S01-v1-40f3df8f794e-2"
+      },
+      {
+        "id": "CBP-S02-v1-d8b616f8c5ce-2",
+        "source_id": "CBP-S02",
+        "version": "v1",
+        "title": "Understanding sample builds",
+        "score": 0.31188,
+        "metric": "cosine",
+        "url": "/rag/sources/CBP-S02-v1-d8b616f8c5ce-2"
+      },
+      {
+        "id": "CBP-S01-v1-40f3df8f794e-3",
+        "source_id": "CBP-S01",
+        "version": "v1",
+        "title": "Site navigation",
+        "score": 0.3114,
+        "metric": "cosine",
+        "url": "/rag/sources/CBP-S01-v1-40f3df8f794e-3"
+      }
+    ],
+    "opened_source": "https://carbuilders.192.81.212.73.sslip.io/rag/sources/CBP-S01-v1-40f3df8f794e-2",
+    "source_passage": "Site navigation\nView Details opens an individual sample build detail page. The Skyline is at /builds/skyline, the Miata at /builds/miata, and the BMW at /builds/bmw. These pages show the example car and labeled modification categories. To look at the upgrades on one example car, open Car Builds and then View Details."
+  },
+  "status": "verified",
+  "rollback_executed": false,
+  "health_observations": [
+    {
+      "at": "2026-11-25T19:06:31.939267+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:06:33.100706+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:06:34.117662+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:06:35.159073+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:06:36.211965+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:06:37.262158+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:06:38.303275+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:06:39.346252+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:06:40.392409+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:06:41.442822+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:06:42.495209+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:06:43.550132+00:00",
+      "status": 502
+    },
+    {
+      "at": "2026-11-25T19:06:44.590354+00:00",
+      "status": 502
+    },
+    {
+      "at": "2026-11-25T19:06:45.637489+00:00",
+      "status": 404
+    },
+    {
+      "at": "2026-11-25T19:06:46.682690+00:00",
+      "status": 404
+    },
+    {
+      "at": "2026-11-25T19:06:47.731366+00:00",
+      "status": 404
+    },
+    {
+      "at": "2026-11-25T19:06:48.786131+00:00",
+      "status": 404
+    },
+    {
+      "at": "2026-11-25T19:06:49.832159+00:00",
+      "status": 404
+    },
+    {
+      "at": "2026-11-25T19:06:50.877317+00:00",
+      "status": 404
+    },
+    {
+      "at": "2026-11-25T19:06:51.926233+00:00",
+      "status": 404
+    },
+    {
+      "at": "2026-11-25T19:06:52.967953+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:06:54.034857+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:06:55.092614+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:06:56.130835+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:06:57.175367+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:06:58.236120+00:00",
+      "status": 502
+    },
+    {
+      "at": "2026-11-25T19:07:00.334527+00:00",
+      "status": 404
+    },
+    {
+      "at": "2026-11-25T19:07:01.359552+00:00",
+      "status": 404
+    },
+    {
+      "at": "2026-11-25T19:07:02.408718+00:00",
+      "status": 404
+    },
+    {
+      "at": "2026-11-25T19:07:03.460044+00:00",
+      "status": 404
+    },
+    {
+      "at": "2026-11-25T19:07:04.509377+00:00",
+      "status": 404
+    },
+    {
+      "at": "2026-11-25T19:07:05.551342+00:00",
+      "status": 404
+    },
+    {
+      "at": "2026-11-25T19:07:06.604772+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:07:07.657821+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:07:08.729183+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:07:09.793637+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:07:11.296511+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:07:12.310885+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:07:13.324256+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:07:14.338635+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:07:15.359501+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:07:16.384675+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:07:17.407699+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:07:18.434679+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:07:19.449974+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:07:20.467991+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:07:21.484666+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:07:22.501318+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:07:23.519428+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:07:24.534441+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:07:25.553470+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:07:26.567974+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:07:27.584461+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:07:28.623305+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:07:29.676272+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:07:30.723109+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:07:31.772962+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:07:32.817962+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:07:33.867987+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:07:34.917950+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:07:35.967714+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:07:37.016112+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:07:38.076673+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:07:39.117943+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:07:40.159318+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:07:41.210297+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:07:42.256514+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:07:43.307351+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:07:44.365618+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:07:45.408595+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:07:46.456707+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:07:47.499413+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:07:48.551251+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:07:49.596428+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:07:50.644693+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:07:51.701238+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:07:52.752958+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:07:53.793118+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:07:54.842731+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:07:55.893101+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:07:57.183306+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:07:58.195360+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:07:59.212652+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:08:00.227185+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:08:01.246654+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:08:02.260231+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:08:03.277131+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:08:04.301236+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:08:05.340521+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:08:06.384534+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:08:07.443938+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:08:08.486029+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:08:09.534474+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:08:10.578867+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:08:11.629970+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:08:12.685065+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:08:13.727855+00:00",
+      "status": 200
+    },
+    {
+      "at": "2026-11-25T19:08:14.777397+00:00",
+      "status": 200
+    }
+  ],
+  "observed_downtime_intervals": [
+    {
+      "first_failed_sample": "2026-11-25T19:06:43.550132+00:00",
+      "first_healthy_sample": "2026-11-25T19:06:52.967953+00:00",
+      "sample_interval_seconds": 1
+    },
+    {
+      "first_failed_sample": "2026-11-25T19:06:58.236120+00:00",
+      "first_healthy_sample": "2026-11-25T19:07:06.604772+00:00",
+      "sample_interval_seconds": 1
+    }
+  ],
+  "ended_at": "2026-11-25T19:08:14.828009+00:00",
+  "runtime_source_matches_approved_commit": {
+    "app/rag_store.py": true,
+    "app/rag_generation.py": true,
+    "app/rag_identity.py": true,
+    "app/features/review2.py": true,
+    "app/main.py": true,
+    "app/static/rag.js": true,
+    "app/templates/rag_source.html": true,
+    "requirements-rag.txt": true
+  },
+  "trusted_post_restart_reimport": {
+    "post_restart_reimport": {
+      "status": "unchanged",
+      "generation": "c8f0e4d840fdef5f40a4f4ec",
+      "documents": 5,
+      "chunks": 18
+    },
+    "stats": {
+      "documents": 5,
+      "chunks": 18
+    }
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "checked_at": "2026-11-25T18:36:06.837334+00:00",
+  "baseline_revision": "34a93cee9105315a5538cc208cbe024b4cce998b",
+  "implementation_revision": "572023ccf35afc44c9dd1f34be4037551d0395f5",
+  "ci_probe_revision": "1c545a874afd87e6061e26d60f4ecbaecc63e1b3",
+  "baseline": {
+    "command": "python3 studio.py check",
+    "exit_code": 0,
+    "application": 120,
+    "contracts": 18,
+    "chromium": 15
+  },
+  "local_final": {
+    "command": "python3 studio.py check",
+    "exit_code": 0,
+    "python": "3.14.3",
+    "black": "passed",
+    "pylint": "passed",
+    "application": 144,
+    "contracts": 18,
+    "chromium": 19,
+    "optional_skips": "6 in non-browser selection (real-RAG module + five HTTP simulation cases); browser selection repeats one real-RAG module skip. Skips are not passes."
+  },
+  "real_rag_without_simulation": {
+    "python": "3.12.16",
+    "passed": 172,
+    "skipped": 5,
+    "browser_deselected": 19
+  },
+  "real_rag_with_local_http_simulation": {
+    "command": "RAG_SIMULATION_URL=http://127.0.0.1:4511/gemini/v1beta/models/ python -m pytest -q tests -m \"not e2e\" contracts",
+    "python": "3.12.16",
+    "passed": 177,
+    "browser_deselected": 19,
+    "provider": "isolated local Postman simulation; not Gemini"
+  },
+  "browser": {
+    "viewports": [
+      1440,
+      768,
+      390,
+      320
+    ],
+    "pages": [
+      "/portfolio",
+      "/portfolio/projects/rag",
+      "/rag"
+    ],
+    "checks": [
+      "horizontal overflow",
+      "keyboard Tab traversal and visible focus",
+      "heading order",
+      "sampled computed text contrast",
+      "image alt attributes and loaded images",
+      "local links",
+      "question label and 44px submit button",
+      "console errors"
+    ],
+    "result": "four parametrized new checks passed; all 19 browser cases passed",
+    "screenshots": "screenshots/portfolio-local-{width}.png",
+    "limitation": "Sampled contrast and automation are not a full accessibility audit or human reader feedback."
+  },
+  "initial_failures": [
+    {
+      "type": "lint",
+      "result": "new branch/return/line-length complexity findings fixed without disabling lint"
+    },
+    {
+      "type": "browser test setup",
+      "result": "3 viewport cases failed when a mouse click changed the initial sequential focus point; fresh navigation before Tab fixed setup, no website redesign or assertion weakened"
+    },
+    {
+      "type": "recovery harness",
+      "result": "initial external /tmp script lacked repository import path; rerun with explicit PYTHONPATH passed"
+    }
+  ],
+  "compose_validation": {
+    "command": "RELEASE_TAG=review3-local docker compose -f deploy/compose.yml config --no-env-resolution --quiet",
+    "exit_code": 0,
+    "secret_env_read": false
+  },
+  "docker_local": "Docker Desktop launch failed because app executable was missing. Dedicated GitHub CI validates build/startup/persistent import/restart and route probes. No local image success claimed.",
+  "hosted": {
+    "release": "517b03c947c4fb0e14947fbda98fab11b850a267",
+    "review3_deployed": false,
+    "bounded_public_questions": 9,
+    "actual_gemini_generations": 8,
+    "one_no_context_abstention": true
+  },
+  "student_interpretation": "Pending; no human feedback or independent understanding inferred."
+}

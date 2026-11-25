@@ -1,0 +1,70 @@
+{
+  "checked_at": "2026-11-25T18:35:18.971563+00:00",
+  "hosted_release": "517b03c947c4fb0e14947fbda98fab11b850a267",
+  "review3_deployed": false,
+  "routes": {
+    "/": 200,
+    "/builds": 200,
+    "/builds/skyline": 200,
+    "/builds/miata": 200,
+    "/builds/bmw": 200,
+    "/about": 200,
+    "/signup": 200,
+    "/login": 200,
+    "/portfolio": 200,
+    "/portfolio/projects/rag": 200,
+    "/rag": 200,
+    "/health": 200,
+    "https://calc.192.81.212.73.sslip.io/health": 200,
+    "https://192.81.212.73.sslip.io/": 200,
+    "https://qa.192.81.212.73.sslip.io/": 200
+  },
+  "external_links": [
+    {
+      "url": "https://github.com/kushalpatel71",
+      "status": 200,
+      "final_url": "https://github.com/kushalpatel71"
+    },
+    {
+      "url": "https://github.com/kushalpatel71/my-app-studio",
+      "status": 200,
+      "final_url": "https://github.com/kushalpatel71/my-app-studio"
+    },
+    {
+      "url": "https://github.com/kushalpatel71/my-app-studio/actions",
+      "status": 200,
+      "final_url": "https://github.com/kushalpatel71/my-app-studio/actions"
+    },
+    {
+      "url": "https://github.com/kushalpatel71/my-app-studio/blob/feature/review2-build/docs/review1/README.md",
+      "status": 200,
+      "final_url": "https://github.com/kushalpatel71/my-app-studio/blob/feature/review2-build/docs/review1/README.md"
+    },
+    {
+      "url": "https://github.com/kushalpatel71/my-app-studio/blob/feature/review2-build/docs/review1/README.md#verified-group-planning-contribution",
+      "status": 200,
+      "final_url": "https://github.com/kushalpatel71/my-app-studio/blob/feature/review2-build/docs/review1/README.md#verified-group-planning-contribution"
+    },
+    {
+      "url": "https://github.com/kushalpatel71/my-app-studio/blob/main/SPEC.md",
+      "status": 200,
+      "final_url": "https://github.com/kushalpatel71/my-app-studio/blob/main/SPEC.md"
+    },
+    {
+      "url": "https://github.com/kushalpatel71/my-app-studio/issues/new",
+      "status": 200,
+      "final_url": "https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Fkushalpatel71%2Fmy-app-studio%2Fissues%2Fnew"
+    },
+    {
+      "url": "https://github.com/kushalpatel71/my-app-studio/pull/4",
+      "status": 200,
+      "final_url": "https://github.com/kushalpatel71/my-app-studio/pull/4"
+    },
+    {
+      "url": "https://github.com/kushalpatel71/my-app-studio/pull/6",
+      "status": 200,
+      "final_url": "https://github.com/kushalpatel71/my-app-studio/pull/6"
+    }
+  ],
+  "anonymous_import_status": 401
+}

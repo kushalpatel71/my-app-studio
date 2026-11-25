@@ -479,7 +479,7 @@ Post-merge local `python3 studio.py check` passed Black/Pylint, 120 application/
 # Review 3 — Checked Release
 
 **Due:** December 3, 2026, 1:00 PM Eastern. Audit/check date: November 25, 2026.
-**Status:** owner-approved commit `05f8da7bc6ffc6ff3470a53fa9dbba98cb4011d4` is **deployed and verified on the actual hosted app**. Technical release is ready for owner final review. PR #12 remains unmerged and Issue #11 remains open; merge/closure are not authorized. Student interpretation/reader feedback remain pending.
+**Status:** owner-approved commit `05f8da7bc6ffc6ff3470a53fa9dbba98cb4011d4` is **deployed and verified on the actual hosted app**. Technical release is ready for owner final review. PR #12 remains unmerged and Issue #11 remains open; merge/closure are not authorized. Student interpretations are supplied and approved below; real reader/peer feedback remains pending.
 
 Starting main: [`34a93cee9105315a5538cc208cbe024b4cce998b`](https://github.com/kushalpatel71/my-app-studio/commit/34a93cee9105315a5538cc208cbe024b4cce998b). PR #10 merge `04db6b6` and [latest starting main CI](https://github.com/kushalpatel71/my-app-studio/actions/runs/45256376120) were verified. New branch: `feature/review3-checked-release`; [Issue #11](https://github.com/kushalpatel71/my-app-studio/issues/11), open. Implementation: [`572023c`](https://github.com/kushalpatel71/my-app-studio/commit/572023c); image probe/CI extension: [`1c545a8`](https://github.com/kushalpatel71/my-app-studio/commit/1c545a8). PR/CI publication receipts are recorded below after execution.
 
@@ -508,7 +508,19 @@ Starting main: [`34a93cee9105315a5538cc208cbe024b4cce998b`](https://github.com/k
 
 The approved updated release is now verified in the deployment evidence below. For Improve, have a real reader identify the target direction, find skill evidence and open a project, then record their actual issue, a useful fix and retest. Optional professional material requires verified supplied information.
 
-**Student observation / interpretation: Pending.** No first-person opinions, reader observations or understanding are inferred from authorization. AI performed implementation, automated/manual screenshot review, technical evaluation and factual record drafting. The owner's scope and preservation instructions are attributed only as instructions.
+**Student observation / interpretation: Supplied and approved by the student.**
+
+**AI assistance disclosure:** No first-person opinions, reader observations or understanding are inferred from authorization. AI performed implementation, automated/manual screenshot review, technical evaluation and factual record drafting. The owner's scope and preservation instructions are attributed only as instructions.
+
+### My Individual Interpretation — Portfolio
+
+For my portfolio, I decided to keep the evidence-first layout because I want people to see my actual projects, technical skills, and what I have accomplished rather than just reading about me. My portfolio includes Car Builders Place, my RAG application, and my documented group planning contributions.
+
+The browser testing results show that the portfolio works across desktop, tablet, and mobile screen sizes. The tests also checked navigation, keyboard accessibility, and working links. I understand that passing these tests means the tested features worked correctly, but it does not guarantee that every user will have the same experience.
+
+One important thing I learned is that a failed test does not always mean the website has a problem. For example, an initial keyboard test failed because of how the test started, and the issue was fixed by correcting the test setup.
+
+I think the portfolio is useful because it allows someone reviewing my work to open real projects and see evidence of my technical abilities. My next improvement would be to get feedback from another person and make changes based on what they find difficult to use.
 
 ## 2. Individual RAG app + technical research
 
@@ -554,7 +566,21 @@ The corpus remains the five original permitted guides in the [existing manifest]
 
 The owner approved the [app-only deployment/rollback plan](../../deploy/README.md#review-3-release-plan--approval-required-not-executed); actual updated HTTPS/Gemini/source/persistence checks passed below. Proxy-aware identity remains disabled because no live edge behavior proof was added. Do not merge or close Issue #11 before separate approval. For Improve: test the source-diversity alternative on more multi-part queries, validate unsupported/private requests with bounded real calls, measure reliability beyond a tiny sample, and obtain genuine peer observations with fix/retest. Dynamic proxy-IP changes and historical-source retention remain operational limitations; schema cannot guarantee factual completeness.
 
-**Student interpretation: Pending.** The explanation above is AI-authored technical support for presentation, not a claim the student independently understands it. AI authored code, tests, original guides, evaluation and factual writing; prior user decisions are attributed only where already evidenced. No new learner quotation, personal reflection or peer review was invented.
+**Student interpretation: Supplied and approved by the student.**
+
+**AI assistance disclosure:** The explanation above is AI-authored technical support for presentation, not a claim the student independently understands it. AI authored code, tests, original guides, evaluation and factual writing; prior user decisions are attributed only where already evidenced. No new learner quotation, personal reflection or peer review was invented.
+
+### My Individual Interpretation — RAG Application
+
+For my RAG application, I learned how document retrieval and AI-generated answers work together. My system uses five approved documents, which are divided into 18 chunks. MiniLM converts the text into embeddings, and Chroma stores those embeddings so the application can find information related to a user's question. Gemini then uses the retrieved information to generate an answer with source citations.
+
+I understand that retrieval does not guarantee the answer will be completely correct. The source citations are important because they allow users to check where the information came from.
+
+During evaluation, both vector search and keyword search ranked the expected source first for 10 out of 11 answerable questions. This showed me that vector search was not automatically better than keyword search for my small document collection.
+
+One limitation was that a multi-part question received only a partial answer. The application also correctly responded with insufficient evidence when asked about horsepower measurements that were not available in the documents.
+
+I think the system is working well for its tested purpose, but it still needs improvement. My next priority would be improving answers to questions requiring information from multiple sources and testing the application with more questions. I also understand why persistent storage, restricted document imports, and proper error handling are important for keeping the application reliable and secure.
 
 ### Rubric crosswalk
 
@@ -563,7 +589,7 @@ The owner approved the [app-only deployment/rollback plan](../../deploy/README.m
 | Complete | Preserved car application plus updated hosted portfolio/RAG release verified at approved 05f8da7; deployment, source, import, model, browser and recovery receipts linked below. |
 | Thoughtful | Preserve working design; normalized locations avoid migration; default-off exact proxy trust; measured keyword/vector and diversity comparison; graph alternative remains researched historical evidence rather than unnecessary new infrastructure. |
 | Checked | Versioned test/HTTP/browser/recovery receipts, real vectors and Gemini distinguished from simulation, retained partial answer and initial test failures. CI outcomes are recorded separately after execution. |
-| Understood | Eight-step technical explanation, limitations and assistance boundaries supplied. Student interpretation and real human feedback remain pending; authorization is not understanding. |
+| Understood | Student-supplied interpretations explain the evidence-first layout, test limits, retrieval/citations, keyword comparison and multi-part-answer limitation. The AI technical explanation and assistance remain disclosed; real reader/peer feedback remains pending. |
 
 ### Review 3 publication and CI evidence
 
@@ -590,7 +616,7 @@ The exact question generated **“View Details opens an individual sample build 
 
 **Downtime:** approximate observed public `/health` unavailability totaled **225.63 seconds (about 3 minutes 46 seconds)** across backup, failed launch/rollback intervals, final recreate and the approved persistence restart. One-second scheduled sampling includes network latency/timeouts, so this is an observation rather than exact server uptime. The successful final attempt's two sampled intervals totaled 17.79 seconds. All individual intervals are retained in the summary. Four unrelated service identities/start times/restart counts/ports/networks and proxy configuration hashes matched preflight; calculator and original production/QA returned HTTPS 200. No shared Traefik setting, paid service, unrelated container or group project was modified. Proxy-aware rate limiting stays **disabled**; the conservative shared five/minute limit and persistent daily budget remain.
 
-**Final review boundary:** technical deployment and hosted verification passed. The transient provider error and original multi-part-answer limitation remain known risks, not erased failures. Improve priorities remain broader query/reliability evaluation, source diversity/completeness, private upstream-status observability, retention and genuine reader/peer fix/retest. Student interpretation remains Pending. PR #12 is for review only; do not merge or close Issue #11 without separate authorization. This evidence update changes documentation/receipts only; it does not require another production deployment.
+**Final review boundary:** technical deployment and hosted verification passed. The transient provider error and original multi-part-answer limitation remain known risks, not erased failures. Improve priorities remain broader query/reliability evaluation, source diversity/completeness, private upstream-status observability, retention and genuine reader/peer fix/retest. Student interpretations are supplied and approved above; real reader/peer feedback remains pending. PR #12 is for review only; do not merge or close Issue #11 without separate authorization. This evidence update changes documentation/receipts only; it does not require another production deployment.
 
 ### Canvas-ready Review 3 submission — verified hosted release
 
@@ -604,7 +630,7 @@ Due December 3, 2026, 1:00 PM Eastern. Prepared text only; not submitted to Canv
 
 Full local studio passed Black/Pylint, 144 application tests, 18 unchanged instructor contracts and 19 Chromium cases. Linux, Windows and RAG checks passed on [the approved commit](https://github.com/kushalpatel71/my-app-studio/actions/runs/45677813666); [latest PR checks](https://github.com/kushalpatel71/my-app-studio/pull/12/checks) verify subsequent evidence-only changes. Existing accounts, roles and unrelated hosted services were preserved. Initial deployment/checker failures and rollbacks are recorded, not counted as passes.
 
-**Next:** Obtain owner final review, provide my own interpretation, and collect genuine reader feedback with a meaningful fix/retest for Improve. PR merge and issue closure remain unauthorized. AI assisted implementation, testing, deployment and factual writing; personal understanding/peer observations are not fabricated.
+**Next:** Obtain owner final review and collect genuine reader feedback with a meaningful fix/retest for Improve. PR merge and issue closure remain unauthorized. AI assisted implementation, testing, deployment and factual writing; personal understanding/peer observations are not fabricated.
 
 [Repository](https://github.com/kushalpatel71/my-app-studio) · [Single evolving record](https://github.com/kushalpatel71/my-app-studio/blob/feature/review3-checked-release/docs/review1/README.md#review-3--checked-release) · [Issue #11, open](https://github.com/kushalpatel71/my-app-studio/issues/11) · [PR #12, unmerged](https://github.com/kushalpatel71/my-app-studio/pull/12)
 
@@ -622,6 +648,6 @@ The [16-query retrieval comparison](https://github.com/kushalpatel71/my-app-stud
 
 Separate full Python 3.12 regression with real vectors and isolated HTTP simulation passed 177 tests; simulation is not Gemini evidence. Without simulation: 172 passed/five explicit skips. CI passed Docker build/startup, named-volume import/reimport/restart, source/counter/vector checks and protected-route denials.
 
-**Next:** Final owner review, broader query/reliability and multi-part coverage checks, safe upstream-status diagnostics, retention, and genuine peer fix/retest for Improve. Student interpretation remains pending. Implementation, original guides, tests, deployment and record drafting were AI-assisted.
+**Next:** Final owner review, broader query/reliability and multi-part coverage checks, safe upstream-status diagnostics, retention, and genuine peer fix/retest for Improve. Student interpretation is supplied and approved above; real peer feedback remains pending. Implementation, original guides, tests, deployment and record drafting were AI-assisted.
 
 [Source manifest](https://github.com/kushalpatel71/my-app-studio/blob/feature/review3-checked-release/docs/rag/corpus/manifest.json) · [Deployment/rollback runbook](https://github.com/kushalpatel71/my-app-studio/blob/feature/review3-checked-release/deploy/README.md) · [PR #12](https://github.com/kushalpatel71/my-app-studio/pull/12) · [Issue #11](https://github.com/kushalpatel71/my-app-studio/issues/11) · [CI](https://github.com/kushalpatel71/my-app-studio/actions/runs/45677813666)

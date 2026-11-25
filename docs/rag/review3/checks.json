@@ -87,5 +87,12 @@
     "actual_gemini_generations": 8,
     "one_no_context_abstention": true
   },
-  "student_interpretation": "Pending; no human feedback or independent understanding inferred."
+  "student_interpretation": "Pending; no human feedback or independent understanding inferred.",
+  "postman_public_health": {
+    "assertions": 2,
+    "passed": 2,
+    "exit_code": 0,
+    "target": "https://carbuilders.192.81.212.73.sslip.io/health",
+    "external_event_reporting": false
+  }
 }

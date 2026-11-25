@@ -1,0 +1,37 @@
+{
+  "run_id": 45677232803,
+  "url": "https://github.com/kushalpatel71/my-app-studio/actions/runs/45677232803",
+  "revision": "268f973b0a87a46b5c1b35f4baf8cbf29f67c9d4",
+  "status": "completed",
+  "conclusion": "success",
+  "jobs": {
+    "check": {
+      "id": 139427907789,
+      "conclusion": "success",
+      "application_passed": 144,
+      "contracts_passed": 18,
+      "browser_passed": 19,
+      "optional_skips_nonbrowser": 6
+    },
+    "windows": {
+      "id": 139427908590,
+      "conclusion": "success",
+      "application_passed": 142,
+      "contracts_passed": 18,
+      "browser_passed": 19,
+      "skips_nonbrowser": 8
+    },
+    "rag": {
+      "id": 139427908565,
+      "conclusion": "success",
+      "passed": 172,
+      "simulation_skips": 5,
+      "browser_deselected": 19,
+      "docker_build": "passed",
+      "startup": "passed",
+      "named_volume_import_restart_vectors_counter_location": "passed",
+      "route_and_anonymous_denial_probe": "passed"
+    }
+  },
+  "production_deployment": false
+}

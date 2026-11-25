@@ -88,6 +88,7 @@ jobs:
           docker exec cbp-review2-ci python -c 'from app.rag_store import RagStore; from app.settings import Settings; s=RagStore(str(Settings.load().database)+".rag"); assert s.ingest()["documents"]==5; assert s.stats()["chunks"]==18; assert s.ingest()["status"]=="unchanged"; assert s.consume("ci-persistence",0,1); assert s.retrieve("View Details")[0]["source_id"]=="CBP-S01"'
           docker restart cbp-review2-ci
           docker exec cbp-review2-ci python -c 'from app.rag_store import RagStore; from app.settings import Settings; s=RagStore(str(Settings.load().database)+".rag"); assert s.stats()=={"documents":5,"chunks":18}; assert not s.consume("ci-persistence",0,1); assert s.ingest()["status"]=="unchanged"; p=s.retrieve("View Details")[0]; assert p["source_id"]=="CBP-S01"; assert p["location"]["status"]=="located"; print("Persistent image import, vectors, source location, counter and restart passed")'
+          docker exec -i cbp-review2-ci python < scripts/check_release_image.py
       - name: Stop isolated CI image
         if: always()
         run: docker stop cbp-review2-ci || true

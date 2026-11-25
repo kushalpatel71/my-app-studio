@@ -34,6 +34,7 @@ form.addEventListener("submit", async (event) => {
     panel.hidden = !(data.trace || []).length;
     if (!response.ok) {
       status.textContent = typeof data.detail === "string" ? data.detail : "Question rejected. Check its length and try again.";
+      if (typeof data.error_code === "string") status.textContent += ` Reference: ${data.error_code}.`;
       return;
     }
     document.getElementById("rag-answer").textContent = data.answer;

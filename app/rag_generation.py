@@ -11,7 +11,11 @@ PROVIDER_TIMEOUT = 20
 
 
 class GenerationError(RuntimeError):
-    """Safe, user-facing generation failure."""
+    """Safe failure category; never include provider bodies or credentials."""
+
+    def __init__(self, message, code="provider-unavailable"):
+        super().__init__(message)
+        self.code = code
 
 
 def generate(question, passages):
@@ -19,15 +23,18 @@ def generate(question, passages):
     key = os.environ.get("GEMINI_API_KEY")
     if not key:
         raise GenerationError(
-            "Generation unavailable: GEMINI_API_KEY is not configured."
+            "Generation unavailable: GEMINI_API_KEY is not configured.", "missing-key"
         )
     if os.environ.get("RAG_PROVIDER_APPROVED") != "free-tier-confirmed":
         raise GenerationError(
-            "Generation unavailable: free-tier project approval is pending."
+            "Generation unavailable: free-tier project approval is pending.",
+            "unapproved-project",
         )
     model = os.environ.get("GEMINI_MODEL", "gemini-3.5-flash-lite")
     if not re.fullmatch(r"gemini-[a-z0-9.-]+", model):
-        raise GenerationError("Generation model configuration is invalid.")
+        raise GenerationError(
+            "Generation model configuration is invalid.", "invalid-model"
+        )
     prompt = {
         "question": question,
         "evidence": [{"id": p["id"], "text": p["text"]} for p in passages],
@@ -59,6 +66,22 @@ def generate(question, passages):
         "generationConfig": {
             "maxOutputTokens": 600,
             "responseMimeType": "application/json",
+            "responseJsonSchema": {
+                "type": "object",
+                "properties": {
+                    "answer": {"type": "string"},
+                    "citations": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "enum": [p["id"] for p in passages],
+                        },
+                    },
+                    "insufficient": {"type": "boolean"},
+                },
+                "required": ["answer", "citations", "insufficient"],
+                "additionalProperties": False,
+            },
         },
     }
     try:
@@ -70,7 +93,12 @@ def generate(question, passages):
                 headers={"x-goog-api-key": key},
                 json=payload,
             )
-        response.raise_for_status()
+        if response.status_code >= 400:
+            raise GenerationError(
+                "Generation failed: provider rejected the request. "
+                "Please try again later.",
+                "provider-http",
+            )
         data = response.json()
         output = json.loads(
             "".join(
@@ -80,17 +108,26 @@ def generate(question, passages):
         return validate_answer(output, passages)
     except httpx.TimeoutException as error:
         raise GenerationError(
-            "Generation timed out. Please try again later."
+            "Generation timed out. Please try again later.", "provider-timeout"
         ) from error
-    except (httpx.HTTPError, ValueError, KeyError, IndexError, TypeError) as error:
+    except httpx.HTTPError as error:
         raise GenerationError(
-            "Generation failed or returned invalid evidence. Please try again later."
+            "Generation connection failed. Please try again later.", "provider-network"
+        ) from error
+    except (ValueError, KeyError, IndexError, TypeError, AttributeError) as error:
+        raise GenerationError(
+            "Generation failed or returned invalid evidence. Please try again later.",
+            "invalid-evidence",
         ) from error
 
 
 def validate_answer(output, passages):
     """A valid-looking but unretrieved ID never becomes a source link."""
-    if not isinstance(output, dict):
+    if not isinstance(output, dict) or set(output) != {
+        "answer",
+        "citations",
+        "insufficient",
+    }:
         raise ValueError("Invalid answer shape.")
     answer, ids = output.get("answer"), output.get("citations")
     insufficient = output.get("insufficient")

@@ -23,9 +23,12 @@ class CorpusError(ValueError):
 
 def approved_sources(root=CORPUS):
     """Validate the entire manifest before embedding or activating any records."""
-    if root.is_symlink():
-        raise CorpusError("The approved corpus root cannot be a symbolic link.")
-    manifest = json.loads((root / "manifest.json").read_text(encoding="utf-8"))
+    manifest_path = root / "manifest.json"
+    if root.is_symlink() or manifest_path.is_symlink():
+        raise CorpusError(
+            "The approved corpus root or manifest cannot be a symbolic link."
+        )
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     if not isinstance(manifest, list) or not 1 <= len(manifest) <= 5:
         raise CorpusError("Expected one to five approved documents.")
     sources, seen = [], set()
@@ -60,6 +63,31 @@ def approved_sources(root=CORPUS):
         sources.append(dict(item, text=text, sha256=hashlib.sha256(raw).hexdigest()))
         seen.add(item["id"])
     return sources
+
+
+def source_location(provenance, passage):
+    """Locate an exact normalized passage body without changing existing IDs.
+
+    Offsets are Unicode character offsets in the retained LF-normalized, stripped
+    Markdown, not raw-byte offsets. Ambiguous repeated bodies are not guessed.
+    """
+    body = passage.partition("\n")[2]
+    pattern = r"\s+".join(re.escape(word) for word in body.split())
+    matches = list(re.finditer(pattern, provenance["text"])) if pattern else []
+    if len(matches) != 1:
+        return {"status": "ambiguous" if matches else "unresolved"}
+    match = matches[0]
+    text = provenance["text"]
+    return {
+        "status": "located",
+        "file": provenance["file"],
+        "heading": passage.partition("\n")[0],
+        "start_char": match.start(),
+        "end_char": match.end(),
+        "start_line": text.count("\n", 0, match.start()) + 1,
+        "end_line": text.count("\n", 0, match.end()) + 1,
+        "coordinate_system": "LF-normalized stripped Markdown; Unicode characters",
+    }
 
 
 class RagStore:
@@ -257,6 +285,7 @@ class RagStore:
             "title": row[2],
             "text": row[3],
             "provenance": json.loads(row[4]),
+            "location": source_location(json.loads(row[4]), row[3]),
             "url": "/rag/sources/" + ident,
         }
 

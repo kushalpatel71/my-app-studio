@@ -47,6 +47,20 @@ The public case study publishes only this high-level own-contribution summary: *
 
 **Changed:** added public portfolio/case study, accurate project/contribution labels and GitHub contact/navigation without replacing the car website. **Checked:** actual local/CI/browser/hosted access, layout, authentication and full cited-answer journey. **Next for December 3:** maintain current case-study/version links, add supplied optional professional material, and obtain the owner’s own interpretation/reader observation. **Contribution / AI assistance:** owner supplied direction/scope, approved Docker reuse, configured/rotated the key and confirmed the Free tier. AI authored implementation, original guides, tests and this factual record; AI browser observations are separate from human feedback. No personal reflection or understanding is fabricated.
 
+##### My Individual Interpretation — Portfolio (Review 2)
+
+**Student-supplied and approved interpretation:**
+
+For Review 2, my main goal was to build a working professional portfolio that shows my technical skills and the projects I have worked on. I chose an evidence-first design because I think it is more useful for someone to see my actual work rather than just read a list of skills.
+
+My portfolio includes Car Builders Place, my RAG Knowledge Assistant, and my documented group planning contributions. I focused on AI Application and Product Engineering because I am interested in developing applications that combine frontend, backend, databases, and AI technologies.
+
+One important thing I learned was that a portfolio should not only look good but should also work correctly on different devices. The tests checked navigation, mobile layouts, keyboard accessibility, and working links. I understand that passing these tests confirms the functionality that was tested, but it does not mean every possible issue has been discovered.
+
+I also learned how Docker and DigitalOcean can be used to make a project accessible online instead of running it only on my computer.
+
+Overall, I think Review 2 helped me understand the importance of presenting working projects with clear technical evidence. My next goal is to improve the portfolio based on actual user feedback and continue adding verified project accomplishments.
+
 #### Historical Review 1 portfolio research and plan
 
 **Historical Plan status (November 9):** Research and Plan drafted; student reflection/selection review pending. The earlier November 24 Build date is superseded by the supplied Canvas December 1 deadline.
@@ -215,6 +229,22 @@ Final browser, restart and real-generation checks used [deployed release 517b03c
 **Repeatable checks:** ordinary `python3 studio.py check`; Python 3.12 optional runtime via `requirements-rag.txt`; `python -m pytest -q tests -m "not e2e" contracts`; `python scripts/evaluate_rag.py --index PRIVATE_INDEX_PATH`. `--generate` explicitly requests actual approved generation. For local provider simulation use `postman simulation run postman/simulations/review2-provider.sim.yaml --port 4511 --no-history` and `RAG_SIMULATION_URL=http://127.0.0.1:4511/gemini/v1beta/models/ python -m pytest -q tests/test_rag_provider_http.py`. No real credential is used in mocks/CI.
 
 **Changed:** implemented actual import, neural embeddings, persistent vector/keyword retrieval, real Gemini generation, verified source UI, guarded administration, tests and existing-server Docker hosting. **Checked:** actual local/CI/container/hosted/browser outcomes above, with failures and simulation distinguished. **Next for December 3:** broaden independent query/load checks, improve structured-output observability/reliability, source offsets/retention and trusted-proxy per-client limiting based on measured needs; rehearse production rollback when separately approved and obtain the owner’s own interpretation/reader review. **Contribution / AI assistance:** owner selected scope/direction, approved deployment, configured/rotated the private key and confirmed Free-tier status. AI researched, authored code/corpus/tests, diagnosed dependency/sampling issues and executed the reported checks. No peer feedback, personal reflection or independent understanding is fabricated.
+
+##### My Individual Interpretation — RAG Application (Review 2)
+
+**Student-supplied and approved interpretation:**
+
+For Review 2, I worked on building a RAG application called the Car Builds Knowledge Assistant. My goal was to create a chatbot that could answer questions using information from approved documents instead of relying only on an AI model's general knowledge.
+
+I learned that RAG stands for Retrieval-Augmented Generation. My application takes five approved documents and divides them into 18 smaller chunks. MiniLM converts the text into embeddings, and Chroma stores those embeddings so the application can retrieve information related to a user's question. Gemini then uses the retrieved information to generate an answer with source citations.
+
+One important thing I learned is that AI-generated answers should be supported by real evidence. For example, when I asked where the View Details button takes a user, the application returned an answer with a citation to the supporting document.
+
+Another important result was the horsepower question. Since the documents did not contain a verified horsepower measurement, the chatbot returned insufficient evidence instead of making up a number. This helped me understand why handling missing information is an important part of a reliable RAG system.
+
+I also learned why persistent storage matters. Using Docker and persistent storage allows the application to keep its documents and embeddings when the container restarts.
+
+Overall, I think the application met the main goals of Review 2. However, I understand that a few successful tests do not guarantee that every answer will be accurate. My next goal is to test more questions, improve error handling, and make the source references more detailed.
 
 #### Historical Review 1 technical research and plan
 
